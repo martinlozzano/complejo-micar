@@ -1,0 +1,135 @@
+/* ==========================================================================
+   Page: Cabañas
+   ========================================================================== */
+
+/* Intro heading over hills ----------------------------------------------- */
+
+.cabins-intro {
+  padding-bottom: clamp(5rem, 3rem + 6vw, 8rem);
+}
+
+/* Cabin cards ------------------------------------------------------------ */
+
+/* Cards overlap the intro hills, so they need their own stacking layer. */
+.cabins {
+  position: relative;
+  z-index: 1;
+  margin-top: clamp(-5.5rem, -2rem - 4vw, -3rem);
+  padding-bottom: clamp(1.5rem, 1rem + 1.5vw, 2rem);
+}
+
+.cabins__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(1rem, 0.5rem + 1vw, 1.25rem);
+}
+
+.cabin-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background-color: #fbf6ee;
+  box-shadow: var(--shadow-card);
+}
+
+.cabin-card__media {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.cabin-card__media.placeholder {
+  height: auto;
+}
+
+.cabin-card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.9rem;
+  padding: 1.25rem 1.25rem 1.5rem;
+}
+
+.cabin-card__title {
+  font-size: clamp(1.5rem, 1.3rem + 0.6vw, 1.75rem);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.cabin-card__text {
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.cabin-card__list {
+  display: grid;
+  gap: 0.6rem;
+  margin-top: 0.25rem;
+}
+
+.cabin-card__list li {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-size: 0.9375rem;
+  color: var(--color-text);
+}
+
+.cabin-card__list .icon {
+  width: 22px;
+  height: 22px;
+  color: var(--color-brown);
+}
+
+/* Filled check badge: brown circle with a cream tick. */
+.cabin-card__list .icon--check circle {
+  fill: var(--color-brown);
+}
+
+.cabin-card__list .icon--check path {
+  stroke: var(--color-cream);
+  stroke-width: 2.5;
+}
+
+/* Pushes the button to the bottom so all cards align, keeping a minimum gap. */
+.cabin-card__list {
+  margin-bottom: 0.75rem;
+}
+
+.cabin-card .btn {
+  width: 100%;
+  margin-top: auto;
+}
+
+@media (max-width: 1100px) {
+  .cabins__grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 900px;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .cabins__grid {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+    margin-inline: auto;
+  }
+}
+
+/* Amenities -------------------------------------------------------------- */
+
+.amenities {
+  padding-block: clamp(1rem, 0.5rem + 1.5vw, 1.5rem) 0;
+}
+
+.amenities .feature-strip {
+  --feature-count: 6;
+}
+
+/* Closing banner --------------------------------------------------------- */
+
+.closing-banner {
+  padding-bottom: clamp(2rem, 1.5rem + 2vw, 3rem);
+}

@@ -1,0 +1,435 @@
+/* ==========================================================================
+   Page: Galería
+   ========================================================================== */
+
+.gallery {
+  padding-block: clamp(1.5rem, 1rem + 1.5vw, 2rem) clamp(2.5rem, 2rem + 2vw, 3.5rem);
+}
+
+.gallery__inner {
+  width: min(100% - 2 * var(--gutter), 1360px);
+  margin-inline: auto;
+}
+
+/* Filters ---------------------------------------------------------------- */
+
+.gallery-filters {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.gallery-filter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-cream-dark);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-text);
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.gallery-filter:hover {
+  background-color: var(--color-sand);
+}
+
+.gallery-filter[aria-pressed="true"] {
+  background-color: var(--color-brown);
+  color: var(--color-white);
+}
+
+.gallery-filter .icon {
+  width: 22px;
+  height: 22px;
+}
+
+@media (max-width: 900px) {
+  .gallery-filters {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-filters {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .gallery-filter {
+    padding: 0.7rem 0.75rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* Grid ------------------------------------------------------------------- */
+
+/* 12-column grid with short rows: featured photos span 3 rows, the rest 2. */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: clamp(70px, 6.25vw, 90px);
+  grid-auto-flow: dense;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gallery-item {
+  grid-column: span 3;
+  grid-row: span 2;
+}
+
+.gallery-item--lg {
+  grid-column: span 6;
+  grid-row: span 3;
+}
+
+.gallery-item--md {
+  grid-column: span 3;
+  grid-row: span 3;
+}
+
+/* When filtering, every visible photo gets the same size. */
+.gallery-grid.is-filtered .gallery-item {
+  grid-column: span 4;
+  grid-row: span 3;
+}
+
+.gallery-item[hidden] {
+  display: none;
+}
+
+.gallery-card {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-placeholder);
+  box-shadow: var(--shadow-card);
+  text-align: left;
+  isolation: isolate;
+}
+
+button.gallery-card {
+  cursor: zoom-in;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 500ms ease;
+}
+
+button.gallery-card:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-card__caption {
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 2.5rem 1rem 0.9rem;
+  background: linear-gradient(180deg, rgba(20, 10, 5, 0) 0%, rgba(20, 10, 5, 0.7) 100%);
+  font-family: var(--font-serif);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--color-white);
+}
+
+.gallery-card__caption .icon {
+  width: 22px;
+  height: 22px;
+  stroke-width: 1.6;
+}
+
+@media (max-width: 900px) {
+  .gallery-grid {
+    grid-auto-rows: 80px;
+  }
+
+  .gallery-item,
+  .gallery-item--md,
+  .gallery-grid.is-filtered .gallery-item {
+    grid-column: span 6;
+    grid-row: span 2;
+  }
+
+  .gallery-item--lg {
+    grid-column: span 12;
+    grid-row: span 3;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-item,
+  .gallery-item--md,
+  .gallery-item--lg,
+  .gallery-grid.is-filtered .gallery-item {
+    grid-column: span 12;
+    grid-row: span 3;
+  }
+}
+
+/* Lightbox --------------------------------------------------------------- */
+
+.lightbox {
+  /* The global `* { margin: 0 }` reset removes the dialog's native centering. */
+  margin: auto;
+  width: min(100% - 2rem, 1100px);
+  max-height: calc(100vh - 2rem);
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-md);
+  background-color: #1d140e;
+  color: var(--color-white);
+}
+
+.lightbox::backdrop {
+  background-color: rgba(20, 10, 5, 0.85);
+}
+
+.lightbox[open] {
+  animation: lightbox-in 260ms ease;
+}
+
+.lightbox[open]::backdrop {
+  animation: backdrop-in 260ms ease;
+}
+
+@keyframes lightbox-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+}
+
+@keyframes backdrop-in {
+  from {
+    opacity: 0;
+  }
+}
+
+.lightbox__figure {
+  display: grid;
+  margin: 0;
+}
+
+.lightbox__img {
+  width: 100%;
+  max-height: calc(100vh - 7rem);
+  object-fit: contain;
+  background-color: #000;
+  transition: opacity 220ms ease;
+}
+
+.lightbox__caption {
+  padding: 0.9rem 4rem 1rem 1.25rem;
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  transition: opacity 220ms ease;
+}
+
+.lightbox__img.is-fading,
+.lightbox__caption.is-fading {
+  opacity: 0;
+}
+
+.lightbox__btn {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(245, 237, 224, 0.92);
+  color: var(--color-text);
+  transition: background-color var(--transition);
+}
+
+.lightbox__btn:hover {
+  background-color: var(--color-white);
+}
+
+.lightbox__btn .icon {
+  width: 22px;
+  height: 22px;
+  stroke-width: 2;
+}
+
+.lightbox__close {
+  right: 0.75rem;
+  bottom: 0.5rem;
+}
+
+.lightbox__prev,
+.lightbox__next {
+  top: calc(50% - 2.5rem);
+}
+
+.lightbox__prev {
+  left: 0.75rem;
+}
+
+.lightbox__next {
+  right: 0.75rem;
+}
+
+/* Testimonials ----------------------------------------------------------- */
+
+.testimonials {
+  text-align: center;
+}
+
+.testimonials .pending-tag {
+  align-self: center;
+  margin-top: 0.5rem;
+}
+
+.testimonial-slider {
+  display: grid;
+  grid-template-columns: auto minmax(0, 46rem) auto;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(1rem, 4vw, 3.5rem);
+  margin-top: 1rem;
+}
+
+/* Direction of the slide animation, set by testimonials.js:
+   forward  → the incoming quote enters from the left and the outgoing one leaves to the right;
+   backward → the opposite. --from/--to multiply the horizontal shift. */
+.testimonial-slider__track {
+  --shift: 90px;
+  --from: -1;
+  --to: 1;
+  display: grid;
+  overflow: hidden;
+  padding-inline: 0.5rem;
+}
+
+.testimonial-slider__track[data-direction="backward"] {
+  --from: 1;
+  --to: -1;
+}
+
+/* All quotes share one cell, so the track keeps the height of the longest one.
+   Resting (inactive) quotes wait off to the entry side, ready to slide in. */
+.testimonial {
+  grid-area: 1 / 1;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(calc(var(--from) * var(--shift)));
+}
+
+.testimonial.is-active {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition:
+    opacity 450ms ease 200ms,
+    transform 550ms cubic-bezier(0.2, 0.7, 0.2, 1) 200ms,
+    visibility 0s linear 200ms;
+}
+
+.testimonial.is-leaving {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(calc(var(--to) * var(--shift)));
+  transition:
+    opacity 350ms ease,
+    transform 400ms ease-in,
+    visibility 0s linear 400ms;
+}
+
+/* Used by the script to reposition a quote instantly before it animates in. */
+.testimonial.no-transition {
+  transition: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .testimonial,
+  .testimonial.is-active,
+  .testimonial.is-leaving {
+    transform: none;
+    transition-delay: 0s;
+  }
+}
+
+.testimonial__quote {
+  font-family: var(--font-serif);
+  font-size: clamp(1.375rem, 1.1rem + 1.1vw, 2rem);
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--color-text);
+}
+
+.testimonial__stars {
+  display: flex;
+  justify-content: center;
+  gap: 0.3rem;
+  margin-top: 1rem;
+  color: #d98b2b;
+}
+
+.testimonial__stars .icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  stroke: currentColor;
+}
+
+.testimonial__author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.6rem;
+  font-size: 0.9375rem;
+  color: var(--color-text);
+}
+
+.testimonial__author::before,
+.testimonial__author::after {
+  content: "";
+  width: clamp(2.5rem, 6vw, 4rem);
+  height: 1px;
+  background-color: #8a7a62;
+}
+
+.testimonial-slider .carousel__btn {
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .testimonial-slider {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 1.25rem;
+  }
+
+  .testimonial-slider__track {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .testimonial-slider [data-testimonial-prev] {
+    justify-self: end;
+  }
+}
+
+/* Hero: the title fits on one line on desktop, as in the design. */
+.hero--short .hero__text {
+  max-width: 54rem;
+}

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Servicios | Cabañas MICAR</title>
+  <meta name="description" content="Servicios de Cabañas MICAR: pileta y jacuzzi, amplio parque, juegos para chicos, asador, estacionamiento, Wi-Fi y pet friendly.">
+
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap">
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages/servicios.css">
+</head>
+<body>
+
+  <!-- Site header (shared across pages) -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">
+        <img src="assets/img/logo-256.webp" alt="Cabañas MICAR" width="124" height="124">
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <svg class="icon nav-toggle__open" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
+        <svg class="icon nav-toggle__close" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        <span class="visually-hidden">Abrir menú</span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Principal">
+        <ul class="site-nav__list" role="list">
+          <li><a class="site-nav__link" href="index.html">Inicio</a></li>
+          <li><a class="site-nav__link" href="cabanas.html">Cabañas</a></li>
+          <li><a class="site-nav__link" href="servicios.html" aria-current="page">Servicios</a></li>
+          <li><a class="site-nav__link" href="galeria.html">Galería</a></li>
+          <li><a class="site-nav__link" href="ubicacion.html">Ubicación</a></li>
+        </ul>
+        <a class="btn btn--primary" href="reserva.html">
+          Reservar
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <img class="hero__media" src="assets/img/photos/pileta-vista-lejana-1200.webp" srcset="assets/img/photos/pileta-vista-lejana-600.webp 600w, assets/img/photos/pileta-vista-lejana-1200.webp 1200w" sizes="100vw" width="1200" height="1600" alt="" fetchpriority="high" decoding="async">
+      <div class="container hero__content">
+        <div class="hero__text">
+          <span class="eyebrow">Todo lo que necesitás</span>
+          <h1 id="hero-title">Servicios pensados<br>para tu descanso</h1>
+          <p class="hero__lead">En Cabañas MICAR te ofrecemos todas las comodidades para que vivas unas vacaciones únicas, en contacto con la naturaleza y con el confort de tu hogar.</p>
+          <a class="btn btn--light btn--lg" href="reserva.html">
+            Ver disponibilidad
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service tiles -->
+    <section class="services" aria-labelledby="services-title">
+      <header class="container section-heading">
+        <span class="eyebrow">Nuestros servicios</span>
+        <h2 id="services-title">Comodidades para una estadía perfecta</h2>
+        <div class="leaf-divider" aria-hidden="true">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M11 20a10 10 0 0010-10 25.9 25.9 0 00-1.04-7.281 1 1 0 00-1.755-.325C15.833 5.5 13 5.5 9.8 6.1A7 7 0 0011 20"/><path d="M2 21a5 5 0 012.911-4.544C7.613 15.212 8.351 15.24 11 13"/></svg>
+        </div>
+      </header>
+
+      <ul class="service-tiles" role="list">
+        <li class="service-tile">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 19q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 5q2.5 2 5 0t5 0 5 0 5 0"/></svg>
+          <h3 class="service-tile__title">Pileta y jacuzzi</h3>
+          <p class="service-tile__text">Relax y diversión para toda la familia</p>
+        </li>
+        <li class="service-tile">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z"/><path d="M12 22v-3"/></svg>
+          <h3 class="service-tile__title">Amplio parque</h3>
+          <p class="service-tile__text">Naturaleza y espacios verdes</p>
+        </li>
+        <li class="service-tile">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 21 14 3"/><path d="M20.5 21 10 3"/><path d="M15.5 21 12 15l-3.5 6"/><path d="M2 21h20"/></svg>
+          <h3 class="service-tile__title">Juegos para chicos</h3>
+          <p class="service-tile__text">Diversión segura en un entorno natural</p>
+        </li>
+        <li class="service-tile">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"/></svg>
+          <h3 class="service-tile__title">Asador</h3>
+          <p class="service-tile__text">Para compartir buenos momentos</p>
+        </li>
+        <li class="service-tile">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
+          <h3 class="service-tile__title">Estacionamiento</h3>
+          <p class="service-tile__text">Comodidad y seguridad</p>
+        </li>
+        <li class="service-tile">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h.01"/><path d="M2 8.82a15 15 0 0 1 20 0"/><path d="M5 12.859a10 10 0 0 1 14 0"/><path d="M8.5 16.429a5 5 0 0 1 7 0"/></svg>
+          <h3 class="service-tile__title">Wi-Fi</h3>
+          <p class="service-tile__text">Conectate siempre</p>
+        </li>
+        <li class="service-tile">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="20" cy="16" r="2"/><path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z"/></svg>
+          <h3 class="service-tile__title">Pet friendly<br>(consultar)</h3>
+          <p class="service-tile__text">Tu mascota también es bienvenida</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Pool -->
+    <section class="scenery-banner experience" aria-labelledby="pool-title">
+      <div class="container split">
+        <div class="split__text">
+          <span class="eyebrow">Disfrutá del verano</span>
+          <h2 id="pool-title">Pileta y jacuzzi</h2>
+          <p>Nuestra amplia pileta al aire libre y el jacuzzi son el lugar ideal para relajarte, refrescarte y disfrutar del sol en un entorno natural y tranquilo.</p>
+          <a class="btn btn--olive" href="galeria.html">
+            Momentos de relax
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+        <img class="split__media" src="assets/img/photos/pileta-panoramica-1599.webp" srcset="assets/img/photos/pileta-panoramica-800.webp 800w, assets/img/photos/pileta-panoramica-1599.webp 1599w" sizes="(max-width: 800px) 100vw, 55vw" width="1599" height="899" alt="Pileta con jacuzzi y reposeras rodeada de pinos" loading="lazy" decoding="async">
+      </div>
+    </section>
+
+    <!-- Family / park -->
+    <section class="experience experience--plain" aria-labelledby="family-title">
+      <div class="container split split--reverse">
+        <div class="split__text">
+          <span class="eyebrow">Espacios para compartir</span>
+          <h2 id="family-title">Naturaleza en familia</h2>
+          <p>Un amplio parque con juegos para chicos, rodeado de árboles y aire puro, donde grandes y chicos pueden disfrutar de la tranquilidad de las sierras.</p>
+          <a class="btn btn--olive" href="galeria.html">
+            Diversión para todos
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+        <img class="split__media" src="assets/img/photos/juegos-1600.webp" srcset="assets/img/photos/juegos-800.webp 800w, assets/img/photos/juegos-1600.webp 1600w" sizes="(max-width: 800px) 100vw, 55vw" width="1600" height="1200" alt="Juegos infantiles con tobogán y hamacas en el parque" loading="lazy" decoding="async">
+      </div>
+    </section>
+
+    <!-- What's included -->
+    <section class="includes" aria-labelledby="includes-title">
+      <header class="container section-heading section-heading--compact">
+        <span class="eyebrow">Tu estadía incluye</span>
+        <h2 id="includes-title">Todo lo que necesitás, en un solo lugar</h2>
+        <div class="leaf-divider" aria-hidden="true">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M11 20a10 10 0 0010-10 25.9 25.9 0 00-1.04-7.281 1 1 0 00-1.755-.325C15.833 5.5 13 5.5 9.8 6.1A7 7 0 0011 20"/><path d="M2 21a5 5 0 012.911-4.544C7.613 15.212 8.351 15.24 11 13"/></svg>
+        </div>
+      </header>
+
+      <ul class="container feature-strip" role="list">
+        <li class="feature-strip__item">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></svg>
+          <span><span class="feature-strip__label">Cabañas equipadas</span><span class="feature-strip__note">Con todo el confort</span></span>
+        </li>
+        <li class="feature-strip__item">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z"/><path d="M12 22v-3"/></svg>
+          <span><span class="feature-strip__label">Amplio parque</span><span class="feature-strip__note">Entorno natural</span></span>
+        </li>
+        <li class="feature-strip__item">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 19q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 5q2.5 2 5 0t5 0 5 0 5 0"/></svg>
+          <span><span class="feature-strip__label">Pileta y jacuzzi</span><span class="feature-strip__note">Relax asegurado</span></span>
+        </li>
+        <li class="feature-strip__item">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"/></svg>
+          <span><span class="feature-strip__label">Asador</span><span class="feature-strip__note">Para tus comidas</span></span>
+        </li>
+        <li class="feature-strip__item">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 21 14 3"/><path d="M20.5 21 10 3"/><path d="M15.5 21 12 15l-3.5 6"/><path d="M2 21h20"/></svg>
+          <span><span class="feature-strip__label">Juegos para chicos</span><span class="feature-strip__note">Diversión en familia</span></span>
+        </li>
+        <li class="feature-strip__item">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
+          <span><span class="feature-strip__label">Estacionamiento</span><span class="feature-strip__note">Dentro del predio</span></span>
+        </li>
+        <li class="feature-strip__item">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h.01"/><path d="M2 8.82a15 15 0 0 1 20 0"/><path d="M5 12.859a10 10 0 0 1 14 0"/><path d="M8.5 16.429a5 5 0 0 1 7 0"/></svg>
+          <span><span class="feature-strip__label">Wi-Fi</span><span class="feature-strip__note">En todas las cabañas</span></span>
+        </li>
+        <li class="feature-strip__item">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="20" cy="16" r="2"/><path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z"/></svg>
+          <span><span class="feature-strip__label">Pet friendly</span><span class="feature-strip__note">(consultar)</span></span>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Site footer (shared across pages) -->
+  <footer class="site-footer">
+    <div class="container footer-cta">
+      <div class="footer-cta__info">
+        <svg class="footer-cta__pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+        <div>
+          <span class="eyebrow">¿Listo para tu próxima escapada?</span>
+          <h2 class="footer-cta__title">Consultá disponibilidad</h2>
+          <p class="footer-cta__text">Viví la naturaleza con todas las comodidades. Te esperamos en Cabañas MICAR.</p>
+        </div>
+      </div>
+      <a class="btn btn--light btn--lg" href="reserva.html">
+        Reservar ahora
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

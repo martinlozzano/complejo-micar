@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galería | Cabañas MICAR</title>
+  <meta name="description" content="Galería de fotos de Cabañas MICAR: la casa, las cabañas, la pileta y jacuzzi, el parque y los juegos para chicos.">
+
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap">
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages/galeria.css">
+</head>
+<body>
+
+  <!-- Site header (shared across pages) -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">
+        <img src="assets/img/logo-256.webp" alt="Cabañas MICAR" width="124" height="124">
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <svg class="icon nav-toggle__open" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
+        <svg class="icon nav-toggle__close" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        <span class="visually-hidden">Abrir menú</span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Principal">
+        <ul class="site-nav__list" role="list">
+          <li><a class="site-nav__link" href="index.html">Inicio</a></li>
+          <li><a class="site-nav__link" href="cabanas.html">Cabañas</a></li>
+          <li><a class="site-nav__link" href="servicios.html">Servicios</a></li>
+          <li><a class="site-nav__link" href="galeria.html" aria-current="page">Galería</a></li>
+          <li><a class="site-nav__link" href="ubicacion.html">Ubicación</a></li>
+        </ul>
+        <a class="btn btn--primary" href="reserva.html">
+          Reservar
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero hero--short" aria-labelledby="hero-title">
+      <img class="hero__media" src="assets/img/photos/casa-contrafrente-1600.webp" srcset="assets/img/photos/casa-contrafrente-800.webp 800w, assets/img/photos/casa-contrafrente-1600.webp 1600w" sizes="100vw" width="1600" height="1200" alt="" fetchpriority="high" decoding="async">
+      <div class="container hero__content">
+        <div class="hero__text">
+          <span class="eyebrow">Nuestras imágenes</span>
+          <h1 id="hero-title">Conocé cada rincón</h1>
+          <p class="hero__lead">Explorá la belleza, la comodidad y la tranquilidad de Cabañas MICAR a través de nuestras fotos.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery" aria-label="Fotos del complejo">
+      <div class="gallery__inner">
+        <div class="gallery-filters" role="group" aria-label="Filtrar fotos por categoría">
+          <button class="gallery-filter" type="button" data-filter="todo" aria-pressed="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>Todo</button>
+          <button class="gallery-filter" type="button" data-filter="casa" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Casa principal</button>
+          <button class="gallery-filter" type="button" data-filter="cabanas" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></svg>Cabañas</button>
+          <button class="gallery-filter" type="button" data-filter="pileta" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 19q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 5q2.5 2 5 0t5 0 5 0 5 0"/></svg>Pileta y jacuzzi</button>
+          <button class="gallery-filter" type="button" data-filter="parque" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z"/><path d="M12 22v-3"/></svg>Parque y juegos</button>
+          <button class="gallery-filter" type="button" data-filter="comunes" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>Quincho y salón</button>
+        </div>
+        <p class="visually-hidden" data-gallery-status aria-live="polite"></p>
+
+        <ul class="gallery-grid" role="list" data-gallery>
+        <li class="gallery-item gallery-item--lg" data-category="pileta">
+          <button class="gallery-card" type="button" data-caption="Pileta y reposeras" data-full="assets/img/photos/pileta-panoramica-1599.webp">
+            <img src="assets/img/photos/pileta-panoramica-1599.webp" srcset="assets/img/photos/pileta-panoramica-800.webp 800w, assets/img/photos/pileta-panoramica-1599.webp 1599w" sizes="(max-width: 900px) 100vw, 50vw" width="1599" height="899" alt="Pileta con jacuzzi y reposeras rodeada de pinos" decoding="async">
+            <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 19q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 5q2.5 2 5 0t5 0 5 0 5 0"/></svg>Pileta y reposeras</span>
+          </button>
+        </li>
+        <li class="gallery-item gallery-item--md" data-category="casa">
+          <button class="gallery-card" type="button" data-caption="Living con hogar" data-full="assets/img/photos/casa-living-hogar-1600.webp">
+            <img src="assets/img/photos/casa-living-hogar-1600.webp" srcset="assets/img/photos/casa-living-hogar-800.webp 800w, assets/img/photos/casa-living-hogar-1600.webp 1600w" sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw" width="1600" height="1200" alt="Living con hogar a leña y sillones" loading="lazy" decoding="async">
+            <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Living con hogar</span>
+          </button>
+        </li>
+        <li class="gallery-item gallery-item--md" data-category="parque">
+          <button class="gallery-card" type="button" data-caption="Juegos para chicos" data-full="assets/img/photos/juegos-1600.webp">
+            <img src="assets/img/photos/juegos-1600.webp" srcset="assets/img/photos/juegos-800.webp 800w, assets/img/photos/juegos-1600.webp 1600w" sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw" width="1600" height="1200" alt="Juegos infantiles con tobogán y hamacas en el parque" loading="lazy" decoding="async">
+            <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z"/><path d="M12 22v-3"/></svg>Juegos para chicos</span>
+          </button>
+        </li>
+        <li class="gallery-item" data-category="casa">
+          <button class="gallery-card" type="button" data-caption="Casa principal" data-full="assets/img/photos/casa-principal-1600.webp">
+            <img src="assets/img/photos/casa-principal-1600.webp" srcset="assets/img/photos/casa-principal-800.webp 800w, assets/img/photos/casa-principal-1600.webp 1600w" sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw" width="1600" height="1200" alt="Casa principal de ladrillo con escalera blanca, balcón y galería de arcos" loading="lazy" decoding="async">
+            <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Casa principal</span>
+          </button>
+        </li>
+        <li class="gallery-item" data-category="cabanas">
+          <button class="gallery-card" type="button" data-caption="Cabaña 1 · Dormitorio matrimonial" data-full="assets/img/photos/cabana1-dormitorio-matrimonial-1200.webp">
+            <img src="assets/img/photos/cabana1-dormitorio-matrimonial-1200.webp" srcset="assets/img/photos/cabana1-dormitorio-matrimonial-600.webp 600w, assets/img/photos/cabana1-dormitorio-matrimonial-1200.webp 1200w" sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw" width="1200" height="1600" alt="Dormitorio matrimonial de la Cabaña 1 con cuadro colorido" loading="lazy" decoding="async">
+            <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></svg>Cabaña 1 · Dormitorio matrimonial</span>
+          </button>
+        </li>
+        <li class="gallery-item" data-category="pileta">
+          <button class="gallery-card" type="button" data-caption="Pileta y jacuzzi" data-full="assets/img/photos/pileta-vista-aerea-1080.webp">
+            <img src="assets/img/photos/pileta-vista-aerea-1080.webp" srcset="assets/img/photos/pileta-vista-aerea-800.webp 800w, assets/img/photos/pileta-vista-aerea-1080.webp 1080w" sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw" width="1080" height="786" alt="Vista de la pileta con jacuzzi y las casas del complejo" loading="lazy" decoding="async">
+            <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 19q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 5q2.5 2 5 0t5 0 5 0 5 0"/></svg>Pileta y jacuzzi</span>
+          </button>
+        </li>
+        <li class="gallery-item" data-category="comunes">
+          <button class="gallery-card" type="button" data-caption="Quincho" data-full="assets/img/photos/quincho-900.webp">
+            <img src="assets/img/photos/quincho-900.webp" srcset="assets/img/photos/quincho-450.webp 450w, assets/img/photos/quincho-900.webp 900w" sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw" width="900" height="1600" alt="Quincho con mesas y sillas y vista a la pileta" loading="lazy" decoding="async">
+            <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>Quincho</span>
+          </button>
+        </li>
+        <li class="gallery-item" data-category="casa">
+          <button class="gallery-card" type="button" data-caption="Comedor" data-full="assets/img/photos/casa-comedor-1600.webp">
+            <img src="assets/img/photos/casa-comedor-1600.webp" srcset="assets/img/photos/casa-comedor-800.webp 800w, assets/img/photos/casa-comedor-1600.webp 1600w" sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw" width="1600" height="1200" alt="Comedor con mesa grande y vista al living" loading="lazy" decoding="async">
+            <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Comedor</span>
+          </button>
+        </li>
+        <li class="gallery-item" data-category="casa">
+          <button class="gallery-card" type="button" data-caption="Cocina" data-full="assets/img/photos/casa-cocina-1600.webp">
+            <img src="assets/img/photos/casa-cocina-1600.webp" srcset="assets/img/photos/casa-cocina-800.webp 800w, assets/img/photos/casa-cocina-1600.webp 1600w" sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw" width="1600" height="1200" alt="Cocina equipada con isla central" loading="lazy" decoding="async">
+            <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Cocina</span>
+          </button>
+        </li>
+        <li class="gallery-item" data-category="pileta">
+          <button class="gallery-card" type="button" data-caption="Jacuzzi" data-full="assets/img/photos/jacuzzi-768.webp">
+            <img src="assets/img/photos/jacuzzi-768.webp" srcset="assets/img/photos/jacuzzi-600.webp 600w, assets/img/photos/jacuzzi-768.webp 768w" sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw" width="768" height="1024" alt="Jacuzzi junto a la pileta con la casa al fondo" loading="lazy" decoding="async">
+            <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 19q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 5q2.5 2 5 0t5 0 5 0 5 0"/></svg>Jacuzzi</span>
+          </button>
+        </li>
+        <li class="gallery-item" data-category="parque">
+          <button class="gallery-card" type="button" data-caption="Gazebo" data-full="assets/img/photos/gazebo-1200.webp">
+            <img src="assets/img/photos/gazebo-1200.webp" srcset="assets/img/photos/gazebo-600.webp 600w, assets/img/photos/gazebo-1200.webp 1200w" sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw" width="1200" height="1600" alt="Gazebo con mesa y balaustrada en el parque" loading="lazy" decoding="async">
+            <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z"/><path d="M12 22v-3"/></svg>Gazebo</span>
+          </button>
+        </li>
+        <li class="gallery-item" data-category="cabanas">
+          <button class="gallery-card" type="button" data-caption="Cabaña 1 · Galería" data-full="assets/img/photos/cabana1-galeria-1200.webp">
+            <img src="assets/img/photos/cabana1-galeria-1200.webp" srcset="assets/img/photos/cabana1-galeria-600.webp 600w, assets/img/photos/cabana1-galeria-1200.webp 1200w" sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw" width="1200" height="1600" alt="Galería techada de la Cabaña 1 con mesa y vista al asador" loading="lazy" decoding="async">
+            <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></svg>Cabaña 1 · Galería</span>
+          </button>
+        </li>
+        <li class="gallery-item" data-category="casa">
+          <button class="gallery-card" type="button" data-caption="Dormitorio matrimonial" data-full="assets/img/photos/casa-dormitorio-matrimonial-1200.webp">
+            <img src="assets/img/photos/casa-dormitorio-matrimonial-1200.webp" srcset="assets/img/photos/casa-dormitorio-matrimonial-600.webp 600w, assets/img/photos/casa-dormitorio-matrimonial-1200.webp 1200w" sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw" width="1200" height="1600" alt="Dormitorio con cama matrimonial y cuadro de mariposas" loading="lazy" decoding="async">
+            <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Dormitorio matrimonial</span>
+          </button>
+        </li>
+        <li class="gallery-item" data-category="pileta">
+          <button class="gallery-card" type="button" data-caption="Reposeras" data-full="assets/img/photos/pileta-reposeras-768.webp">
+            <img src="assets/img/photos/pileta-reposeras-768.webp" srcset="assets/img/photos/pileta-reposeras-600.webp 600w, assets/img/photos/pileta-reposeras-768.webp 768w" sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw" width="768" height="1024" alt="Reposeras junto a la pileta rodeada de pinos" loading="lazy" decoding="async">
+            <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 19q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 5q2.5 2 5 0t5 0 5 0 5 0"/></svg>Reposeras</span>
+          </button>
+        </li>
+        <li class="gallery-item" data-category="parque">
+          <button class="gallery-card" type="button" data-caption="Flores junto a la pileta" data-full="assets/img/photos/flores-1200.webp">
+            <img src="assets/img/photos/flores-1200.webp" srcset="assets/img/photos/flores-600.webp 600w, assets/img/photos/flores-1200.webp 1200w" sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw" width="1200" height="1600" alt="Cantero con flores junto a la entrada de la pileta" loading="lazy" decoding="async">
+            <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z"/><path d="M12 22v-3"/></svg>Flores junto a la pileta</span>
+          </button>
+        </li>
+        <li class="gallery-item" data-category="casa">
+          <button class="gallery-card" type="button" data-caption="Galería con arcos" data-full="assets/img/photos/casa-contrafrente-1600.webp">
+            <img src="assets/img/photos/casa-contrafrente-1600.webp" srcset="assets/img/photos/casa-contrafrente-800.webp 800w, assets/img/photos/casa-contrafrente-1600.webp 1600w" sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw" width="1600" height="1200" alt="Contrafrente de la casa con galería de arcos y balcón" loading="lazy" decoding="async">
+            <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Galería con arcos</span>
+          </button>
+        </li>
+        <li class="gallery-item" data-category="cabanas">
+          <button class="gallery-card" type="button" data-caption="Cabaña 1 · Comedor" data-full="assets/img/photos/cabana1-comedor-1200.webp">
+            <img src="assets/img/photos/cabana1-comedor-1200.webp" srcset="assets/img/photos/cabana1-comedor-600.webp 600w, assets/img/photos/cabana1-comedor-1200.webp 1200w" sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw" width="1200" height="1600" alt="Comedor de la Cabaña 1 con barra y mesa" loading="lazy" decoding="async">
+            <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></svg>Cabaña 1 · Comedor</span>
+          </button>
+        </li>
+        <li class="gallery-item" data-category="pileta">
+          <button class="gallery-card" type="button" data-caption="Solárium" data-full="assets/img/photos/pileta-solarium-900.webp">
+            <img src="assets/img/photos/pileta-solarium-900.webp" srcset="assets/img/photos/pileta-solarium-450.webp 450w, assets/img/photos/pileta-solarium-900.webp 900w" sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw" width="900" height="1600" alt="Solárium con reposeras junto a la pileta" loading="lazy" decoding="async">
+            <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 19q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 5q2.5 2 5 0t5 0 5 0 5 0"/></svg>Solárium</span>
+          </button>
+        </li>
+        <li class="gallery-item" data-category="comunes">
+          <button class="gallery-card" type="button" data-caption="Salón de usos múltiples" data-full="assets/img/photos/sum-1200.webp">
+            <img src="assets/img/photos/sum-1200.webp" srcset="assets/img/photos/sum-600.webp 600w, assets/img/photos/sum-1200.webp 1200w" sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw" width="1200" height="1600" alt="Salón de usos múltiples vidriado rodeado de césped" loading="lazy" decoding="async">
+            <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>Salón de usos múltiples</span>
+          </button>
+        </li>
+        <li class="gallery-item gallery-item--lg" data-category="pileta">
+          <button class="gallery-card" type="button" data-caption="La pileta de noche" data-full="assets/img/photos/pileta-noche-720.webp">
+            <img src="assets/img/photos/pileta-noche-720.webp" srcset="assets/img/photos/pileta-noche-720.webp 720w" sizes="(max-width: 900px) 100vw, 50vw" width="720" height="473" alt="Pileta iluminada de noche" loading="lazy" decoding="async">
+            <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 19q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 5q2.5 2 5 0t5 0 5 0 5 0"/></svg>La pileta de noche</span>
+          </button>
+        </li>
+        <li class="gallery-item gallery-item--md" data-category="casa">
+          <button class="gallery-card" type="button" data-caption="Entrada de la casa" data-full="assets/img/photos/casa-entrada-1200.webp">
+            <img src="assets/img/photos/casa-entrada-1200.webp" srcset="assets/img/photos/casa-entrada-600.webp 600w, assets/img/photos/casa-entrada-1200.webp 1200w" sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw" width="1200" height="1600" alt="Entrada de la casa con columnas y jardín" loading="lazy" decoding="async">
+            <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Entrada de la casa</span>
+          </button>
+        </li>
+        <li class="gallery-item gallery-item--md" data-category="parque">
+          <button class="gallery-card" type="button" data-caption="Detalles que enamoran" data-full="assets/img/photos/rosas-1200.webp">
+            <img src="assets/img/photos/rosas-1200.webp" srcset="assets/img/photos/rosas-600.webp 600w, assets/img/photos/rosas-1200.webp 1200w" sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw" width="1200" height="1600" alt="Rosas blancas con la pileta y la casa de fondo" loading="lazy" decoding="async">
+            <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z"/><path d="M12 22v-3"/></svg>Detalles que enamoran</span>
+          </button>
+        </li>
+        <li class="gallery-item" data-category="casa">
+          <button class="gallery-card" type="button" data-caption="Galería" data-full="assets/img/photos/casa-galeria-900.webp">
+            <img src="assets/img/photos/casa-galeria-900.webp" srcset="assets/img/photos/casa-galeria-450.webp 450w, assets/img/photos/casa-galeria-900.webp 900w" sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw" width="900" height="1600" alt="Galería techada con mesa larga y sillas junto a los ventanales" loading="lazy" decoding="async">
+            <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Galería</span>
+          </button>
+        </li>
+        <li class="gallery-item" data-category="cabanas">
+          <button class="gallery-card" type="button" data-caption="Cabaña 1 · Cocina" data-full="assets/img/photos/cabana1-cocina-1200.webp">
+            <img src="assets/img/photos/cabana1-cocina-1200.webp" srcset="assets/img/photos/cabana1-cocina-600.webp 600w, assets/img/photos/cabana1-cocina-1200.webp 1200w" sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw" width="1200" height="1600" alt="Cocina equipada de la Cabaña 1" loading="lazy" decoding="async">
+            <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></svg>Cabaña 1 · Cocina</span>
+          </button>
+        </li>
+        <li class="gallery-item" data-category="pileta">
+          <button class="gallery-card" type="button" data-caption="Pileta entre pinos" data-full="assets/img/photos/pileta-pinos-900.webp">
+            <img src="assets/img/photos/pileta-pinos-900.webp" srcset="assets/img/photos/pileta-pinos-450.webp 450w, assets/img/photos/pileta-pinos-900.webp 900w" sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw" width="900" height="1600" alt="Pileta con un pino alto y la casa al fondo" loading="lazy" decoding="async">
+            <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 19q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 5q2.5 2 5 0t5 0 5 0 5 0"/></svg>Pileta entre pinos</span>
+          </button>
+        </li>
+        <li class="gallery-item" data-category="parque">
+          <button class="gallery-card" type="button" data-caption="Amplio parque" data-full="assets/img/photos/parque-1600.webp">
+            <img src="assets/img/photos/parque-1600.webp" srcset="assets/img/photos/parque-800.webp 800w, assets/img/photos/parque-1600.webp 1600w" sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw" width="1600" height="1200" alt="Parque amplio con pinos y césped" loading="lazy" decoding="async">
+            <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z"/><path d="M12 22v-3"/></svg>Amplio parque</span>
+          </button>
+        </li>
+        <li class="gallery-item" data-category="casa">
+          <button class="gallery-card" type="button" data-caption="Living" data-full="assets/img/photos/casa-living-1600.webp">
+            <img src="assets/img/photos/casa-living-1600.webp" srcset="assets/img/photos/casa-living-800.webp 800w, assets/img/photos/casa-living-1600.webp 1600w" sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw" width="1600" height="1200" alt="Living con futones, mesa ratona y televisor" loading="lazy" decoding="async">
+            <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Living</span>
+          </button>
+        </li>
+        <li class="gallery-item" data-category="cabanas">
+          <button class="gallery-card" type="button" data-caption="Cabaña 1 · Dormitorio" data-full="assets/img/photos/cabana1-dormitorio-1200.webp">
+            <img src="assets/img/photos/cabana1-dormitorio-1200.webp" srcset="assets/img/photos/cabana1-dormitorio-600.webp 600w, assets/img/photos/cabana1-dormitorio-1200.webp 1200w" sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw" width="1200" height="1600" alt="Dormitorio de la Cabaña 1 con camas individuales y aire acondicionado" loading="lazy" decoding="async">
+            <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></svg>Cabaña 1 · Dormitorio</span>
+          </button>
+        </li>
+        <li class="gallery-item" data-category="pileta">
+          <button class="gallery-card" type="button" data-caption="Jacuzzi al atardecer" data-full="assets/img/photos/jacuzzi-atardecer-1200.webp">
+            <img src="assets/img/photos/jacuzzi-atardecer-1200.webp" srcset="assets/img/photos/jacuzzi-atardecer-600.webp 600w, assets/img/photos/jacuzzi-atardecer-1200.webp 1200w" sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw" width="1200" height="1600" alt="Jacuzzi al atardecer con pinos de fondo" loading="lazy" decoding="async">
+            <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 19q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 5q2.5 2 5 0t5 0 5 0 5 0"/></svg>Jacuzzi al atardecer</span>
+          </button>
+        </li>
+        <li class="gallery-item" data-category="comunes parque">
+          <button class="gallery-card" type="button" data-caption="Metegol" data-full="assets/img/photos/quincho-metegol-900.webp">
+            <img src="assets/img/photos/quincho-metegol-900.webp" srcset="assets/img/photos/quincho-metegol-450.webp 450w, assets/img/photos/quincho-metegol-900.webp 900w" sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw" width="900" height="1600" alt="Metegol en el quincho techado" loading="lazy" decoding="async">
+            <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>Metegol</span>
+          </button>
+        </li>
+        <li class="gallery-item" data-category="casa">
+          <button class="gallery-card" type="button" data-caption="Dormitorio con dos camas" data-full="assets/img/photos/casa-dormitorio-doble-1600.webp">
+            <img src="assets/img/photos/casa-dormitorio-doble-1600.webp" srcset="assets/img/photos/casa-dormitorio-doble-800.webp 800w, assets/img/photos/casa-dormitorio-doble-1600.webp 1600w" sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw" width="1600" height="1200" alt="Dormitorio con dos camas individuales y mesas de luz" loading="lazy" decoding="async">
+            <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Dormitorio con dos camas</span>
+          </button>
+        </li>
+        <li class="gallery-item" data-category="cabanas parque">
+          <button class="gallery-card" type="button" data-caption="Cabaña 1 · Asador" data-full="assets/img/photos/cabana1-asador-1200.webp">
+            <img src="assets/img/photos/cabana1-asador-1200.webp" srcset="assets/img/photos/cabana1-asador-600.webp 600w, assets/img/photos/cabana1-asador-1200.webp 1200w" sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw" width="1200" height="1600" alt="Asador de ladrillo de la Cabaña 1" loading="lazy" decoding="async">
+            <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></svg>Cabaña 1 · Asador</span>
+          </button>
+        </li>
+        <li class="gallery-item" data-category="pileta parque">
+          <button class="gallery-card" type="button" data-caption="Atardecer en la pileta" data-full="assets/img/photos/pileta-atardecer-1277.webp">
+            <img src="assets/img/photos/pileta-atardecer-1277.webp" srcset="assets/img/photos/pileta-atardecer-798.webp 798w, assets/img/photos/pileta-atardecer-1277.webp 1277w" sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw" width="1277" height="1280" alt="Atardecer sobre la pileta y los pinos" loading="lazy" decoding="async">
+            <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 19q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 5q2.5 2 5 0t5 0 5 0 5 0"/></svg>Atardecer en la pileta</span>
+          </button>
+        </li>
+        <li class="gallery-item" data-category="parque">
+          <button class="gallery-card" type="button" data-caption="Tobogán y hamacas" data-full="assets/img/photos/juegos-tobogan-1080.webp">
+            <img src="assets/img/photos/juegos-tobogan-1080.webp" srcset="assets/img/photos/juegos-tobogan-800.webp 800w, assets/img/photos/juegos-tobogan-1080.webp 1080w" sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw" width="1080" height="602" alt="Tobogán amarillo y hamacas en el parque" loading="lazy" decoding="async">
+            <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z"/><path d="M12 22v-3"/></svg>Tobogán y hamacas</span>
+          </button>
+        </li>
+        <li class="gallery-item" data-category="casa">
+          <button class="gallery-card" type="button" data-caption="Baño" data-full="assets/img/photos/casa-bano-1200.webp">
+            <img src="assets/img/photos/casa-bano-1200.webp" srcset="assets/img/photos/casa-bano-600.webp 600w, assets/img/photos/casa-bano-1200.webp 1200w" sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw" width="1200" height="1600" alt="Baño con vanitory y espejo" loading="lazy" decoding="async">
+            <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Baño</span>
+          </button>
+        </li>
+        <li class="gallery-item" data-category="cabanas">
+          <button class="gallery-card" type="button" data-caption="Cabaña 1 · Baño" data-full="assets/img/photos/cabana1-bano-1200.webp">
+            <img src="assets/img/photos/cabana1-bano-1200.webp" srcset="assets/img/photos/cabana1-bano-600.webp 600w, assets/img/photos/cabana1-bano-1200.webp 1200w" sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw" width="1200" height="1600" alt="Baño de la Cabaña 1 con vanitory" loading="lazy" decoding="async">
+            <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></svg>Cabaña 1 · Baño</span>
+          </button>
+        </li>
+        <li class="gallery-item" data-category="pileta">
+          <button class="gallery-card" type="button" data-caption="Pileta y solárium" data-full="assets/img/photos/pileta-vista-lejana-1200.webp">
+            <img src="assets/img/photos/pileta-vista-lejana-1200.webp" srcset="assets/img/photos/pileta-vista-lejana-600.webp 600w, assets/img/photos/pileta-vista-lejana-1200.webp 1200w" sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw" width="1200" height="1600" alt="Vista de la pileta con jacuzzi, reposeras, quincho y la casa al fondo" loading="lazy" decoding="async">
+            <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 19q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 5q2.5 2 5 0t5 0 5 0 5 0"/></svg>Pileta y solárium</span>
+          </button>
+        </li>
+        <li class="gallery-item" data-category="comunes">
+          <button class="gallery-card" type="button" data-caption="Quincho techado" data-full="assets/img/photos/quincho-exterior-1600.webp">
+            <img src="assets/img/photos/quincho-exterior-1600.webp" srcset="assets/img/photos/quincho-exterior-800.webp 800w, assets/img/photos/quincho-exterior-1600.webp 1600w" sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw" width="1600" height="1200" alt="Quincho techado con mesas frente al parque" loading="lazy" decoding="async">
+            <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>Quincho techado</span>
+          </button>
+        </li>
+        <li class="gallery-item" data-category="casa">
+          <button class="gallery-card" type="button" data-caption="Lateral de la casa" data-full="assets/img/photos/casa-lateral-1080.webp">
+            <img src="assets/img/photos/casa-lateral-1080.webp" srcset="assets/img/photos/casa-lateral-800.webp 800w, assets/img/photos/casa-lateral-1080.webp 1080w" sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw" width="1080" height="604" alt="Lateral de la casa con escalera exterior y parque" loading="lazy" decoding="async">
+            <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Lateral de la casa</span>
+          </button>
+        </li>
+        <li class="gallery-item" data-category="casa parque">
+          <button class="gallery-card" type="button" data-caption="Asador" data-full="assets/img/photos/casa-asador-1200.webp">
+            <img src="assets/img/photos/casa-asador-1200.webp" srcset="assets/img/photos/casa-asador-600.webp 600w, assets/img/photos/casa-asador-1200.webp 1200w" sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw" width="1200" height="1600" alt="Asador de ladrillo en el parque" loading="lazy" decoding="async">
+            <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Asador</span>
+          </button>
+        </li>
+        <li class="gallery-item" data-category="casa parque">
+          <button class="gallery-card" type="button" data-caption="Vista al parque" data-full="assets/img/photos/casa-vista-parque-1600.webp">
+            <img src="assets/img/photos/casa-vista-parque-1600.webp" srcset="assets/img/photos/casa-vista-parque-800.webp 800w, assets/img/photos/casa-vista-parque-1600.webp 1600w" sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw" width="1600" height="1200" alt="Vista del parque y el asador desde el balcón de la casa" loading="lazy" decoding="async">
+            <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Vista al parque</span>
+          </button>
+        </li>
+        <li class="gallery-item" data-category="comunes">
+          <button class="gallery-card" type="button" data-caption="Interior del salón" data-full="assets/img/photos/sum-interior-768.webp">
+            <img src="assets/img/photos/sum-interior-768.webp" srcset="assets/img/photos/sum-interior-600.webp 600w, assets/img/photos/sum-interior-768.webp 768w" sizes="(max-width: 480px) 100vw, (max-width: 900px) 50vw, 33vw" width="768" height="1024" alt="Interior del salón con metegol, mesas y ventanales" loading="lazy" decoding="async">
+            <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>Interior del salón</span>
+          </button>
+        </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <!-- TODO: replace these sample testimonials with real guest reviews before publishing. -->
+    <section class="scenery-banner testimonials" aria-labelledby="testimonials-title">
+      <div class="container section-heading">
+        <p class="eyebrow" id="testimonials-title">Lo que dicen nuestros huéspedes</p>
+        <span class="pending-tag">Testimonios de ejemplo</span>
+        <div class="testimonial-slider" data-testimonials>
+          <button class="carousel__btn" type="button" data-testimonial-prev aria-label="Testimonio anterior">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+          </button>
+          <div class="testimonial-slider__track" aria-live="off">
+            <figure class="testimonial is-active">
+              <blockquote class="testimonial__quote">“Un lugar increíble, la pileta, el parque y la tranquilidad hacen que sea el destino perfecto para descansar.”</blockquote>
+              <div class="testimonial__stars" role="img" aria-label="5 de 5 estrellas"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></div>
+              <figcaption class="testimonial__author">Familia González</figcaption>
+            </figure>
+            <figure class="testimonial">
+              <blockquote class="testimonial__quote">“Las cabañas están impecables y la atención fue excelente. Los chicos disfrutaron muchísimo del parque.”</blockquote>
+              <div class="testimonial__stars" role="img" aria-label="5 de 5 estrellas"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></div>
+              <figcaption class="testimonial__author">Laura y Martín</figcaption>
+            </figure>
+            <figure class="testimonial">
+              <blockquote class="testimonial__quote">“Ideal para desconectar unos días en la naturaleza. Sin dudas volvemos el próximo verano.”</blockquote>
+              <div class="testimonial__stars" role="img" aria-label="5 de 5 estrellas"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></div>
+              <figcaption class="testimonial__author">Grupo de amigos</figcaption>
+            </figure>
+          </div>
+          <button class="carousel__btn" type="button" data-testimonial-next aria-label="Testimonio siguiente">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Lightbox -->
+  <dialog class="lightbox" data-lightbox aria-label="Foto ampliada">
+    <figure class="lightbox__figure">
+      <img class="lightbox__img" src="" alt="">
+      <figcaption class="lightbox__caption"></figcaption>
+    </figure>
+    <button class="lightbox__btn lightbox__prev" type="button" data-lightbox-prev aria-label="Foto anterior"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg></button>
+    <button class="lightbox__btn lightbox__next" type="button" data-lightbox-next aria-label="Foto siguiente"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+    <button class="lightbox__btn lightbox__close" type="button" data-lightbox-close aria-label="Cerrar"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+  </dialog>
+
+  <!-- Site footer (shared across pages) -->
+  <footer class="site-footer">
+    <div class="container footer-cta">
+      <div class="footer-cta__info">
+        <svg class="footer-cta__pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+        <div>
+          <h2 class="footer-cta__title">Ubicación privilegiada</h2>
+          <p class="footer-cta__text">Cerca de todo, en un entorno natural y tranquilo.</p>
+        </div>
+      </div>
+      <a class="btn btn--outline-light btn--lg" href="reserva.html">
+        Reservar ahora
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+  <script src="js/gallery.js" defer></script>
+  <script src="js/testimonials.js" defer></script>
+</body>
+</html>

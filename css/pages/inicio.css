@@ -1,0 +1,115 @@
+/* ==========================================================================
+   Page: Inicio
+   ========================================================================== */
+
+/* Hero ------------------------------------------------------------------- */
+
+.hero--home {
+  min-height: clamp(460px, 44vw, 640px);
+}
+
+/* Frame the main house: keep the roof and the white staircase in view. */
+.hero--home .hero__media {
+  object-position: center 38%;
+}
+
+/* Highlights ------------------------------------------------------------- */
+
+.highlights {
+  padding-bottom: clamp(2.5rem, 2rem + 2vw, 3.5rem);
+}
+
+.highlights__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  width: min(100% - 2 * var(--gutter), 1360px);
+  margin-inline: auto;
+}
+
+@media (max-width: 800px) {
+  .highlights__grid {
+    grid-template-columns: 1fr;
+    max-width: 560px;
+  }
+}
+
+/* Relax banner ----------------------------------------------------------- */
+
+.relax-banner .section-heading h2 {
+  font-size: clamp(2.25rem, 1.5rem + 3.2vw, 4rem);
+}
+
+/* Gallery preview carousel ----------------------------------------------- */
+
+.gallery-preview {
+  padding-block: clamp(2rem, 1.5rem + 2vw, 3rem) clamp(1.5rem, 1rem + 2vw, 2.5rem);
+}
+
+.gallery-preview .section-heading {
+  margin-bottom: 1.75rem;
+}
+
+.carousel {
+  --per-view: 4;
+  --gap: 1rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  width: min(100% - 2 * var(--gutter), 1360px);
+  margin-inline: auto;
+}
+
+.carousel__track {
+  display: flex;
+  gap: var(--gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.carousel__track::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel__slide {
+  flex: 0 0 calc((100% - (var(--per-view) - 1) * var(--gap)) / var(--per-view));
+  scroll-snap-align: start;
+}
+
+.carousel__slide img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-card);
+}
+
+@media (max-width: 1000px) {
+  .carousel {
+    --per-view: 3;
+  }
+}
+
+@media (max-width: 700px) {
+  .carousel {
+    --per-view: 2;
+    gap: 0.5rem;
+  }
+
+  .carousel__btn {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 440px) {
+  .carousel {
+    --per-view: 1;
+  }
+}

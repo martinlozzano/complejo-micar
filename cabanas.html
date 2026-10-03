@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nuestras cabañas | Cabañas MICAR</title>
+  <meta name="description" content="Conocé las cabañas de MICAR: espacios amplios y equipados para hasta 8 personas, con pileta y jacuzzi, rodeados de naturaleza.">
+
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap">
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages/cabanas.css">
+</head>
+<body>
+
+  <!-- Site header (shared across pages) -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">
+        <img src="assets/img/logo-256.webp" alt="Cabañas MICAR" width="124" height="124">
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <svg class="icon nav-toggle__open" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
+        <svg class="icon nav-toggle__close" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        <span class="visually-hidden">Abrir menú</span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Principal">
+        <ul class="site-nav__list" role="list">
+          <li><a class="site-nav__link" href="index.html">Inicio</a></li>
+          <li><a class="site-nav__link" href="cabanas.html" aria-current="page">Cabañas</a></li>
+          <li><a class="site-nav__link" href="servicios.html">Servicios</a></li>
+          <li><a class="site-nav__link" href="galeria.html">Galería</a></li>
+          <li><a class="site-nav__link" href="ubicacion.html">Ubicación</a></li>
+        </ul>
+        <a class="btn btn--primary" href="reserva.html">
+          Reservar
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <img class="hero__media" src="assets/img/photos/casa-living-hogar-1600.webp" srcset="assets/img/photos/casa-living-hogar-800.webp 800w, assets/img/photos/casa-living-hogar-1600.webp 1600w" sizes="100vw" width="1600" height="1200" alt="" fetchpriority="high" decoding="async">
+      <div class="container hero__content">
+        <div class="hero__text">
+          <span class="eyebrow">Tu escapada perfecta</span>
+          <h1 id="hero-title">Nuestras<br>cabañas</h1>
+          <p class="hero__lead">Espacios pensados para tu comodidad, rodeados de naturaleza y con todo lo que necesitás para un descanso único.</p>
+          <a class="btn btn--light btn--lg" href="reserva.html">
+            Ver disponibilidad
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Intro -->
+    <section class="scenery-banner cabins-intro" aria-labelledby="cabins-title">
+      <header class="container section-heading">
+        <span class="eyebrow">Espacios únicos en un entorno natural</span>
+        <h2 id="cabins-title">Cabañas pensadas para vos</h2>
+        <div class="leaf-divider" aria-hidden="true">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M11 20a10 10 0 0010-10 25.9 25.9 0 00-1.04-7.281 1 1 0 00-1.755-.325C15.833 5.5 13 5.5 9.8 6.1A7 7 0 0011 20"/><path d="M2 21a5 5 0 012.911-4.544C7.613 15.212 8.351 15.24 11 13"/></svg>
+        </div>
+      </header>
+    </section>
+
+    <!-- Cabin cards -->
+    <!-- TODO: replace the sample data (descriptions, capacity, rooms, highlights) and the placeholders with the real info and photos of each space. -->
+    <section class="cabins" aria-label="Nuestros espacios">
+      <div class="container cabins__grid">
+        <article class="cabin-card">
+          <img class="cabin-card__media" src="assets/img/photos/casa-principal-1600.webp" srcset="assets/img/photos/casa-principal-800.webp 800w, assets/img/photos/casa-principal-1600.webp 1600w" sizes="(max-width: 640px) 100vw, (max-width: 1100px) 50vw, 25vw" width="1600" height="1200" alt="Casa principal de ladrillo con escalera blanca, balcón y galería de arcos" loading="lazy" decoding="async">
+          <div class="cabin-card__body">
+            <span class="pending-tag">Datos de ejemplo</span>
+            <h3 class="cabin-card__title">Casa principal</h3>
+            <p class="cabin-card__text">Amplia y luminosa, ideal para familias o grupos grandes, con galería y salida directa a la pileta.</p>
+            <ul class="cabin-card__list" role="list">
+              <li>
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>
+                Hasta 8 personas
+              </li>
+              <li>
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></svg>
+                3 dormitorios
+              </li>
+              <li>
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 4 8 6"/><path d="M17 19v2"/><path d="M2 12h20"/><path d="M7 19v2"/><path d="M9 5 7.621 3.621A2.121 2.121 0 0 0 4 5v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5"/></svg>
+                2 baños
+              </li>
+              <li>
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 19q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 5q2.5 2 5 0t5 0 5 0 5 0"/></svg>
+                Acceso directo a pileta y jacuzzi
+              </li>
+            </ul>
+            <a class="btn btn--primary" href="galeria.html#casa">
+              Ver más fotos
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="cabin-card">
+          <img class="cabin-card__media" src="assets/img/photos/cabana1-dormitorio-matrimonial-1200.webp" srcset="assets/img/photos/cabana1-dormitorio-matrimonial-600.webp 600w, assets/img/photos/cabana1-dormitorio-matrimonial-1200.webp 1200w" sizes="(max-width: 640px) 100vw, (max-width: 1100px) 50vw, 25vw" width="1200" height="1600" alt="Dormitorio matrimonial de la Cabaña 1 con cuadro colorido" loading="lazy" decoding="async">
+          <div class="cabin-card__body">
+            <span class="pending-tag">Datos de ejemplo</span>
+            <h3 class="cabin-card__title">Cabaña 1</h3>
+            <p class="cabin-card__text">Ideal para parejas que buscan tranquilidad, rodeada de árboles y con vista al parque.</p>
+            <ul class="cabin-card__list" role="list">
+              <li>
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>
+                Hasta 2 personas
+              </li>
+              <li>
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></svg>
+                1 dormitorio
+              </li>
+              <li>
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 4 8 6"/><path d="M17 19v2"/><path d="M2 12h20"/><path d="M7 19v2"/><path d="M9 5 7.621 3.621A2.121 2.121 0 0 0 4 5v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5"/></svg>
+                1 baño
+              </li>
+              <li>
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z"/><path d="M12 22v-3"/></svg>
+                Vista al parque
+              </li>
+            </ul>
+            <a class="btn btn--primary" href="galeria.html#cabanas">
+              Ver más fotos
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="cabin-card">
+          <div class="cabin-card__media placeholder" role="img" aria-label="Foto pendiente: Cabaña 2">
+            <span class="placeholder__tag">Foto pendiente: Cabaña 2</span>
+          </div>
+          <div class="cabin-card__body">
+            <span class="pending-tag">Datos de ejemplo</span>
+            <h3 class="cabin-card__title">Cabaña 2</h3>
+            <p class="cabin-card__text">Cómoda y práctica, pensada para familias chicas que quieren disfrutar del aire libre.</p>
+            <ul class="cabin-card__list" role="list">
+              <li>
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>
+                Hasta 4 personas
+              </li>
+              <li>
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></svg>
+                2 dormitorios
+              </li>
+              <li>
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 4 8 6"/><path d="M17 19v2"/><path d="M2 12h20"/><path d="M7 19v2"/><path d="M9 5 7.621 3.621A2.121 2.121 0 0 0 4 5v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5"/></svg>
+                1 baño
+              </li>
+              <li>
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"/></svg>
+                Asador propio
+              </li>
+            </ul>
+            <a class="btn btn--primary" href="galeria.html#cabanas">
+              Ver más fotos
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="cabin-card">
+          <div class="cabin-card__media placeholder" role="img" aria-label="Foto pendiente: Cabaña 3">
+            <span class="placeholder__tag">Foto pendiente: Cabaña 3</span>
+          </div>
+          <div class="cabin-card__body">
+            <span class="pending-tag">Datos de ejemplo</span>
+            <h3 class="cabin-card__title">Cabaña 3</h3>
+            <p class="cabin-card__text">Espaciosa y equipada, perfecta para compartir unos días con amigos o en familia.</p>
+            <ul class="cabin-card__list" role="list">
+              <li>
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>
+                Hasta 5 personas
+              </li>
+              <li>
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></svg>
+                2 dormitorios
+              </li>
+              <li>
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 4 8 6"/><path d="M17 19v2"/><path d="M2 12h20"/><path d="M7 19v2"/><path d="M9 5 7.621 3.621A2.121 2.121 0 0 0 4 5v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5"/></svg>
+                1 baño
+              </li>
+              <li>
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m10 20-1.25-2.5L6 18"/><path d="M10 4 8.75 6.5 6 6"/><path d="m14 20 1.25-2.5L18 18"/><path d="m14 4 1.25 2.5L18 6"/><path d="m17 21-3-6h-4"/><path d="m17 3-3 6 1.5 3"/><path d="M2 12h6.5L10 9"/><path d="m20 10-1.5 2 1.5 2"/><path d="M22 12h-6.5L14 15"/><path d="m4 10 1.5 2L4 14"/><path d="m7 21 3-6-1.5-3"/><path d="m7 3 3 6h4"/></svg>
+                Aire acondicionado
+              </li>
+            </ul>
+            <a class="btn btn--primary" href="galeria.html#cabanas">
+              Ver más fotos
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Amenities -->
+    <section class="amenities" aria-label="Equipamiento de las cabañas">
+      <ul class="container feature-strip feature-strip--card" role="list">
+        <li class="feature-strip__item">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
+          <span>Cocina<br>equipada</span>
+        </li>
+        <li class="feature-strip__item">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></svg>
+          Ropa blanca
+        </li>
+        <li class="feature-strip__item">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m10 20-1.25-2.5L6 18"/><path d="M10 4 8.75 6.5 6 6"/><path d="m14 20 1.25-2.5L18 18"/><path d="m14 4 1.25 2.5L18 6"/><path d="m17 21-3-6h-4"/><path d="m17 3-3 6 1.5 3"/><path d="M2 12h6.5L10 9"/><path d="m20 10-1.5 2 1.5 2"/><path d="M22 12h-6.5L14 15"/><path d="m4 10 1.5 2L4 14"/><path d="m7 21 3-6-1.5-3"/><path d="m7 3 3 6h4"/></svg>
+          <span>Aire<br>acondicionado</span>
+        </li>
+        <li class="feature-strip__item">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h.01"/><path d="M2 8.82a15 15 0 0 1 20 0"/><path d="M5 12.859a10 10 0 0 1 14 0"/><path d="M8.5 16.429a5 5 0 0 1 7 0"/></svg>
+          Wi-Fi
+        </li>
+        <li class="feature-strip__item">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"/></svg>
+          Asador
+        </li>
+        <li class="feature-strip__item">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
+          Estacionamiento
+        </li>
+      </ul>
+    </section>
+
+    <!-- Closing banner -->
+    <section class="scenery-banner closing-banner" aria-labelledby="closing-title">
+      <header class="container section-heading">
+        <span class="eyebrow">Naturaleza, confort y buenos momentos</span>
+        <h2 id="closing-title">Comodidad para vivir la naturaleza</h2>
+        <div class="leaf-divider" aria-hidden="true">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M11 20a10 10 0 0010-10 25.9 25.9 0 00-1.04-7.281 1 1 0 00-1.755-.325C15.833 5.5 13 5.5 9.8 6.1A7 7 0 0011 20"/><path d="M2 21a5 5 0 012.911-4.544C7.613 15.212 8.351 15.24 11 13"/></svg>
+        </div>
+      </header>
+    </section>
+  </main>
+
+  <!-- Site footer (shared across pages) -->
+  <footer class="site-footer">
+    <div class="container footer-cta">
+      <div>
+        <h2 class="footer-cta__title">¿Listo para tu próxima escapada?</h2>
+        <p class="footer-cta__text">Consultá disponibilidad y viví una experiencia única en nuestras cabañas.</p>
+      </div>
+      <div class="footer-cta__actions">
+        <a class="btn btn--light btn--lg" href="reserva.html">
+          Reservar ahora
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <!-- TODO: replace with the WhatsApp link (https://wa.me/<number>) once the number is confirmed. -->
+        <a class="text-link" href="#">
+          O consultanos por WhatsApp
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

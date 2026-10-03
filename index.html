@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cabañas MICAR | Naturaleza, comodidad y tranquilidad</title>
+  <meta name="description" content="Cabañas MICAR: cabañas equipadas rodeadas de naturaleza, con pileta, jacuzzi, amplio parque, asador y juegos para chicos.">
+
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap">
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages/inicio.css">
+</head>
+<body>
+
+  <!-- Site header (shared across pages) -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">
+        <img src="assets/img/logo-256.webp" alt="Cabañas MICAR" width="124" height="124">
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <svg class="icon nav-toggle__open" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
+        <svg class="icon nav-toggle__close" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        <span class="visually-hidden">Abrir menú</span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Principal">
+        <ul class="site-nav__list" role="list">
+          <li><a class="site-nav__link" href="index.html" aria-current="page">Inicio</a></li>
+          <li><a class="site-nav__link" href="cabanas.html">Cabañas</a></li>
+          <li><a class="site-nav__link" href="servicios.html">Servicios</a></li>
+          <li><a class="site-nav__link" href="galeria.html">Galería</a></li>
+          <li><a class="site-nav__link" href="ubicacion.html">Ubicación</a></li>
+        </ul>
+        <a class="btn btn--primary" href="reserva.html">
+          Reservar
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero hero--home" aria-labelledby="hero-title">
+      <img class="hero__media" src="assets/img/photos/casa-principal-1600.webp" srcset="assets/img/photos/casa-principal-800.webp 800w, assets/img/photos/casa-principal-1600.webp 1600w" sizes="100vw" width="1600" height="1200" alt="" fetchpriority="high" decoding="async">
+      <div class="container hero__content">
+        <div class="hero__text">
+          <span class="eyebrow">Un lugar para desconectar</span>
+          <h1 id="hero-title">Naturaleza,<br>comodidad<br>y tranquilidad</h1>
+          <p class="hero__lead">Disfrutá de unas vacaciones únicas en nuestras cabañas, rodeadas de naturaleza y todas las comodidades para tu descanso.</p>
+          <a class="btn btn--light btn--lg" href="cabanas.html">
+            Ver cabañas
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Amenities -->
+    <section aria-label="Comodidades">
+      <ul class="container feature-strip" role="list">
+        <li class="feature-strip__item">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z"/><path d="M12 22v-3"/></svg>
+          Amplio parque
+        </li>
+        <li class="feature-strip__item">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"/></svg>
+          Asador
+        </li>
+        <li class="feature-strip__item">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
+          Estacionamiento
+        </li>
+        <li class="feature-strip__item">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h.01"/><path d="M2 8.82a15 15 0 0 1 20 0"/><path d="M5 12.859a10 10 0 0 1 14 0"/><path d="M8.5 16.429a5 5 0 0 1 7 0"/></svg>
+          Wi-Fi
+        </li>
+        <li class="feature-strip__item">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="20" cy="16" r="2"/><path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z"/></svg>
+          <span>Pet friendly<br>(consultar)</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Highlights -->
+    <section class="highlights" aria-label="Lo que te espera">
+      <div class="highlights__grid">
+        <a class="photo-card" href="cabanas.html">
+          <img class="photo-card__media" src="assets/img/photos/casa-dormitorio-matrimonial-1200.webp" srcset="assets/img/photos/casa-dormitorio-matrimonial-600.webp 600w, assets/img/photos/casa-dormitorio-matrimonial-1200.webp 1200w" sizes="(max-width: 800px) 100vw, 33vw" width="1200" height="1600" alt="Dormitorio con cama matrimonial y cuadro de mariposas" loading="lazy" decoding="async">
+          <span class="photo-card__overlay">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></svg>
+            <span class="photo-card__title">Cabañas equipadas</span>
+          </span>
+        </a>
+        <a class="photo-card" href="servicios.html">
+          <img class="photo-card__media" src="assets/img/photos/pileta-panoramica-1599.webp" srcset="assets/img/photos/pileta-panoramica-800.webp 800w, assets/img/photos/pileta-panoramica-1599.webp 1599w" sizes="(max-width: 800px) 100vw, 33vw" width="1599" height="899" alt="Pileta con jacuzzi y reposeras rodeada de pinos" loading="lazy" decoding="async">
+          <span class="photo-card__overlay">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 19q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 5q2.5 2 5 0t5 0 5 0 5 0"/></svg>
+            <span class="photo-card__title">Pileta y jacuzzi</span>
+          </span>
+        </a>
+        <a class="photo-card" href="servicios.html">
+          <img class="photo-card__media" src="assets/img/photos/juegos-1600.webp" srcset="assets/img/photos/juegos-800.webp 800w, assets/img/photos/juegos-1600.webp 1600w" sizes="(max-width: 800px) 100vw, 33vw" width="1600" height="1200" alt="Juegos infantiles con tobogán y hamacas en el parque" loading="lazy" decoding="async">
+          <span class="photo-card__overlay">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z"/><path d="M12 22v-3"/></svg>
+            <span class="photo-card__title">Juegos para chicos</span>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Relax banner -->
+    <section class="scenery-banner relax-banner" aria-labelledby="relax-title">
+      <header class="container section-heading">
+        <span class="eyebrow">Desconexión en el corazón de la naturaleza</span>
+        <h2 id="relax-title">Relajate, viví, repetí</h2>
+        <div class="leaf-divider" aria-hidden="true">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M11 20a10 10 0 0010-10 25.9 25.9 0 00-1.04-7.281 1 1 0 00-1.755-.325C15.833 5.5 13 5.5 9.8 6.1A7 7 0 0011 20"/><path d="M2 21a5 5 0 012.911-4.544C7.613 15.212 8.351 15.24 11 13"/></svg>
+        </div>
+      </header>
+    </section>
+
+    <!-- Gallery preview -->
+    <section class="gallery-preview" aria-labelledby="gallery-title">
+      <header class="container section-heading section-heading--compact">
+        <span class="eyebrow">Galería</span>
+        <h2 id="gallery-title">Conocé cada rincón</h2>
+      </header>
+
+      <div class="carousel" data-carousel>
+        <button class="carousel__btn" type="button" data-carousel-prev aria-label="Fotos anteriores">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+        </button>
+        <ul class="carousel__track" role="list" aria-label="Fotos del complejo">
+          <li class="carousel__slide"><img src="assets/img/photos/casa-principal-1600.webp" srcset="assets/img/photos/casa-principal-800.webp 800w, assets/img/photos/casa-principal-1600.webp 1600w" sizes="(max-width: 440px) 100vw, (max-width: 700px) 50vw, (max-width: 1000px) 33vw, 25vw" width="1600" height="1200" alt="Casa principal de ladrillo con escalera blanca, balcón y galería de arcos" loading="lazy" decoding="async"></li>
+          <li class="carousel__slide"><img src="assets/img/photos/casa-living-hogar-1600.webp" srcset="assets/img/photos/casa-living-hogar-800.webp 800w, assets/img/photos/casa-living-hogar-1600.webp 1600w" sizes="(max-width: 440px) 100vw, (max-width: 700px) 50vw, (max-width: 1000px) 33vw, 25vw" width="1600" height="1200" alt="Living con hogar a leña y sillones" loading="lazy" decoding="async"></li>
+          <li class="carousel__slide"><img src="assets/img/photos/pileta-vista-aerea-1080.webp" srcset="assets/img/photos/pileta-vista-aerea-800.webp 800w, assets/img/photos/pileta-vista-aerea-1080.webp 1080w" sizes="(max-width: 440px) 100vw, (max-width: 700px) 50vw, (max-width: 1000px) 33vw, 25vw" width="1080" height="786" alt="Vista de la pileta con jacuzzi y las casas del complejo" loading="lazy" decoding="async"></li>
+          <li class="carousel__slide"><img src="assets/img/photos/juegos-1600.webp" srcset="assets/img/photos/juegos-800.webp 800w, assets/img/photos/juegos-1600.webp 1600w" sizes="(max-width: 440px) 100vw, (max-width: 700px) 50vw, (max-width: 1000px) 33vw, 25vw" width="1600" height="1200" alt="Juegos infantiles con tobogán y hamacas en el parque" loading="lazy" decoding="async"></li>
+          <li class="carousel__slide"><img src="assets/img/photos/cabana1-dormitorio-matrimonial-1200.webp" srcset="assets/img/photos/cabana1-dormitorio-matrimonial-600.webp 600w, assets/img/photos/cabana1-dormitorio-matrimonial-1200.webp 1200w" sizes="(max-width: 440px) 100vw, (max-width: 700px) 50vw, (max-width: 1000px) 33vw, 25vw" width="1200" height="1600" alt="Dormitorio matrimonial de la Cabaña 1 con cuadro colorido" loading="lazy" decoding="async"></li>
+          <li class="carousel__slide"><img src="assets/img/photos/quincho-900.webp" srcset="assets/img/photos/quincho-450.webp 450w, assets/img/photos/quincho-900.webp 900w" sizes="(max-width: 440px) 100vw, (max-width: 700px) 50vw, (max-width: 1000px) 33vw, 25vw" width="900" height="1600" alt="Quincho con mesas y sillas y vista a la pileta" loading="lazy" decoding="async"></li>
+          <li class="carousel__slide"><img src="assets/img/photos/pileta-noche-720.webp" srcset="assets/img/photos/pileta-noche-720.webp 720w" sizes="(max-width: 440px) 100vw, (max-width: 700px) 50vw, (max-width: 1000px) 33vw, 25vw" width="720" height="473" alt="Pileta iluminada de noche" loading="lazy" decoding="async"></li>
+          <li class="carousel__slide"><img src="assets/img/photos/casa-cocina-1600.webp" srcset="assets/img/photos/casa-cocina-800.webp 800w, assets/img/photos/casa-cocina-1600.webp 1600w" sizes="(max-width: 440px) 100vw, (max-width: 700px) 50vw, (max-width: 1000px) 33vw, 25vw" width="1600" height="1200" alt="Cocina equipada con isla central" loading="lazy" decoding="async"></li>
+        </ul>
+        <button class="carousel__btn" type="button" data-carousel-next aria-label="Fotos siguientes">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site footer (shared across pages) -->
+  <footer class="site-footer">
+    <div class="container footer-cta">
+      <div class="footer-cta__info">
+        <svg class="footer-cta__pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+        <div>
+          <h2 class="footer-cta__title">Ubicación privilegiada</h2>
+          <p class="footer-cta__text">Cerca de todo, en un entorno natural y tranquilo.</p>
+        </div>
+      </div>
+      <a class="btn btn--outline-light btn--lg" href="ubicacion.html">
+        Ver ubicación
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+  <script src="js/carousel.js" defer></script>
+</body>
+</html>
