@@ -386,7 +386,7 @@
 
 .feature-strip {
   display: grid;
-  grid-template-columns: repeat(var(--feature-count, 5), 1fr);
+  grid-template-columns: repeat(var(--feature-count, 6), 1fr);
   align-items: start;
   padding-block: 1.75rem;
 }
