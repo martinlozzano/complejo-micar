@@ -1,0 +1,36 @@
+# Cabañas MICAR
+
+> Complejo turístico de cabañas y casa principal con pileta panorámica y jacuzzi en Mina Clavero, Valle de Traslasierra, Córdoba, Argentina. Diseñado para familias, parejas o grupos de amigos que buscan descanso, confort y contacto pleno con la naturaleza.
+
+## Resumen del Complejo
+- **Ubicación:** Mina Clavero, Valle de Traslasierra, Córdoba, Argentina. Acceso ágil y directo por RP 34 (Camino de las Altas Cumbres) y RP 14.
+- **Tipo de alojamiento:** Casa Principal y 3 Cabañas independientes totalmente equipadas.
+- **Capacidad:** Opciones desde 2 hasta 12 personas por unidad (capacidad combinada para contingentes o familias numerosas).
+- **Comodidades destacadas:** Pileta con solárium y jacuzzi, amplio parque arbolado, asadores individuales en cada unidad, juegos para niños, conexión Wi-Fi y estacionamiento dentro del predio.
+- **Modalidad de reserva:** Cotización en línea y contacto directo vía WhatsApp para confirmar fechas y disponibilidad.
+
+## Alojamientos y Capacidades
+- [Casa Principal](cabanas.html#casa): Capacidad hasta 12 personas. 4 dormitorios, 2 baños, living con hogar a leña, cocina completa, asador individual y vistas al parque.
+- [Cabaña 1](cabanas.html#cabana-1): Capacidad hasta 6 personas. 2 dormitorios, 1 baño, cocina equipada y asador individual.
+- [Cabaña 2](cabanas.html#cabana-2): Capacidad hasta 3 personas. Ideal para parejas o familias pequeñas. 1 dormitorio, 1 baño, cocina comedor y asador individual.
+- [Cabaña 3](cabanas.html#cabana-3): Capacidad hasta 6 personas. 2 dormitorios, 1 baño, cocina comedor y asador individual.
+
+## Comodidades y Servicios
+- [Pileta y Jacuzzi](servicios.html): Pileta exterior con solárium, reposeras y sector de hidromasaje / jacuzzi integrado.
+- [Parque y Juegos](servicios.html): Amplio predio parquizado con vegetación autóctona y juegos infantiles seguros.
+- [Asadores Individuales](servicios.html): Parrilla propia en cada cabaña y en la casa principal.
+- [Wi-Fi y Estacionamiento](servicios.html): Conectividad inalámbrica en todo el complejo y cocheras dentro del predio.
+
+## Estructura del Sitio Web
+- [Inicio](index.html): Presentación general del complejo, galería fotográfica y comodidades principales.
+- [Cabañas](cabanas.html): Fichas detalladas con capacidad, distribución de ambientes y servicios por unidad.
+- [Servicios](servicios.html): Listado exhaustivo de instalaciones y equipamiento disponible para los huéspedes.
+- [Ubicación](ubicacion.html): Mapa interactivo, rutas de acceso, distancias a puntos clave y balnearios de Traslasierra.
+- [Galería](galeria.html): Fotografías de alta resolución filtrables por cabaña, casa principal, pileta y exteriores.
+- [Reservar](reserva.html): Formulario interactivo para seleccionar fechas, cantidad de huéspedes y enviar reserva por WhatsApp.
+
+## Preguntas Frecuentes
+- [FAQ y Condiciones](reserva.html#faq): Respuestas sobre métodos de reserva, check-in, check-out, servicios incluidos y políticas de estadía.
+
+## Archivo Completo para Modelos de Lenguaje
+- [llms-full.txt](llms-full.txt): Documento integral con todos los textos, detalles técnicos y descripciones del complejo.

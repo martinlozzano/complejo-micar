@@ -31,4 +31,27 @@
     window.addEventListener("resize", updateButtons);
     updateButtons();
   });
+
+  // Amenities mobile infinite auto-displacement carousel
+  document.querySelectorAll("[data-amenities-track]").forEach((amenitiesTrack) => {
+    const originalList = amenitiesTrack.querySelector(".feature-strip");
+    if (originalList) {
+      const clone = originalList.cloneNode(true);
+      clone.setAttribute("aria-hidden", "true");
+      clone.classList.add("feature-strip--clone");
+      amenitiesTrack.appendChild(clone);
+
+      amenitiesTrack.addEventListener(
+        "touchstart",
+        () => amenitiesTrack.classList.add("is-paused"),
+        { passive: true }
+      );
+      amenitiesTrack.addEventListener(
+        "touchend",
+        () => amenitiesTrack.classList.remove("is-paused"),
+        { passive: true }
+      );
+    }
+  });
 })();
+

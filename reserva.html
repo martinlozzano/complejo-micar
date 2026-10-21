@@ -3,8 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Reservá tu estadía | Cabañas MICAR</title>
-  <meta name="description" content="Reservá tu estadía en Cabañas MICAR: completá el formulario con tus fechas y te contactamos para confirmar la disponibilidad.">
+  <title>Reservar Cabañas en Mina Clavero | Cabañas MICAR</title>
+  <meta name="description" content="Reservá tu estadía en Cabañas MICAR, Mina Clavero. Completá tus fechas y contactanos directamente por WhatsApp para confirmar disponibilidad de cabañas con pileta y jacuzzi.">
+  <link rel="canonical" href="reserva.html">
+
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Cabañas MICAR">
+  <meta property="og:title" content="Reservar Cabañas en Mina Clavero | Cabañas MICAR">
+  <meta property="og:description" content="Completá tus fechas y enviá tu consulta directa por WhatsApp. Cabañas equipadas y casa principal en Mina Clavero, Córdoba.">
+  <meta property="og:image" content="assets/img/photos/pileta-panoramica-1599.webp">
+  <meta property="og:locale" content="es_AR">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Reservar Cabañas en Mina Clavero | Cabañas MICAR">
+  <meta name="twitter:description" content="Completá tus fechas y enviá tu consulta directa por WhatsApp. Cabañas equipadas y casa principal en Mina Clavero, Córdoba.">
+  <meta name="twitter:image" content="assets/img/photos/pileta-panoramica-1599.webp">
+
+  <!-- AI Discovery -->
+  <link rel="help" type="text/markdown" href="llms.txt" title="Contexto para modelos de lenguaje e IA">
+
+  <!-- Schema.org FAQPage Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Cómo realizo una reserva en Cabañas MICAR?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Completás el formulario con tus fechas de ingreso y egreso, cantidad de personas y cabaña elegida, y el sistema te redirige a WhatsApp con los datos listos para confirmar la disponibilidad y coordinar la estadía."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuál es la capacidad máxima de las cabañas?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ofrecemos diferentes opciones: Cabaña 2 para hasta 3 personas, Cabañas 1 y 3 para hasta 6 personas, y la Casa Principal con capacidad de hasta 12 personas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué comodidades y servicios incluye la estadía?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La estadía incluye acceso a la pileta al aire libre con jacuzzi, solárium, amplio parque arbolado con juegos infantiles, asadores individuales, ropa blanca, cocina equipada, Wi-Fi y estacionamiento."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Dónde está ubicado el complejo Cabañas MICAR?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Estamos ubicados en Mina Clavero, en el Valle de Traslasierra, provincia de Córdoba, a pocos minutos del centro y de los principales ríos y balnearios de la zona."
+        }
+      }
+    ]
+  }
+  </script>
 
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
 
@@ -65,43 +125,9 @@
       <div class="container booking__panel">
         <form class="booking-form" data-booking-form novalidate>
           <h2 class="booking-form__title">Realizá tu reserva</h2>
-          <p class="booking-form__intro">Completá el formulario y te contactaremos a la brevedad para confirmar la disponibilidad.</p>
+          <p class="booking-form__intro">Completá el formulario con tus datos para enviar tu reserva directamente por WhatsApp.</p>
 
           <div class="booking-form__fields">
-              <div class="form-field">
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2v3"/><path d="M16 2v3"/><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg>
-                <div>
-                  <label for="checkin">Fecha de ingreso</label>
-                  <input class="form-control" type="date" id="checkin" name="checkin" required aria-describedby="checkin-error">
-                </div>
-                <p class="form-field__error" id="checkin-error"></p>
-              </div>
-              <div class="form-field">
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2v3"/><path d="M16 2v3"/><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg>
-                <div>
-                  <label for="checkout">Fecha de egreso</label>
-                  <input class="form-control" type="date" id="checkout" name="checkout" required aria-describedby="checkout-error">
-                </div>
-                <p class="form-field__error" id="checkout-error"></p>
-              </div>
-              <div class="form-field form-field--full">
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>
-                <div>
-                  <label for="guests">Cantidad de huéspedes</label>
-                  <select class="form-control" id="guests" name="guests" required aria-describedby="guests-error">
-                    <option value="" selected disabled>Seleccioná</option>
-                    <option value="1">1 persona</option>
-                    <option value="2">2 personas</option>
-                    <option value="3">3 personas</option>
-                    <option value="4">4 personas</option>
-                    <option value="5">5 personas</option>
-                    <option value="6">6 personas</option>
-                    <option value="7">7 personas</option>
-                    <option value="8">8 personas</option>
-                  </select>
-                </div>
-                <p class="form-field__error" id="guests-error"></p>
-              </div>
               <div class="form-field form-field--full">
                 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                 <div>
@@ -110,24 +136,61 @@
                 </div>
                 <p class="form-field__error" id="name-error"></p>
               </div>
+
               <div class="form-field">
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
                 <div>
-                  <label for="email">Email</label>
-                  <input class="form-control" type="email" id="email" name="email" autocomplete="email" placeholder="tu@email.com" required aria-describedby="email-error">
+                  <label for="accommodation">Seleccionar lugar</label>
+                  <select class="form-control" id="accommodation" name="accommodation" required aria-describedby="accommodation-error">
+                    <option value="" selected disabled>Elegí una opción</option>
+                    <option value="casa" data-max="12">Casa principal (hasta 12 personas)</option>
+                    <option value="cabana1" data-max="6">Cabaña 1 (hasta 6 personas)</option>
+                    <option value="cabana2" data-max="3">Cabaña 2 (hasta 3 personas)</option>
+                    <option value="cabana3" data-max="6">Cabaña 3 (hasta 6 personas)</option>
+                  </select>
                 </div>
-                <p class="form-field__error" id="email-error"></p>
+                <p class="form-field__error" id="accommodation-error"></p>
               </div>
+
               <div class="form-field">
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>
                 <div>
-                  <label for="phone">Teléfono</label>
-                  <input class="form-control" type="tel" id="phone" name="phone" autocomplete="tel" placeholder="Ej: 351 123 4567" pattern="[\d\s\+\-\(\)]{6,}" required aria-describedby="phone-error">
+                  <label for="guests">Cantidad de personas</label>
+                  <input class="form-control" type="number" id="guests" name="guests" min="1" disabled required placeholder="Elegí primero el lugar" aria-describedby="guests-error guests-hint">
+                  <span class="form-field__hint" id="guests-hint">Elegí un lugar para habilitar este campo.</span>
                 </div>
-                <p class="form-field__error" id="phone-error"></p>
+                <p class="form-field__error" id="guests-error"></p>
               </div>
+
+              <div class="form-field">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2v3"/><path d="M16 2v3"/><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg>
+                <div>
+                  <label for="checkin">Fecha de ingreso</label>
+                  <input class="form-control" type="date" id="checkin" name="checkin" required aria-describedby="checkin-error">
+                </div>
+                <p class="form-field__error" id="checkin-error"></p>
+              </div>
+
+              <div class="form-field">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2v3"/><path d="M16 2v3"/><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg>
+                <div>
+                  <label for="checkout">Fecha de egreso</label>
+                  <input class="form-control" type="date" id="checkout" name="checkout" required aria-describedby="checkout-error">
+                </div>
+                <p class="form-field__error" id="checkout-error"></p>
+              </div>
+
               <div class="form-field form-field--full">
-                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"/><path d="M7 11h10"/><path d="M7 15h6"/><path d="M7 7h8"/></svg>
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+                <div>
+                  <label for="nights">Cantidad de noches</label>
+                  <input class="form-control" type="number" id="nights" name="nights" min="1" placeholder="Ej: 3" required aria-describedby="nights-error">
+                </div>
+                <p class="form-field__error" id="nights-error"></p>
+              </div>
+
+              <div class="form-field form-field--full">
+                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"/><path d="M7 11h10"/><path d="M7 15h6"/><path d="M7 7h8"/></svg>
                 <div>
                   <label for="message">Mensaje o consulta <span class="form-field__optional">(opcional)</span></label>
                   <textarea class="form-control" id="message" name="message" rows="3" placeholder="Contanos sobre tu estadía, consultas o cualquier detalle importante..." aria-describedby="message-error"></textarea>
@@ -137,16 +200,10 @@
           </div>
 
           <button class="btn btn--primary btn--lg booking-form__submit" type="submit">
-            Enviar consulta y reservar
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            Enviar reserva por WhatsApp
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
           </button>
           <p class="booking-form__status" role="status" data-booking-status></p>
-
-          <!-- TODO: replace with the WhatsApp link (https://wa.me/<number>) once the number is confirmed. -->
-          <a class="booking-form__whatsapp" href="#">
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
-            <span>O consultanos directamente por WhatsApp</span>
-          </a>
         </form>
 
         <aside class="booking-info" aria-labelledby="booking-info-title">
@@ -154,7 +211,7 @@
           <div class="booking-info__body">
             <h2 class="booking-info__title" id="booking-info-title">Cabañas MICAR</h2>
             <!-- TODO: confirm the real town/address. -->
-            <p class="booking-info__place"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Villa General Belgrano, Córdoba</p>
+            <p class="booking-info__place"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Mina Clavero, Córdoba</p>
             <p class="booking-info__text">Cabañas completamente equipadas, rodeadas de naturaleza, con pileta, jacuzzi, amplio parque y todas las comodidades para tu descanso.</p>
             <ul class="booking-info__list" role="list">
                 <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Cabañas equipadas</li>
@@ -162,7 +219,6 @@
                 <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z"/><path d="M12 22v-3"/></svg>Amplio parque natural</li>
                 <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"/></svg>Asador individual</li>
                 <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h.01"/><path d="M2 8.82a15 15 0 0 1 20 0"/><path d="M5 12.859a10 10 0 0 1 14 0"/><path d="M8.5 16.429a5 5 0 0 1 7 0"/></svg>Wi-Fi en todo el predio</li>
-                <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="20" cy="16" r="2"/><path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z"/></svg>Pet friendly (consultar)</li>
                 <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>Estacionamiento dentro del predio</li>
                 <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 21 14 3"/><path d="M20.5 21 10 3"/><path d="M15.5 21 12 15l-3.5 6"/><path d="M2 21h20"/></svg>Juegos para chicos</li>
             </ul>
@@ -233,12 +289,60 @@
             <p class="trust-strip__text">Consultá nuestras políticas de cancelación.</p>
           </div>
         </div>
-        <div class="trust-strip__item">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="20" cy="16" r="2"/><path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z"/></svg>
-          <div>
-            <h3 class="trust-strip__title">Pet friendly</h3>
-            <p class="trust-strip__text">¡Tu mascota también es bienvenida! (Consultar condiciones).</p>
+      </div>
+    </section>
+
+    <!-- FAQ Section (Extractable for Users & AI) -->
+    <section class="faq-section" id="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <header class="section-heading">
+          <span class="eyebrow">Dudas habituales</span>
+          <h2 id="faq-title">Preguntas frecuentes</h2>
+          <div class="leaf-divider" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M11 20a10 10 0 0010-10 25.9 25.9 0 00-1.04-7.281 1 1 0 00-1.755-.325C15.833 5.5 13 5.5 9.8 6.1A7 7 0 0011 20"/><path d="M2 21a5 5 0 012.911-4.544C7.613 15.212 8.351 15.24 11 13"/></svg>
           </div>
+        </header>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary class="faq-item__trigger">
+              <span>¿Cómo realizo una reserva en Cabañas MICAR?</span>
+              <svg class="icon faq-item__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="faq-item__content">
+              <p>Completás el formulario con tus fechas de ingreso y egreso, cantidad de personas y cabaña elegida, y el sistema te redirige a WhatsApp con los datos listos para confirmar la disponibilidad y coordinar la estadía.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-item__trigger">
+              <span>¿Cuál es la capacidad máxima de las cabañas?</span>
+              <svg class="icon faq-item__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="faq-item__content">
+              <p>Ofrecemos diferentes opciones: Cabaña 2 para hasta 3 personas, Cabañas 1 y 3 para hasta 6 personas, y la Casa Principal con capacidad de hasta 12 personas.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-item__trigger">
+              <span>¿Qué comodidades y servicios incluye la estadía?</span>
+              <svg class="icon faq-item__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="faq-item__content">
+              <p>La estadía incluye acceso a la pileta al aire libre con jacuzzi, solárium, amplio parque arbolado con juegos infantiles, asadores individuales, cocina equipada, Wi-Fi y estacionamiento.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-item__trigger">
+              <span>¿Dónde está ubicado el complejo Cabañas MICAR?</span>
+              <svg class="icon faq-item__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="faq-item__content">
+              <p>Estamos ubicados en Mina Clavero, en el Valle de Traslasierra, provincia de Córdoba, a pocos minutos del centro y de los principales ríos y balnearios de la zona.</p>
+            </div>
+          </details>
         </div>
       </div>
     </section>
@@ -261,6 +365,13 @@
     </div>
   </footer>
 
+  <!-- Floating WhatsApp CTA -->
+  <a class="whatsapp-float" href="https://wa.me/?text=Hola%2C%20quisiera%20consultar%20por%20disponibilidad%20en%20Caba%C3%B1as%20MICAR" data-whatsapp-link target="_blank" rel="noopener noreferrer" aria-label="Consultar por WhatsApp">
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
+    <span class="whatsapp-float__tooltip">¿Tenés dudas? Escribinos</span>
+  </a>
+
+  <script src="js/config.js"></script>
   <script src="js/main.js" defer></script>
   <script src="js/booking.js" defer></script>
 </body>

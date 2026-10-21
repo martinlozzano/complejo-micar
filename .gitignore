@@ -1,0 +1,19 @@
+# Dependencies & environments
+node_modules/
+.env
+.env.local
+
+# Agent & AI skills tooling
+.agents/
+skills-lock.json
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE & Editors
+.vscode/
+.idea/
+*.swp
+*.swo

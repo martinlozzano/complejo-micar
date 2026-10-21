@@ -1,7 +1,7 @@
 // Testimonial carousel: slides quotes horizontally, auto-advances every few seconds
 // and pauses while the user hovers or focuses it.
-// "forward" (autoplay and next arrow): the new quote enters from the left, the old one exits right.
-// "backward" (previous arrow): the new quote enters from the right, the old one exits left.
+// "forward" (autoplay and next arrow): the new quote enters from the right, the old one exits left.
+// "backward" (previous arrow): the new quote enters from the left, the old one exits right.
 (function () {
   const AUTOPLAY_MS = 5000;
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");

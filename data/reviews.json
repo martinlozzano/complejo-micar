@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "author": "Mariana Gómez",
+    "avatar": "",
+    "initial": "M",
+    "color": "#8b5a2b",
+    "rating": 5,
+    "date": "Hace 2 meses",
+    "unit": "Casa Principal",
+    "text": "Pasamos unos días hermosos en familia. La casa principal es súper amplia, cómoda y con todo lo necesario para grupos grandes. La pileta con el jacuzzi y la vista a las sierras son increíbles. ¡Súper recomendable!",
+    "url": "https://maps.google.com/?cid=13763134922117110731"
+  },
+  {
+    "id": 2,
+    "author": "Carlos Benítez",
+    "avatar": "",
+    "initial": "C",
+    "color": "#2c6e49",
+    "rating": 5,
+    "date": "Hace 3 meses",
+    "unit": "Cabaña 1",
+    "text": "Excelente lugar para desconectar del ruido de la ciudad. El parque es enorme y muy bien cuidado, los asadores individuales son muy cómodos y la atención de los dueños fue impecable de principio a fin.",
+    "url": "https://maps.google.com/?cid=13763134922117110731"
+  },
+  {
+    "id": 3,
+    "author": "Lucía Fernández",
+    "avatar": "",
+    "initial": "L",
+    "color": "#c05a3e",
+    "rating": 5,
+    "date": "Hace 4 meses",
+    "unit": "Cabaña 2",
+    "text": "Fuimos en pareja y quedamos encantados. La cabaña es muy acogedora, todo impecablemente limpio y con mucha tranquilidad. Estar en la pileta viendo el atardecer fue lo mejor de las vacaciones.",
+    "url": "https://maps.google.com/?cid=13763134922117110731"
+  },
+  {
+    "id": 4,
+    "author": "Esteban Rossi",
+    "avatar": "",
+    "initial": "E",
+    "color": "#4a5568",
+    "rating": 5,
+    "date": "Hace 5 meses",
+    "unit": "Cabaña 3",
+    "text": "La ubicación es inmejorable: estás en un entorno de paz absoluta pero a minutos del centro de Mina Clavero y de los ríos. Los juegos para chicos fueron un gran plus para los niños. Volveremos sin dudas.",
+    "url": "https://maps.google.com/?cid=13763134922117110731"
+  }
+]

@@ -256,7 +256,7 @@
 /* height: auto overrides the placeholder's 100% height so aspect-ratio drives the size. */
 .nature-card__media {
   height: auto;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
   border-radius: var(--radius-sm);
   box-shadow: var(--shadow-card);
@@ -266,6 +266,11 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
+}
+
+.nature-card__img--sunset {
+  object-position: center 65%;
 }
 
 .nature-card figcaption {

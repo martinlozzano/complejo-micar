@@ -1,0 +1,32 @@
+# Robots.txt for Cabañas MICAR
+User-agent: *
+Allow: /
+
+# Explicit allowance for major search engines and AI answer engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: sitemap.xml
+
+# LLM & AI agent discovery files
+# Reference: https://llmstxt.org
+# llms.txt: /llms.txt
+# llms-full.txt: /llms-full.txt

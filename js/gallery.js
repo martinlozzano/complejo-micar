@@ -1,4 +1,4 @@
-// Gallery page: category filters and a lightbox built on the native <dialog> element.
+// Gallery page: category filters, 10-item pagination, and a lightbox built on the native <dialog> element.
 (function () {
   const grid = document.querySelector("[data-gallery]");
   if (!grid) return;
@@ -6,27 +6,133 @@
   const items = Array.from(grid.querySelectorAll(".gallery-item"));
   const filters = Array.from(document.querySelectorAll("[data-filter]"));
   const status = document.querySelector("[data-gallery-status]");
+  const pagination = document.querySelector("[data-gallery-pagination]");
 
-  /* Filters -------------------------------------------------------------- */
+  const PAGE_SIZE = 9;
+  let currentCategory = "todo";
+  let currentPage = 1;
 
-  function applyFilter(category) {
-    let visibleCount = 0;
+  /* Filter & Pagination --------------------------------------------------- */
+
+  function getMatchingItems(category) {
+    return items.filter((item) => {
+      const categories = (item.dataset.category || "").split(" ");
+      return category === "todo" || categories.includes(category);
+    });
+  }
+
+  function renderPagination(totalItems, totalPages) {
+    if (!pagination) return;
+    if (totalPages <= 1) {
+      pagination.hidden = true;
+      pagination.innerHTML = "";
+      return;
+    }
+
+    pagination.hidden = false;
+    pagination.innerHTML = "";
+
+    // Prev button
+    const prevBtn = document.createElement("button");
+    prevBtn.type = "button";
+    prevBtn.className = "gallery-pagination__btn gallery-pagination__btn--prev";
+    prevBtn.setAttribute("aria-label", "Página anterior");
+    prevBtn.disabled = currentPage === 1;
+    prevBtn.innerHTML = `<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>`;
+    prevBtn.addEventListener("click", () => {
+      if (currentPage > 1) goToPage(currentPage - 1);
+    });
+    pagination.appendChild(prevBtn);
+
+    // Numbered buttons
+    for (let p = 1; p <= totalPages; p++) {
+      const pageBtn = document.createElement("button");
+      pageBtn.type = "button";
+      pageBtn.className = "gallery-pagination__btn";
+      pageBtn.textContent = String(p);
+      pageBtn.setAttribute("aria-label", `Página ${p}`);
+      if (p === currentPage) {
+        pageBtn.classList.add("is-active");
+        pageBtn.setAttribute("aria-current", "page");
+      }
+      pageBtn.addEventListener("click", () => {
+        if (currentPage !== p) goToPage(p);
+      });
+      pagination.appendChild(pageBtn);
+    }
+
+    // Next button
+    const nextBtn = document.createElement("button");
+    nextBtn.type = "button";
+    nextBtn.className = "gallery-pagination__btn gallery-pagination__btn--next";
+    nextBtn.setAttribute("aria-label", "Página siguiente");
+    nextBtn.disabled = currentPage === totalPages;
+    nextBtn.innerHTML = `<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>`;
+    nextBtn.addEventListener("click", () => {
+      if (currentPage < totalPages) goToPage(currentPage + 1);
+    });
+    pagination.appendChild(nextBtn);
+  }
+
+  function updateView(shouldScroll = false) {
+    const matching = getMatchingItems(currentCategory);
+    const totalItems = matching.length;
+    const totalPages = Math.max(1, Math.ceil(totalItems / PAGE_SIZE));
+
+    if (currentPage > totalPages) {
+      currentPage = 1;
+    }
+
+    const startIndex = (currentPage - 1) * PAGE_SIZE;
+    const endIndex = Math.min(startIndex + PAGE_SIZE, totalItems);
 
     items.forEach((item) => {
-      const categories = item.dataset.category.split(" ");
-      const isVisible = category === "todo" || categories.includes(category);
+      const matchIndex = matching.indexOf(item);
+      const isVisible = matchIndex >= startIndex && matchIndex < endIndex;
       item.hidden = !isVisible;
-      if (isVisible) visibleCount += 1;
+      delete item.dataset.bento;
     });
 
-    grid.classList.toggle("is-filtered", category !== "todo");
+    const isEvenPage = currentPage % 2 === 0;
+    grid.dataset.pageVariant = isEvenPage ? "even" : "odd";
+
+    // 4x3 Bento: 1 Large Hero (2x2 = 4 cells) + 8 Standard (1x1 = 8 cells) = 12 cells, exactly 3 rows.
+    // Preserves broad, uncropped 4:3 perspectives without flat letterboxing.
+    const pageItems = matching.slice(startIndex, endIndex);
+    if (pageItems.length >= 5) {
+      pageItems[0].dataset.bento = "large";
+    }
+
+    grid.classList.toggle("is-filtered", currentCategory !== "todo");
     filters.forEach((button) => {
-      button.setAttribute("aria-pressed", String(button.dataset.filter === category));
+      button.setAttribute("aria-pressed", String(button.dataset.filter === currentCategory));
     });
 
     if (status) {
-      status.textContent = `Mostrando ${visibleCount} ${visibleCount === 1 ? "foto" : "fotos"}`;
+      if (totalItems === 0) {
+        status.textContent = "No hay fotos en esta categoría.";
+      } else {
+        status.textContent = `Mostrando fotos ${startIndex + 1} a ${endIndex} de ${totalItems}`;
+      }
     }
+
+    renderPagination(totalItems, totalPages);
+
+    if (shouldScroll) {
+      const topOffset = grid.getBoundingClientRect().top + window.scrollY - 100;
+      window.scrollTo({ top: Math.max(0, topOffset), behavior: "smooth" });
+    }
+  }
+
+  function goToPage(page) {
+    currentPage = page;
+    updateView(true);
+  }
+
+  function applyFilter(category) {
+    currentCategory = category;
+    currentPage = 1;
+    updateView(false);
   }
 
   const validFilters = filters.map((button) => button.dataset.filter);
@@ -35,15 +141,18 @@
     button.addEventListener("click", () => {
       const category = button.dataset.filter;
       applyFilter(category);
-      // Keep the active filter in the URL so it can be shared (e.g. galeria.html#casa).
       history.replaceState(null, "", category === "todo" ? location.pathname : `#${category}`);
     });
   });
 
-  // Links like galeria.html#cabanas open the gallery already filtered.
   function filterFromHash() {
-    const category = decodeURIComponent(location.hash.slice(1));
-    if (validFilters.includes(category)) applyFilter(category);
+    let category = decodeURIComponent(location.hash.slice(1));
+    if (category === "cabanas") category = "cabana1";
+    if (validFilters.includes(category)) {
+      applyFilter(category);
+    } else {
+      applyFilter("todo");
+    }
   }
 
   filterFromHash();
@@ -68,10 +177,9 @@
   let lastTrigger = null;
   let changeId = 0;
 
-  // Only real photos (not placeholders) that match the active filter can be opened.
+  // Real photos that match the active filter can be browsed in the lightbox across pages
   function openablePhotos() {
-    return items
-      .filter((item) => !item.hidden)
+    return getMatchingItems(currentCategory)
       .map((item) => item.querySelector("button.gallery-card"))
       .filter(Boolean);
   }
@@ -81,7 +189,6 @@
     caption.classList.toggle("is-fading", isFading);
   }
 
-  // Shows the photo at `index`; with `animate`, cross-fades from the current one.
   function show(index, animate = false) {
     const photos = openablePhotos();
     if (!photos.length) return;
@@ -94,7 +201,6 @@
     next.hidden = single;
 
     const apply = () => {
-      // The grid loads small versions; the lightbox shows the full-size file.
       image.src = trigger.dataset.full || thumb.currentSrc || thumb.src;
       image.alt = thumb.alt;
       caption.textContent = trigger.dataset.caption || "";
@@ -106,13 +212,11 @@
       return;
     }
 
-    // Ignore stale transitions when the user clicks through photos quickly.
     const id = ++changeId;
     setFading(true);
     window.setTimeout(() => {
       if (id !== changeId) return;
       apply();
-      // Fade back in once the new photo is decoded, or after a cap so it never stays hidden.
       const decoded = image.decode().catch(() => {});
       const cap = new Promise((resolve) => window.setTimeout(resolve, DECODE_CAP_MS));
       Promise.race([decoded, cap]).then(() => {
@@ -125,8 +229,12 @@
     const trigger = event.target.closest("button.gallery-card");
     if (!trigger) return;
     lastTrigger = trigger;
-    show(openablePhotos().indexOf(trigger));
-    dialog.showModal();
+    const photos = openablePhotos();
+    const idx = photos.indexOf(trigger);
+    if (idx !== -1) {
+      show(idx);
+      dialog.showModal();
+    }
   });
 
   prev.addEventListener("click", () => show(currentIndex - 1, true));
@@ -138,12 +246,13 @@
     if (event.key === "ArrowRight") show(currentIndex + 1, true);
   });
 
-  // Clicking the backdrop (outside the figure) closes the lightbox.
   dialog.addEventListener("click", (event) => {
     if (event.target === dialog) dialog.close();
   });
 
   dialog.addEventListener("close", () => {
-    if (lastTrigger) lastTrigger.focus();
+    if (lastTrigger && !lastTrigger.closest(".gallery-item").hidden) {
+      lastTrigger.focus();
+    }
   });
 })();

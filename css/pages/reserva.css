@@ -126,6 +126,20 @@
   box-shadow: 0 0 0 3px rgba(91, 107, 58, 0.25);
 }
 
+.form-control:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  background-color: #f0e7d8;
+  border-color: #dacdb7;
+}
+
+.form-field__hint {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
 select.form-control {
   appearance: none;
   padding-right: 2.5rem;
@@ -158,6 +172,34 @@ textarea.form-control {
 .booking-form__submit {
   width: 100%;
   margin-top: 1.5rem;
+  padding-inline: 1.25rem;
+  font-size: 1rem;
+  white-space: normal;
+  text-align: center;
+  line-height: 1.35;
+}
+
+.booking-form__submit .icon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+}
+
+@media (max-width: 560px) {
+  .booking-form__submit {
+    padding-inline: 0.85rem;
+    padding-block: 0.85rem;
+    font-size: 0.9375rem;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .booking-form__submit {
+    padding-inline: 0.65rem;
+    padding-block: 0.75rem;
+    font-size: 0.875rem;
+  }
 }
 
 .booking-form__status {
@@ -171,31 +213,6 @@ textarea.form-control {
 
 .booking-form__status:empty {
   display: none;
-}
-
-.booking-form__whatsapp {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.6rem;
-  margin-top: 1rem;
-  font-size: 0.9375rem;
-  color: var(--color-text);
-}
-
-.booking-form__whatsapp .icon {
-  width: 26px;
-  height: 26px;
-  padding: 4px;
-  border-radius: 50%;
-  background-color: #25d366;
-  color: var(--color-white);
-  stroke-width: 2;
-}
-
-.booking-form__whatsapp:hover span {
-  text-decoration: underline;
-  text-underline-offset: 3px;
 }
 
 @media (max-width: 560px) {
@@ -216,8 +233,9 @@ textarea.form-control {
 
 .booking-info__media {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
+  object-position: center 85%;
 }
 
 .booking-info__body {
@@ -316,7 +334,7 @@ textarea.form-control {
 
 .trust-strip {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   padding-block: 1.25rem;
   border-radius: var(--radius-md);
   background-color: #fbf6ee;
@@ -364,3 +382,78 @@ textarea.form-control {
     border-top: 1px solid var(--color-sand);
   }
 }
+
+/* FAQ Section ------------------------------------------------------------ */
+
+.faq-section {
+  padding-block: clamp(3rem, 2rem + 3vw, 5rem);
+  background-color: #faf5ec;
+}
+
+.faq-section .section-heading {
+  margin-bottom: clamp(1.75rem, 1.25rem + 1.5vw, 2.5rem);
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+.faq-item {
+  border: 1px solid #ebdccb;
+  border-radius: var(--radius-md);
+  background-color: #fcf8f1;
+  box-shadow: 0 4px 14px rgba(59, 31, 20, 0.05);
+  overflow: hidden;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.faq-item[open] {
+  border-color: var(--color-terracotta);
+  box-shadow: 0 8px 24px rgba(59, 31, 20, 0.09);
+}
+
+.faq-item__trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.15rem 1.4rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-text);
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+}
+
+.faq-item__trigger::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item__icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: var(--color-brown);
+  transition: transform 0.25s ease;
+}
+
+.faq-item[open] .faq-item__icon {
+  transform: rotate(180deg);
+}
+
+.faq-item__content {
+  padding: 0 1.4rem 1.25rem 1.4rem;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.faq-item__content p {
+  margin: 0;
+}
+
