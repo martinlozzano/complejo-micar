@@ -35,8 +35,13 @@
 
 .cabin-card__media {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
+}
+
+/* Cabaña 1: frame the cabin exterior with a wider view from roof to entrance */
+.cabin-card:nth-child(2) .cabin-card__media {
+  object-position: center 36%;
 }
 
 .cabin-card__media.placeholder {

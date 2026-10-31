@@ -5,12 +5,12 @@
 /* Hero ------------------------------------------------------------------- */
 
 .hero--home {
-  min-height: clamp(460px, 44vw, 640px);
+  min-height: clamp(540px, 55vw, 780px);
 }
 
-/* Frame the main house: keep the roof and the white staircase in view. */
+/* Frame the main house: wider view showing almost the entire house. */
 .hero--home .hero__media {
-  object-position: center 38%;
+  object-position: center 46%;
 }
 
 /* Highlights ------------------------------------------------------------- */
@@ -25,6 +25,19 @@
   gap: 1rem;
   width: min(100% - 2 * var(--gutter), 1360px);
   margin-inline: auto;
+}
+
+.highlights__grid .photo-card {
+  aspect-ratio: 1 / 1;
+}
+
+.highlights__grid .photo-card:nth-child(1) .photo-card__media {
+  object-position: center 38%;
+}
+
+/* Frame the pool and reposeras with a wider downward perspective */
+.highlights__grid .photo-card:nth-child(2) .photo-card__media {
+  object-position: center 70%;
 }
 
 @media (max-width: 800px) {

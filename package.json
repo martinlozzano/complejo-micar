@@ -1,0 +1,14 @@
+{
+  "name": "complejo-micar",
+  "version": "1.0.0",
+  "description": "Sitio web oficial de Cabañas MICAR",
+  "private": true,
+  "scripts": {
+    "gallery": "node scripts/update-gallery.js",
+    "reviews": "node scripts/update-reviews.js",
+    "convert-webp": "node scripts/convert-to-webp.js"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.5"
+  }
+}

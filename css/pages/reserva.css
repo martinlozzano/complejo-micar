@@ -169,14 +169,34 @@ textarea.form-control {
   display: none;
 }
 
+.booking-form__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
 .booking-form__submit {
   width: 100%;
-  margin-top: 1.5rem;
+  margin-top: 0;
   padding-inline: 1.25rem;
   font-size: 1rem;
   white-space: normal;
   text-align: center;
   line-height: 1.35;
+}
+
+.booking-form__submit--email {
+  border: 1.5px solid var(--color-brown);
+  background-color: transparent;
+  color: var(--color-brown);
+  transition: background-color var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.booking-form__submit--email:hover,
+.booking-form__submit--email:focus-visible {
+  background-color: var(--color-brown);
+  color: var(--color-white);
 }
 
 .booking-form__submit .icon {

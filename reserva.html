@@ -12,14 +12,14 @@
   <meta property="og:site_name" content="Cabañas MICAR">
   <meta property="og:title" content="Reservar Cabañas en Mina Clavero | Cabañas MICAR">
   <meta property="og:description" content="Completá tus fechas y enviá tu consulta directa por WhatsApp. Cabañas equipadas y casa principal en Mina Clavero, Córdoba.">
-  <meta property="og:image" content="assets/img/photos/pileta-panoramica-1599.webp">
+  <meta property="og:image" content="assets/img/photos/pileta-parque/pileta-parque-1.webp">
   <meta property="og:locale" content="es_AR">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Reservar Cabañas en Mina Clavero | Cabañas MICAR">
   <meta name="twitter:description" content="Completá tus fechas y enviá tu consulta directa por WhatsApp. Cabañas equipadas y casa principal en Mina Clavero, Córdoba.">
-  <meta name="twitter:image" content="assets/img/photos/pileta-panoramica-1599.webp">
+  <meta name="twitter:image" content="assets/img/photos/pileta-parque/pileta-parque-1.webp">
 
   <!-- AI Discovery -->
   <link rel="help" type="text/markdown" href="llms.txt" title="Contexto para modelos de lenguaje e IA">
@@ -32,10 +32,10 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "¿Cómo realizo una reserva en Cabañas MICAR?",
+        "name": "¿Cómo consulto por disponibilidad en Cabañas MICAR?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Completás el formulario con tus fechas de ingreso y egreso, cantidad de personas y cabaña elegida, y el sistema te redirige a WhatsApp con los datos listos para confirmar la disponibilidad y coordinar la estadía."
+          "text": "Completás el formulario con tus fechas de ingreso y egreso, cantidad de personas y cabaña elegida, y podés enviar tu consulta directamente por WhatsApp o por correo electrónico para confirmar disponibilidad y coordinar tu estadía."
         }
       },
       {
@@ -73,8 +73,8 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap">
 
   <link rel="stylesheet" href="css/base.css?v=1.1">
-  <link rel="stylesheet" href="css/components.css?v=1.1">
-  <link rel="stylesheet" href="css/pages/reserva.css?v=1.1">
+  <link rel="stylesheet" href="css/components.css?v=1.3">
+  <link rel="stylesheet" href="css/pages/reserva.css?v=1.2">
 </head>
 <body>
 
@@ -100,7 +100,7 @@
           <li><a class="site-nav__link" href="ubicacion.html">Ubicación</a></li>
         </ul>
         <a class="btn btn--primary" href="reserva.html" aria-current="page">
-          Reservar
+          Consultá disponibilidad
           <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </a>
       </nav>
@@ -110,11 +110,11 @@
   <main>
     <!-- Hero -->
     <section class="hero hero--booking" aria-labelledby="hero-title">
-      <img class="hero__media" src="assets/img/photos/pileta-panoramica-1599.webp" srcset="assets/img/photos/pileta-panoramica-800.webp 800w, assets/img/photos/pileta-panoramica-1599.webp 1599w" sizes="100vw" width="1599" height="899" alt="" fetchpriority="high" decoding="async">
+      <img class="hero__media" src="assets/img/photos/pileta-parque/pileta-parque-1.webp" sizes="100vw" width="1448" height="1086" alt="" fetchpriority="high" decoding="async">
       <div class="container hero__content">
         <div class="hero__text">
           <span class="eyebrow">Tu próxima escapada te espera</span>
-          <h1 id="hero-title">Reservá tu<br>estadía</h1>
+          <h1 id="hero-title">Consultá por tu<br>estadía</h1>
           <p class="hero__lead">Viví unos días de descanso en un entorno natural único, con todas las comodidades para disfrutar en familia, en pareja o con amigos.</p>
         </div>
       </div>
@@ -124,8 +124,8 @@
     <section class="booking" aria-label="Formulario de reserva">
       <div class="container booking__panel">
         <form class="booking-form" data-booking-form novalidate>
-          <h2 class="booking-form__title">Realizá tu reserva</h2>
-          <p class="booking-form__intro">Completá el formulario con tus datos para enviar tu reserva directamente por WhatsApp.</p>
+          <h2 class="booking-form__title">Consultanos por disponibilidad</h2>
+          <p class="booking-form__intro">Completá el formulario con tus datos para enviar tu consulta directamente por WhatsApp o por correo electrónico.</p>
 
           <div class="booking-form__fields">
               <div class="form-field form-field--full">
@@ -156,8 +156,7 @@
                 <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>
                 <div>
                   <label for="guests">Cantidad de personas</label>
-                  <input class="form-control" type="number" id="guests" name="guests" min="1" disabled required placeholder="Elegí primero el lugar" aria-describedby="guests-error guests-hint">
-                  <span class="form-field__hint" id="guests-hint">Elegí un lugar para habilitar este campo.</span>
+                  <input class="form-control" type="number" id="guests" name="guests" min="1" placeholder="Ej: 4" aria-describedby="guests-error">
                 </div>
                 <p class="form-field__error" id="guests-error"></p>
               </div>
@@ -199,15 +198,21 @@
               </div>
           </div>
 
-          <button class="btn btn--primary btn--lg booking-form__submit" type="submit">
-            Enviar reserva por WhatsApp
-            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
-          </button>
+          <div class="booking-form__actions">
+            <button class="btn btn--primary btn--lg booking-form__submit booking-form__submit--whatsapp" type="submit" name="channel" value="whatsapp">
+              Enviar consulta por WhatsApp
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
+            </button>
+            <button class="btn btn--outline-brown btn--lg booking-form__submit booking-form__submit--email" type="submit" name="channel" value="email">
+              Enviar consulta por correo electrónico
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </button>
+          </div>
           <p class="booking-form__status" role="status" data-booking-status></p>
         </form>
 
         <aside class="booking-info" aria-labelledby="booking-info-title">
-          <img class="booking-info__media" src="assets/img/photos/pileta-vista-aerea-1080.webp" srcset="assets/img/photos/pileta-vista-aerea-800.webp 800w, assets/img/photos/pileta-vista-aerea-1080.webp 1080w" sizes="(max-width: 960px) 100vw, 40vw" width="1080" height="786" alt="Vista de la pileta con jacuzzi y las casas del complejo" loading="lazy" decoding="async">
+          <img class="booking-info__media" src="assets/img/photos/pileta-parque/pileta-parque-16.webp" width="1086" height="1448" alt="Vista de la pileta con jacuzzi y las casas del complejo" loading="lazy" decoding="async">
           <div class="booking-info__body">
             <h2 class="booking-info__title" id="booking-info-title">Cabañas MICAR</h2>
             <!-- TODO: confirm the real town/address. -->
@@ -238,7 +243,7 @@
       </header>
       <div class="included__grid">
         <div class="photo-card">
-          <img class="photo-card__media" src="assets/img/photos/casa-dormitorio-doble-1600.webp" srcset="assets/img/photos/casa-dormitorio-doble-800.webp 800w, assets/img/photos/casa-dormitorio-doble-1600.webp 1600w" sizes="(max-width: 520px) 100vw, (max-width: 1100px) 50vw, 25vw" width="1600" height="1200" alt="Dormitorio con dos camas individuales y mesas de luz" loading="lazy" decoding="async">
+          <img class="photo-card__media" src="assets/img/photos/casa/dormitorio-con-cama-marinera-planta-alta-34.webp" width="1086" height="1448" alt="Dormitorio equipado en Cabañas MICAR" loading="lazy" decoding="async">
           <span class="photo-card__overlay">
             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></svg>
             <span class="photo-card__title">Cabañas equipadas</span>
@@ -246,7 +251,7 @@
           </span>
         </div>
         <div class="photo-card">
-          <img class="photo-card__media" src="assets/img/photos/pileta-reposeras-768.webp" srcset="assets/img/photos/pileta-reposeras-600.webp 600w, assets/img/photos/pileta-reposeras-768.webp 768w" sizes="(max-width: 520px) 100vw, (max-width: 1100px) 50vw, 25vw" width="768" height="1024" alt="Reposeras junto a la pileta rodeada de pinos" loading="lazy" decoding="async">
+          <img class="photo-card__media" src="assets/img/photos/pileta-parque/pileta-parque-16.webp" width="1086" height="1448" alt="Reposeras junto a la pileta y jacuzzi" loading="lazy" decoding="async">
           <span class="photo-card__overlay">
             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 19q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 5q2.5 2 5 0t5 0 5 0 5 0"/></svg>
             <span class="photo-card__title">Pileta y jacuzzi</span>
@@ -254,7 +259,7 @@
           </span>
         </div>
         <div class="photo-card">
-          <img class="photo-card__media" src="assets/img/photos/juegos-1600.webp" srcset="assets/img/photos/juegos-800.webp 800w, assets/img/photos/juegos-1600.webp 1600w" sizes="(max-width: 520px) 100vw, (max-width: 1100px) 50vw, 25vw" width="1600" height="1200" alt="Juegos infantiles con tobogán y hamacas en el parque" loading="lazy" decoding="async">
+          <img class="photo-card__media" src="assets/img/photos/juegos-ninos/juegos-para-ninos-1.webp" width="1086" height="1448" alt="Juegos infantiles en el parque" loading="lazy" decoding="async">
           <span class="photo-card__overlay">
             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 21 14 3"/><path d="M20.5 21 10 3"/><path d="M15.5 21 12 15l-3.5 6"/><path d="M2 21h20"/></svg>
             <span class="photo-card__title">Juegos para chicos</span>
@@ -262,7 +267,7 @@
           </span>
         </div>
         <div class="photo-card">
-          <img class="photo-card__media" src="assets/img/photos/parque-1600.webp" srcset="assets/img/photos/parque-800.webp 800w, assets/img/photos/parque-1600.webp 1600w" sizes="(max-width: 520px) 100vw, (max-width: 1100px) 50vw, 25vw" width="1600" height="1200" alt="Parque amplio con pinos y césped" loading="lazy" decoding="async">
+          <img class="photo-card__media" src="assets/img/photos/casa/parte-del-parque-14.webp" width="1448" height="1086" alt="Parque amplio con pinos y césped" loading="lazy" decoding="async">
           <span class="photo-card__overlay">
             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z"/><path d="M12 22v-3"/></svg>
             <span class="photo-card__title">Amplio parque</span>
@@ -306,43 +311,94 @@
         <div class="faq-list">
           <details class="faq-item">
             <summary class="faq-item__trigger">
-              <span>¿Cómo realizo una reserva en Cabañas MICAR?</span>
+              <span>¿Se aceptan mascotas?</span>
               <svg class="icon faq-item__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
             </summary>
             <div class="faq-item__content">
-              <p>Completás el formulario con tus fechas de ingreso y egreso, cantidad de personas y cabaña elegida, y el sistema te redirige a WhatsApp con los datos listos para confirmar la disponibilidad y coordinar la estadía.</p>
+              <p>¡Nos encantan los animales! 🐾 Sin embargo, para garantizar la comodidad y tranquilidad de todos nuestros huéspedes, por el momento no aceptamos mascotas. Agradecemos mucho su comprensión.</p>
             </div>
           </details>
 
           <details class="faq-item">
             <summary class="faq-item__trigger">
-              <span>¿Cuál es la capacidad máxima de las cabañas?</span>
+              <span>¿Se proporciona ropa blanca?</span>
               <svg class="icon faq-item__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
             </summary>
             <div class="faq-item__content">
-              <p>Ofrecemos diferentes opciones: Cabaña 2 para hasta 3 personas, Cabañas 1 y 3 para hasta 6 personas, y la Casa Principal con capacidad de hasta 12 personas.</p>
+              <p>¡Sí! Tanto la casa como las cabañas se entregan equipadas con sábanas y toallas para cada huésped. Las toallas son de uso exclusivo dentro del alojamiento, por lo que deben traer toallas propias para disfrutar de la pileta.</p>
             </div>
           </details>
 
           <details class="faq-item">
             <summary class="faq-item__trigger">
-              <span>¿Qué comodidades y servicios incluye la estadía?</span>
+              <span>¿Con cuánto se confirma la reserva?</span>
               <svg class="icon faq-item__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
             </summary>
             <div class="faq-item__content">
-              <p>La estadía incluye acceso a la pileta al aire libre con jacuzzi, solárium, amplio parque arbolado con juegos infantiles, asadores individuales, cocina equipada, Wi-Fi y estacionamiento.</p>
+              <p>Para confirmar tu estadía, solicitamos una seña equivalente al 50% del valor total de la reserva.</p>
+            </div>
+          </details>
+          
+          <details class="faq-item">
+            <summary class="faq-item__trigger">
+              <span>¿Se puede comer o beber dentro de la pileta?</span>
+              <svg class="icon faq-item__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="faq-item__content">
+              <p>No está permitido consumir alimentos ni bebidas dentro de la pileta. Para disfrutar de comidas, bebidas o unos ricos mates, contamos con quinchos y espacios con pérgolas y toldos de lona, ideales para compartir momentos al aire libre.</p>
             </div>
           </details>
 
           <details class="faq-item">
             <summary class="faq-item__trigger">
-              <span>¿Dónde está ubicado el complejo Cabañas MICAR?</span>
+              <span>¿Cuál es la estadía mínima en temporada alta?</span>
               <svg class="icon faq-item__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
             </summary>
             <div class="faq-item__content">
-              <p>Estamos ubicados en Mina Clavero, en el Valle de Traslasierra, provincia de Córdoba, a pocos minutos del centro y de los principales ríos y balnearios de la zona.</p>
+              <p>Durante los meses de enero y febrero, la estadía mínima es de 5 noches, tanto para la casa como para las cabañas.</p>
             </div>
           </details>
+
+          <details class="faq-item">
+            <summary class="faq-item__trigger">
+              <span>¿Cuáles son los horarios de check-in y check-out?</span>
+              <svg class="icon faq-item__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="faq-item__content">
+              <p>El check-in se realiza a partir de las 14:00 horas, y el check-out debe realizarse antes de las 10:00 horas.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-item__trigger">
+              <span>¿La pileta y el parque son compartidos?</span>
+              <svg class="icon faq-item__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="faq-item__content">
+              <p>La pileta es de uso compartido entre los huéspedes de la casa y las cabañas. Sin embargo, cada sector cuenta con su propio parque: la casa dispone de un espacio verde exclusivo y las cabañas comparten otro, para disfrutar al aire libre con comodidad y tranquilidad.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-item__trigger">
+              <span>¿Los alojamientos cuentan con estacionamiento y asador?</span>
+              <svg class="icon faq-item__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="faq-item__content">
+              <p>¡Sí! Tanto la casa como las cabañas cuentan con estacionamiento y asador propios, para que cada grupo pueda disfrutar de su espacio con total comodidad.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-item__trigger">
+              <span>¿Se permiten visitas de personas que no están alojadas?</span>
+              <svg class="icon faq-item__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <div class="faq-item__content">
+              <p>Para preservar la seguridad, comodidad y tranquilidad de todos nuestros huéspedes, no está permitido el ingreso de personas que no se encuentren alojadas en el complejo. Agradecemos su comprensión.</p>
+            </div>
+          </details>
+
         </div>
       </div>
     </section>
@@ -368,11 +424,11 @@
   <!-- Floating WhatsApp CTA -->
   <a class="whatsapp-float" href="https://wa.me/?text=Hola%2C%20quisiera%20consultar%20por%20disponibilidad%20en%20Caba%C3%B1as%20MICAR" data-whatsapp-link target="_blank" rel="noopener noreferrer" aria-label="Consultar por WhatsApp">
     <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
-    <span class="whatsapp-float__tooltip">¿Tenés dudas? Escribinos</span>
+    <span class="whatsapp-float__text">¿Tenes dudas? Escribinos</span>
   </a>
 
-  <script src="js/config.js?v=1.1"></script>
+  <script src="js/config.js?v=1.2"></script>
   <script src="js/main.js?v=1.1" defer></script>
-  <script src="js/booking.js?v=1.1" defer></script>
+  <script src="js/booking.js?v=1.2" defer></script>
 </body>
 </html>

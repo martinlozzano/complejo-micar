@@ -6,6 +6,7 @@
 
   // WhatsApp contact number from centralized config (or fallback)
   const WHATSAPP_PHONE = window.MICAR_CONFIG?.whatsappPhone || "";
+  const CONTACT_EMAIL = window.MICAR_CONFIG?.contactEmail || "";
 
   const nameInput = form.elements.namedItem("name");
   const accommodation = form.elements.namedItem("accommodation");
@@ -95,83 +96,19 @@
     });
   }
 
-  /* Accommodation and capacity handling ------------------------------------ */
-
-  function updateCapacityLimit() {
-    const selectedKey = accommodation.value;
-    const place = ACCOMMODATIONS[selectedKey];
-
-    if (!place) {
-      guests.disabled = true;
-      guests.value = "";
-      guests.placeholder = "Elegí primero el lugar";
-      if (guestsHint) {
-        guestsHint.textContent = "Elegí un lugar para habilitar este campo.";
-      }
-      return;
-    }
-
-    guests.disabled = false;
-    guests.max = place.maxGuests;
-    guests.placeholder = `Hasta ${place.maxGuests} personas`;
-    if (guestsHint) {
-      guestsHint.textContent = `Capacidad máxima: ${place.maxGuests} personas.`;
-    }
-
-    validateGuestsCapacity();
-  }
-
-  function validateGuestsCapacity() {
-    const selectedKey = accommodation.value;
-    const place = ACCOMMODATIONS[selectedKey];
-
-    if (!place) {
-      guests.setCustomValidity("");
-      return true;
-    }
-
-    if (!guests.value) {
-      guests.setCustomValidity("");
-      return false;
-    }
-
-    const val = Number(guests.value);
-    if (val > place.maxGuests) {
-      guests.setCustomValidity(
-        `${place.label} permite un máximo de ${place.maxGuests} personas.`
-      );
-      showError(guests);
-      return false;
-    }
-
-    if (val < 1) {
-      guests.setCustomValidity("Ingresá al menos 1 persona.");
-      showError(guests);
-      return false;
-    }
-
-    guests.setCustomValidity("");
-    showError(guests);
-    return true;
-  }
+  /* Accommodation handling (no capacity validation restriction) ----------- */
 
   accommodation.addEventListener("change", () => {
-    updateCapacityLimit();
     showError(accommodation);
-  });
-
-  guests.addEventListener("input", () => {
-    validateGuestsCapacity();
   });
 
   /* Validation messages --------------------------------------------------- */
 
   const messages = {
     name: { valueMissing: "Ingresá tu nombre y apellido." },
-    accommodation: { valueMissing: "Seleccioná el lugar a reservar." },
+    accommodation: { valueMissing: "Seleccioná el lugar a consultar." },
     guests: {
       valueMissing: "Ingresá la cantidad de personas.",
-      rangeOverflow: "Supera la capacidad máxima del lugar.",
       rangeUnderflow: "Debe ser al menos 1 persona.",
     },
     checkin: {
@@ -217,20 +154,29 @@
     });
   });
 
-  /* Submit: redirect to WhatsApp ------------------------------------------ */
+  /* Submit: WhatsApp or Email inquiry ------------------------------------ */
+
+  let activeSubmitter = null;
+  form.querySelectorAll('button[type="submit"]').forEach((btn) => {
+    btn.addEventListener("click", () => {
+      activeSubmitter = btn;
+    });
+  });
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
     status.textContent = "";
 
     // Force validation on all fields
-    validateGuestsCapacity();
     const invalid = fields.filter((field) => !showError(field));
 
     if (invalid.length) {
       invalid[0].focus();
       return;
     }
+
+    const submitter = event.submitter || activeSubmitter;
+    const channel = submitter?.getAttribute("value") || "whatsapp";
 
     const place = ACCOMMODATIONS[accommodation.value]?.label || accommodation.value;
     const clientName = nameInput.value.trim();
@@ -240,8 +186,34 @@
     const numGuests = guests.value;
     const extraMessage = messageInput ? messageInput.value.trim() : "";
 
-    let text = `¡Hola! Me gustaría hacer una reserva en Cabañas MICAR.\n\n` +
-      `*Datos de la reserva:*\n` +
+    if (channel === "email") {
+      const subject = `Consulta de disponibilidad - ${place}`;
+      let emailBody = `¡Hola! Me gustaría consultar por disponibilidad en Cabañas MICAR.\n\n` +
+        `Datos de la consulta:\n` +
+        `• Nombre: ${clientName}\n` +
+        `• Alojamiento: ${place}\n` +
+        `• Fecha de ingreso: ${inDate}\n` +
+        `• Fecha de egreso: ${outDate}\n` +
+        `• Cantidad de noches: ${numNights}\n` +
+        `• Cantidad de personas: ${numGuests}\n`;
+
+      if (extraMessage) {
+        emailBody += `• Consulta adicional: ${extraMessage}\n`;
+      }
+
+      emailBody += `\nMuchas gracias,\n${clientName}`;
+
+      const recipient = CONTACT_EMAIL ? encodeURIComponent(CONTACT_EMAIL) : "";
+      const webmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${recipient}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+
+      status.textContent = "¡Abriendo correo en una pestaña nueva para enviar tu consulta!";
+      window.open(webmailUrl, "_blank");
+      return;
+    }
+
+    // Default: WhatsApp inquiry
+    let text = `¡Hola! Me gustaría consultar por disponibilidad en Cabañas MICAR.\n\n` +
+      `*Datos de la consulta:*\n` +
       `• *Nombre:* ${clientName}\n` +
       `• *Lugar:* ${place}\n` +
       `• *Fecha de ingreso:* ${inDate}\n` +
@@ -258,7 +230,7 @@
       ? `https://api.whatsapp.com/send?phone=${phoneDigits}&text=${encodeURIComponent(text)}`
       : `https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`;
 
-    status.textContent = "¡Redirigiendo a WhatsApp para enviar tu reserva!";
+    status.textContent = "¡Redirigiendo a WhatsApp para enviar tu consulta!";
     window.open(whatsappUrl, "_blank");
   });
 })();

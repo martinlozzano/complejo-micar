@@ -37,14 +37,26 @@
   },
   {
     "id": 4,
-    "author": "Esteban Rossi",
+    "author": "Vanesa Ribbaudo",
     "avatar": "",
-    "initial": "E",
+    "initial": "V",
     "color": "#4a5568",
     "rating": 5,
     "date": "Hace 5 meses",
     "unit": "Cabaña 3",
-    "text": "La ubicación es inmejorable: estás en un entorno de paz absoluta pero a minutos del centro de Mina Clavero y de los ríos. Los juegos para chicos fueron un gran plus para los niños. Volveremos sin dudas.",
-    "url": "https://maps.google.com/?cid=13763134922117110731"
+    "text": "Paradisíaco lugar en Mina Clavero ,excelentes servicios, comodidad,exquisito gusto ensu decoración e inmejorable ubicación.",
+    "url": "https://maps.app.goo.gl/uteSeSSjkPADEPhS9"
+  },
+  {
+    "id": 5,
+    "author": "Ivana Campoli",
+    "avatar": "",
+    "initial": "I",
+    "color": "#4a5568",
+    "rating": 5,
+    "date": "Hace 7 meses",
+    "unit": "Casa Principal",
+    "text": "Muy lindo complejo. Es la 2da vez que voy. Limpio, la pileta hermosa. Tiene asador la cabaña con mesita y reposeras para comer en el balcon y aparte un parque hermoso. Se ven todas las sierras, de noche es muy lindo. Tenes a 2 cuadras el río hermoso para relajarte. Hay un señor que te recibe súper amoroso. Está pendiente de todo. Hablé con Clarisa también y te da toda la información que necesitas. Ideal para relajarte",
+    "url": "https://maps.app.goo.gl/zqzrAyJP5pAZ9F3f8"
   }
 ]
