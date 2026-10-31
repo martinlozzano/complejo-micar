@@ -32,7 +32,7 @@
     updateButtons();
   });
 
-  // Amenities mobile infinite auto-displacement carousel
+  // Amenities mobile infinite auto-displacement carousel (uninterrupted continuous motion)
   document.querySelectorAll("[data-amenities-track]").forEach((amenitiesTrack) => {
     const originalList = amenitiesTrack.querySelector(".feature-strip");
     if (originalList) {
@@ -40,17 +40,6 @@
       clone.setAttribute("aria-hidden", "true");
       clone.classList.add("feature-strip--clone");
       amenitiesTrack.appendChild(clone);
-
-      amenitiesTrack.addEventListener(
-        "touchstart",
-        () => amenitiesTrack.classList.add("is-paused"),
-        { passive: true }
-      );
-      amenitiesTrack.addEventListener(
-        "touchend",
-        () => amenitiesTrack.classList.remove("is-paused"),
-        { passive: true }
-      );
     }
   });
 })();

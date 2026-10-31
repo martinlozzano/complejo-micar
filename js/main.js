@@ -65,9 +65,44 @@
     });
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", syncWhatsAppLinks);
-  } else {
+  /* WhatsApp Popup Controller -------------------------------------------- */
+  function initWhatsAppPopup() {
+    const popup = document.getElementById("whatsapp-popup");
+    const closeBtn = document.querySelector("[data-whatsapp-popup-close]");
+    if (!popup) return;
+
+    let isDismissed = false;
+    try {
+      isDismissed = sessionStorage.getItem("micar_whatsapp_popup_dismissed") === "1";
+    } catch (_) {}
+
+    if (!isDismissed) {
+      setTimeout(() => {
+        popup.classList.add("is-visible");
+      }, 1500);
+    }
+
+    if (closeBtn) {
+      closeBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        popup.classList.remove("is-visible");
+        popup.classList.add("is-dismissed");
+        try {
+          sessionStorage.setItem("micar_whatsapp_popup_dismissed", "1");
+        } catch (_) {}
+      });
+    }
+  }
+
+  function initSite() {
     syncWhatsAppLinks();
+    initWhatsAppPopup();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initSite);
+  } else {
+    initSite();
   }
 })();

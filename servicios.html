@@ -79,7 +79,7 @@
       </div>
     </section>
 
-    <!-- Service tiles -->
+    <!-- Service cards: varied composition -->
     <section class="services" aria-labelledby="services-title">
       <header class="container section-heading">
         <span class="eyebrow">Nuestros servicios</span>
@@ -89,38 +89,68 @@
         </div>
       </header>
 
-      <ul class="service-tiles" role="list">
-        <li class="service-tile">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 19q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 5q2.5 2 5 0t5 0 5 0 5 0"/></svg>
-          <h3 class="service-tile__title">Pileta y jacuzzi</h3>
-          <p class="service-tile__text">Relax y diversión para toda la familia</p>
-        </li>
-        <li class="service-tile">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z"/><path d="M12 22v-3"/></svg>
-          <h3 class="service-tile__title">Amplio parque</h3>
-          <p class="service-tile__text">Naturaleza y espacios verdes</p>
-        </li>
-        <li class="service-tile">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 21 14 3"/><path d="M20.5 21 10 3"/><path d="M15.5 21 12 15l-3.5 6"/><path d="M2 21h20"/></svg>
-          <h3 class="service-tile__title">Juegos para chicos</h3>
-          <p class="service-tile__text">Diversión segura en un entorno natural</p>
-        </li>
-        <li class="service-tile">
+      <!-- Featured services with real photos -->
+      <div class="services-featured">
+        <article class="service-card-featured">
+          <img class="service-card-featured__media" src="assets/img/photos/pileta-parque/pileta-parque-16.webp" width="1086" height="1448" alt="Pileta y solárium rodeado de pinos" loading="lazy" decoding="async">
+          <div class="service-card-featured__body">
+            <h3 class="service-card-featured__title">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 19q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 5q2.5 2 5 0t5 0 5 0 5 0"/></svg>
+              Pileta y jacuzzi
+            </h3>
+            <p class="service-card-featured__text">Relax y diversión al aire libre con vista panorámica a las sierras.</p>
+          </div>
+        </article>
+
+        <article class="service-card-featured">
+          <img class="service-card-featured__media" src="assets/img/photos/casa/parte-del-parque-14.webp" width="1448" height="1086" alt="Amplio parque arbolado de Cabañas MICAR" loading="lazy" decoding="async">
+          <div class="service-card-featured__body">
+            <h3 class="service-card-featured__title">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z"/><path d="M12 22v-3"/></svg>
+              Amplio parque
+            </h3>
+            <p class="service-card-featured__text">Espacios verdes cuidados, sombra natural y tranquilidad serrana.</p>
+          </div>
+        </article>
+
+        <article class="service-card-featured">
+          <img class="service-card-featured__media" src="assets/img/photos/juegos-ninos/juegos-para-ninos-1.webp" width="1086" height="1448" alt="Juegos infantiles con hamacas y tobogán" loading="lazy" decoding="async">
+          <div class="service-card-featured__body">
+            <h3 class="service-card-featured__title">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 21 14 3"/><path d="M20.5 21 10 3"/><path d="M15.5 21 12 15l-3.5 6"/><path d="M2 21h20"/></svg>
+              Juegos para chicos
+            </h3>
+            <p class="service-card-featured__text">Diversión segura para los más pequeños dentro del predio.</p>
+          </div>
+        </article>
+      </div>
+
+      <!-- Secondary services in compact format -->
+      <div class="services-secondary">
+        <div class="service-secondary-card">
           <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"/></svg>
-          <h3 class="service-tile__title">Asador</h3>
-          <p class="service-tile__text">Para compartir buenos momentos</p>
-        </li>
-        <li class="service-tile">
+          <div>
+            <h4 class="service-secondary-card__title">Asador individual</h4>
+            <p class="service-secondary-card__desc">Para disfrutar de tus comidas al aire libre</p>
+          </div>
+        </div>
+
+        <div class="service-secondary-card">
           <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
-          <h3 class="service-tile__title">Estacionamiento</h3>
-          <p class="service-tile__text">Comodidad y seguridad</p>
-        </li>
-        <li class="service-tile">
+          <div>
+            <h4 class="service-secondary-card__title">Estacionamiento</h4>
+            <p class="service-secondary-card__desc">Comodidad y seguridad dentro del complejo</p>
+          </div>
+        </div>
+
+        <div class="service-secondary-card">
           <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h.01"/><path d="M2 8.82a15 15 0 0 1 20 0"/><path d="M5 12.859a10 10 0 0 1 14 0"/><path d="M8.5 16.429a5 5 0 0 1 7 0"/></svg>
-          <h3 class="service-tile__title">Wi-Fi</h3>
-          <p class="service-tile__text">Conectate siempre</p>
-        </li>
-      </ul>
+          <div>
+            <h4 class="service-secondary-card__title">Wi-Fi en el predio</h4>
+            <p class="service-secondary-card__desc">Conexión en alojamientos y sectores comunes</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Pool -->
@@ -154,6 +184,16 @@
         <img class="split__media" src="assets/img/photos/juegos-ninos/juegos-para-ninos-1.webp" sizes="(max-width: 800px) 100vw, 55vw" width="1086" height="1448" alt="Juegos infantiles con tobogán y hamacas en el parque" loading="lazy" decoding="async">
       </div>
     </section>
+    <!-- Closing banner -->
+    <section class="scenery-banner services-closing" aria-labelledby="services-closing-title">
+      <header class="container section-heading">
+        <span class="eyebrow">Viví Traslasierra</span>
+        <h2 id="services-closing-title">El descanso que merecés</h2>
+        <div class="leaf-divider" aria-hidden="true">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M11 20a10 10 0 0010-10 25.9 25.9 0 00-1.04-7.281 1 1 0 00-1.755-.325C15.833 5.5 13 5.5 9.8 6.1A7 7 0 0011 20"/><path d="M2 21a5 5 0 012.911-4.544C7.613 15.212 8.351 15.24 11 13"/></svg>
+        </div>
+      </header>
+    </section>
   </main>
 
   <!-- Site footer (shared across pages) -->
@@ -174,11 +214,50 @@
     </div>
   </footer>
 
-  <!-- Floating WhatsApp CTA -->
-  <a class="whatsapp-float" href="https://wa.me/?text=Hola%2C%20quisiera%20consultar%20por%20disponibilidad%20en%20Caba%C3%B1as%20MICAR" data-whatsapp-link target="_blank" rel="noopener noreferrer" aria-label="Consultar por WhatsApp">
-    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
-    <span class="whatsapp-float__text">¿Tenes dudas? Escribinos</span>
-  </a>
+  <!-- Mobile Bottom Navigation (Visible only on mobile/tablet <= 768px) -->
+  <nav class="bottom-nav" aria-label="Navegación móvil">
+    <div class="bottom-nav__inner">
+      <a class="bottom-nav__item" href="index.html">
+        <svg class="icon bottom-nav__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span class="bottom-nav__label">Inicio</span>
+      </a>
+      <a class="bottom-nav__item" href="cabanas.html">
+        <svg class="icon bottom-nav__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></svg>
+        <span class="bottom-nav__label">Cabañas</span>
+      </a>
+      <a class="bottom-nav__item" href="servicios.html" aria-current="page">
+        <svg class="icon bottom-nav__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 16a6 6 0 0 0-12 0"/><path d="M4 20h16"/><path d="M12 4v4"/><path d="M10 4h4"/></svg>
+        <span class="bottom-nav__label">Servicios</span>
+      </a>
+      <a class="bottom-nav__item" href="galeria.html">
+        <svg class="icon bottom-nav__icon" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+        <span class="bottom-nav__label">Galería</span>
+      </a>
+      <a class="bottom-nav__item" href="ubicacion.html">
+        <svg class="icon bottom-nav__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+        <span class="bottom-nav__label">Ubicación</span>
+      </a>
+      <a class="bottom-nav__item bottom-nav__item--highlight" href="reserva.html">
+        <span class="bottom-nav__highlight-bubble">
+          <svg class="icon bottom-nav__icon" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
+        </span>
+        <span class="bottom-nav__label">Reservar</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Floating WhatsApp CTA with dismissible popup -->
+  <div class="whatsapp-widget" data-whatsapp-widget>
+    <div class="whatsapp-popup" id="whatsapp-popup" role="status" aria-live="polite">
+      <span class="whatsapp-popup__text">¿Necesitás ayuda? Consultanos</span>
+      <button class="whatsapp-popup__close" type="button" aria-label="Cerrar mensaje" data-whatsapp-popup-close>
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+    </div>
+    <a class="whatsapp-fab" href="https://wa.me/?text=Hola%2C%20quisiera%20consultar%20por%20disponibilidad%20en%20Caba%C3%B1as%20MICAR" data-whatsapp-link target="_blank" rel="noopener noreferrer" aria-label="Consultar por WhatsApp">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
+    </a>
+  </div>
 
   <script src="js/config.js?v=1.2"></script>
   <script src="js/main.js?v=1.1" defer></script>

@@ -98,8 +98,33 @@
 
   /* Accommodation handling (no capacity validation restriction) ----------- */
 
+  function updateAccommodationNotice() {
+    if (!guestsHint) return;
+    const selected = ACCOMMODATIONS[accommodation.value];
+    if (selected) {
+      guestsHint.textContent = `Capacidad recomendada: hasta ${selected.maxGuests} personas.`;
+      if (guests && !guests.value) {
+        guests.placeholder = `Hasta ${selected.maxGuests}`;
+      }
+    } else {
+      guestsHint.textContent = "";
+      if (guests) guests.placeholder = "Ej: 4";
+    }
+  }
+
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const preselected = params.get("alojamiento") || params.get("cabana");
+    if (preselected && ACCOMMODATIONS[preselected]) {
+      accommodation.value = preselected;
+    }
+  } catch (_) {}
+
+  updateAccommodationNotice();
+
   accommodation.addEventListener("change", () => {
     showError(accommodation);
+    updateAccommodationNotice();
   });
 
   /* Validation messages --------------------------------------------------- */

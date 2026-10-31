@@ -21,6 +21,48 @@
     });
   }
 
+  function getPaginationTokens(page, total) {
+    if (total <= 5) {
+      return Array.from({ length: total }, (_, i) => i + 1);
+    }
+
+    let start;
+    let end;
+
+    if (page <= 2) {
+      start = 1;
+      end = 3;
+    } else if (page >= total - 1) {
+      start = total - 2;
+      end = total;
+    } else {
+      start = page - 1;
+      end = page + 1;
+    }
+
+    const tokens = [];
+
+    // Left ellipsis if window starts past page 1
+    if (start > 1) {
+      tokens.push("...");
+    }
+
+    // Numbered window
+    for (let p = start; p <= end; p++) {
+      tokens.push(p);
+    }
+
+    // Right side: ellipsis and totalPages
+    if (end < total - 1) {
+      tokens.push("...");
+      tokens.push(total);
+    } else if (end === total - 1) {
+      tokens.push(total);
+    }
+
+    return tokens;
+  }
+
   function renderPagination(totalItems, totalPages) {
     if (!pagination) return;
     if (totalPages <= 1) {
@@ -44,22 +86,32 @@
     });
     pagination.appendChild(prevBtn);
 
-    // Numbered buttons
-    for (let p = 1; p <= totalPages; p++) {
-      const pageBtn = document.createElement("button");
-      pageBtn.type = "button";
-      pageBtn.className = "gallery-pagination__btn";
-      pageBtn.textContent = String(p);
-      pageBtn.setAttribute("aria-label", `Página ${p}`);
-      if (p === currentPage) {
-        pageBtn.classList.add("is-active");
-        pageBtn.setAttribute("aria-current", "page");
+    // Numbered buttons and ellipses
+    const tokens = getPaginationTokens(currentPage, totalPages);
+    tokens.forEach((token) => {
+      if (token === "...") {
+        const ellipsis = document.createElement("span");
+        ellipsis.className = "gallery-pagination__ellipsis";
+        ellipsis.setAttribute("aria-hidden", "true");
+        ellipsis.innerHTML = "&hellip;";
+        pagination.appendChild(ellipsis);
+      } else {
+        const p = token;
+        const pageBtn = document.createElement("button");
+        pageBtn.type = "button";
+        pageBtn.className = "gallery-pagination__btn";
+        pageBtn.textContent = String(p);
+        pageBtn.setAttribute("aria-label", `Página ${p}`);
+        if (p === currentPage) {
+          pageBtn.classList.add("is-active");
+          pageBtn.setAttribute("aria-current", "page");
+        }
+        pageBtn.addEventListener("click", () => {
+          if (currentPage !== p) goToPage(p);
+        });
+        pagination.appendChild(pageBtn);
       }
-      pageBtn.addEventListener("click", () => {
-        if (currentPage !== p) goToPage(p);
-      });
-      pagination.appendChild(pageBtn);
-    }
+    });
 
     // Next button
     const nextBtn = document.createElement("button");
@@ -129,9 +181,52 @@
     updateView(true);
   }
 
+  /* Filter Dropdown (Mobile) ---------------------------------------------- */
+  const filterContainer = document.querySelector("[data-filter-container]");
+  const filterTrigger = document.querySelector("[data-filter-trigger]");
+  const filterMenu = document.querySelector("[data-filter-menu]");
+  const filterActiveText = document.querySelector("[data-filter-active-text]");
+
+  function setFilterMenuOpen(isOpen) {
+    if (!filterTrigger || !filterMenu) return;
+    filterTrigger.setAttribute("aria-expanded", String(isOpen));
+    filterMenu.classList.toggle("is-open", isOpen);
+  }
+
+  function updateFilterActiveLabel(category) {
+    if (!filterActiveText) return;
+    const matchBtn = filters.find((btn) => btn.dataset.filter === category);
+    if (matchBtn) {
+      filterActiveText.textContent = matchBtn.textContent.trim();
+    } else {
+      filterActiveText.textContent = "Todas las fotos";
+    }
+  }
+
+  if (filterTrigger && filterMenu) {
+    filterTrigger.addEventListener("click", () => {
+      const isOpen = filterTrigger.getAttribute("aria-expanded") === "true";
+      setFilterMenuOpen(!isOpen);
+    });
+
+    document.addEventListener("click", (event) => {
+      if (filterContainer && !filterContainer.contains(event.target)) {
+        setFilterMenuOpen(false);
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        setFilterMenuOpen(false);
+      }
+    });
+  }
+
   function applyFilter(category) {
     currentCategory = category;
     currentPage = 1;
+    updateFilterActiveLabel(category);
+    setFilterMenuOpen(false);
     updateView(false);
   }
 
@@ -165,6 +260,7 @@
 
   const image = dialog.querySelector(".lightbox__img");
   const caption = dialog.querySelector(".lightbox__caption");
+  const counter = dialog.querySelector("[data-lightbox-counter]");
   const prev = dialog.querySelector("[data-lightbox-prev]");
   const next = dialog.querySelector("[data-lightbox-next]");
   const close = dialog.querySelector("[data-lightbox-close]");
@@ -199,6 +295,10 @@
     const single = photos.length < 2;
     prev.hidden = single;
     next.hidden = single;
+
+    if (counter) {
+      counter.textContent = `${currentIndex + 1} / ${photos.length}`;
+    }
 
     const apply = () => {
       image.src = trigger.dataset.full || thumb.currentSrc || thumb.src;
@@ -249,6 +349,38 @@
   dialog.addEventListener("click", (event) => {
     if (event.target === dialog) dialog.close();
   });
+
+  /* Touch gestures: swipe left/right for photos, swipe down to close ----- */
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let touchEndX = 0;
+  let touchEndY = 0;
+
+  dialog.addEventListener("touchstart", (event) => {
+    if (!event.changedTouches || !event.changedTouches[0]) return;
+    touchStartX = event.changedTouches[0].screenX;
+    touchStartY = event.changedTouches[0].screenY;
+  }, { passive: true });
+
+  dialog.addEventListener("touchend", (event) => {
+    if (!event.changedTouches || !event.changedTouches[0]) return;
+    touchEndX = event.changedTouches[0].screenX;
+    touchEndY = event.changedTouches[0].screenY;
+
+    const deltaX = touchEndX - touchStartX;
+    const deltaY = touchEndY - touchStartY;
+    const minSwipe = 45;
+
+    if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > minSwipe) {
+      if (deltaX < 0) {
+        show(currentIndex + 1, true);
+      } else {
+        show(currentIndex - 1, true);
+      }
+    } else if (deltaY > 80 && Math.abs(deltaY) > Math.abs(deltaX) * 1.5) {
+      dialog.close();
+    }
+  }, { passive: true });
 
   dialog.addEventListener("close", () => {
     if (lastTrigger && !lastTrigger.closest(".gallery-item").hidden) {

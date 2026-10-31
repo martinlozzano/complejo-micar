@@ -18,58 +18,120 @@
   margin-bottom: clamp(1.5rem, 1rem + 1.5vw, 2.25rem);
 }
 
-.service-tiles {
+/* Featured service cards with photos */
+.services-featured {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  width: min(100% - 2 * var(--gutter), 1360px);
+  margin-inline: auto;
+  margin-bottom: 1.5rem;
+}
+
+.service-card-featured {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background-color: #fbf6ee;
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.service-card-featured:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(59, 31, 20, 0.16);
+}
+
+.service-card-featured__media {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.service-card-featured__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.15rem 1.25rem 1.35rem;
+}
+
+.service-card-featured__title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.service-card-featured__title .icon {
+  width: 22px;
+  height: 22px;
+  color: var(--color-brown);
+}
+
+.service-card-featured__text {
+  font-size: 0.875rem;
+  line-height: 1.45;
+  color: var(--color-text-muted);
+}
+
+/* Secondary services in compact format */
+.services-secondary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 0.75rem;
   width: min(100% - 2 * var(--gutter), 1360px);
   margin-inline: auto;
 }
 
-.service-tile {
+.service-secondary-card {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
-  padding: 1.5rem 0.85rem 1.35rem;
+  gap: 0.85rem;
+  padding: 0.9rem 1.15rem;
   border-radius: var(--radius-md);
   background-color: var(--color-cream-dark);
-  text-align: center;
+  border: 1px solid rgba(217, 203, 181, 0.5);
 }
 
-.service-tile .icon {
-  width: 38px;
-  height: 38px;
-  margin-bottom: 0.35rem;
+.service-secondary-card .icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
   color: var(--color-brown);
-  stroke-width: 1.6;
 }
 
-.service-tile__title {
-  font-family: var(--font-sans);
+.service-secondary-card__title {
   font-size: 0.9375rem;
   font-weight: 600;
-  line-height: 1.25;
-  letter-spacing: 0;
   color: var(--color-text);
+  line-height: 1.2;
 }
 
-.service-tile__text {
-  font-size: 0.8125rem;
-  line-height: 1.4;
+.service-secondary-card__desc {
+  font-size: 0.78125rem;
   color: var(--color-text-muted);
+  line-height: 1.3;
 }
 
-@media (max-width: 1100px) {
-  .service-tiles {
-    grid-template-columns: repeat(3, 1fr);
+@media (max-width: 900px) {
+  .services-featured {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+    gap: 1rem;
+  }
+
+  .services-secondary {
+    grid-template-columns: 1fr;
+    max-width: 520px;
   }
 }
 
-@media (max-width: 640px) {
-  .service-tiles {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.services-closing {
+  padding-block: clamp(2rem, 1.5rem + 2vw, 3.5rem);
 }
 
 /* Experience blocks (text + photo) --------------------------------------- */

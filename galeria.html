@@ -78,16 +78,28 @@
     <!-- Gallery -->
     <section class="gallery" aria-label="Fotos del complejo">
       <div class="gallery__inner">
-                                        <div class="gallery-filters" role="group" aria-label="Filtrar fotos por categoría">
-          <button class="gallery-filter" type="button" data-filter="todo" aria-pressed="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>Todo</button>
-          <button class="gallery-filter" type="button" data-filter="casa" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Casa principal</button>
-          <button class="gallery-filter" type="button" data-filter="cabana1" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></svg>Cabaña 1</button>
-          <button class="gallery-filter" type="button" data-filter="cabana2" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></svg>Cabaña 2</button>
-          <button class="gallery-filter" type="button" data-filter="cabana3" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></svg>Cabaña 3</button>
-          <button class="gallery-filter" type="button" data-filter="pileta-parque" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 19q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 5q2.5 2 5 0t5 0 5 0 5 0"/></svg>Pileta y parque</button>
-          <button class="gallery-filter" type="button" data-filter="juegos-ninos" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z"/><path d="M12 22v-3"/></svg>Juegos para niños</button>
-          <button class="gallery-filter" type="button" data-filter="quincho" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>Quincho cabañas</button>
-          <button class="gallery-filter" type="button" data-filter="paisajes-rios-demas" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>Paisajes y ríos</button>
+        <!-- Category filters with mobile dropdown -->
+        <div class="gallery-filter-container" data-filter-container>
+          <button class="gallery-filter-trigger" type="button" aria-expanded="false" aria-controls="gallery-filters" data-filter-trigger>
+            <span class="gallery-filter-trigger__lead">
+              <svg class="icon gallery-filter-trigger__icon" viewBox="0 0 24 24" aria-hidden="true"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+              <span class="gallery-filter-trigger__label">Filtro:</span>
+              <strong class="gallery-filter-trigger__active" data-filter-active-text>Todas las fotos</strong>
+            </span>
+            <svg class="icon gallery-filter-trigger__chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+
+          <div class="gallery-filters" id="gallery-filters" role="group" aria-label="Filtrar fotos por categoría" data-filter-menu>
+            <button class="gallery-filter" type="button" data-filter="todo" aria-pressed="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>Todo</button>
+            <button class="gallery-filter" type="button" data-filter="casa" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Casa principal</button>
+            <button class="gallery-filter" type="button" data-filter="cabana1" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></svg>Cabaña 1</button>
+            <button class="gallery-filter" type="button" data-filter="cabana2" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></svg>Cabaña 2</button>
+            <button class="gallery-filter" type="button" data-filter="cabana3" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></svg>Cabaña 3</button>
+            <button class="gallery-filter" type="button" data-filter="pileta-parque" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 19q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 5q2.5 2 5 0t5 0 5 0 5 0"/></svg>Pileta y parque</button>
+            <button class="gallery-filter" type="button" data-filter="juegos-ninos" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z"/><path d="M12 22v-3"/></svg>Juegos para niños</button>
+            <button class="gallery-filter" type="button" data-filter="quincho" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>Quincho cabañas</button>
+            <button class="gallery-filter" type="button" data-filter="paisajes-rios-demas" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>Paisajes y ríos</button>
+          </div>
         </div>
         <p class="visually-hidden" data-gallery-status aria-live="polite"></p>
 
@@ -1045,13 +1057,16 @@
 
   <!-- Lightbox -->
   <dialog class="lightbox" data-lightbox aria-label="Foto ampliada">
+    <div class="lightbox__header">
+      <span class="lightbox__counter" data-lightbox-counter aria-live="polite"></span>
+      <button class="lightbox__btn lightbox__close" type="button" data-lightbox-close aria-label="Cerrar"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+    </div>
     <figure class="lightbox__figure">
-      <img class="lightbox__img" src="" alt="">
+      <img class="lightbox__img" src="" alt="" decoding="async">
       <figcaption class="lightbox__caption"></figcaption>
     </figure>
     <button class="lightbox__btn lightbox__prev" type="button" data-lightbox-prev aria-label="Foto anterior"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg></button>
     <button class="lightbox__btn lightbox__next" type="button" data-lightbox-next aria-label="Foto siguiente"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
-    <button class="lightbox__btn lightbox__close" type="button" data-lightbox-close aria-label="Cerrar"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
   </dialog>
 
   <!-- Site footer (shared across pages) -->
@@ -1071,11 +1086,50 @@
     </div>
   </footer>
 
-  <!-- Floating WhatsApp CTA -->
-  <a class="whatsapp-float" href="https://wa.me/?text=Hola%2C%20quisiera%20consultar%20por%20disponibilidad%20en%20Caba%C3%B1as%20MICAR" data-whatsapp-link target="_blank" rel="noopener noreferrer" aria-label="Consultar por WhatsApp">
-    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
-    <span class="whatsapp-float__text">¿Tenes dudas? Escribinos</span>
-  </a>
+  <!-- Mobile Bottom Navigation (Visible only on mobile/tablet <= 768px) -->
+  <nav class="bottom-nav" aria-label="Navegación móvil">
+    <div class="bottom-nav__inner">
+      <a class="bottom-nav__item" href="index.html">
+        <svg class="icon bottom-nav__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span class="bottom-nav__label">Inicio</span>
+      </a>
+      <a class="bottom-nav__item" href="cabanas.html">
+        <svg class="icon bottom-nav__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></svg>
+        <span class="bottom-nav__label">Cabañas</span>
+      </a>
+      <a class="bottom-nav__item" href="servicios.html">
+        <svg class="icon bottom-nav__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 16a6 6 0 0 0-12 0"/><path d="M4 20h16"/><path d="M12 4v4"/><path d="M10 4h4"/></svg>
+        <span class="bottom-nav__label">Servicios</span>
+      </a>
+      <a class="bottom-nav__item" href="galeria.html" aria-current="page">
+        <svg class="icon bottom-nav__icon" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+        <span class="bottom-nav__label">Galería</span>
+      </a>
+      <a class="bottom-nav__item" href="ubicacion.html">
+        <svg class="icon bottom-nav__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+        <span class="bottom-nav__label">Ubicación</span>
+      </a>
+      <a class="bottom-nav__item bottom-nav__item--highlight" href="reserva.html">
+        <span class="bottom-nav__highlight-bubble">
+          <svg class="icon bottom-nav__icon" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/><path d="m9 16 2 2 4-4"/></svg>
+        </span>
+        <span class="bottom-nav__label">Reservar</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Floating WhatsApp CTA with dismissible popup -->
+  <div class="whatsapp-widget" data-whatsapp-widget>
+    <div class="whatsapp-popup" id="whatsapp-popup" role="status" aria-live="polite">
+      <span class="whatsapp-popup__text">¿Necesitás ayuda? Consultanos</span>
+      <button class="whatsapp-popup__close" type="button" aria-label="Cerrar mensaje" data-whatsapp-popup-close>
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+    </div>
+    <a class="whatsapp-fab" href="https://wa.me/?text=Hola%2C%20quisiera%20consultar%20por%20disponibilidad%20en%20Caba%C3%B1as%20MICAR" data-whatsapp-link target="_blank" rel="noopener noreferrer" aria-label="Consultar por WhatsApp">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
+    </a>
+  </div>
 
   <script src="js/config.js?v=1.2"></script>
   <script src="js/main.js?v=1.1" defer></script>

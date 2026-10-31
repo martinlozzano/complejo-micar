@@ -179,11 +179,27 @@ textarea.form-control {
 .booking-form__submit {
   width: 100%;
   margin-top: 0;
+  min-height: 48px;
   padding-inline: 1.25rem;
   font-size: 1rem;
   white-space: normal;
   text-align: center;
   line-height: 1.35;
+  cursor: pointer;
+}
+
+.booking-form__submit--whatsapp {
+  background-color: #228448;
+  border-color: #228448;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(34, 132, 72, 0.22);
+}
+
+.booking-form__submit--whatsapp:hover,
+.booking-form__submit--whatsapp:focus-visible {
+  background-color: #1a6a39;
+  border-color: #1a6a39;
+  color: #ffffff;
 }
 
 .booking-form__submit--email {
@@ -235,9 +251,61 @@ textarea.form-control {
   display: none;
 }
 
-@media (max-width: 560px) {
+@media (max-width: 600px) {
   .booking-form__fields {
     grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  .form-field {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    grid-template-rows: auto auto auto auto;
+    column-gap: 0.5rem;
+    row-gap: 0.35rem;
+    align-items: center;
+  }
+
+  .form-field > .icon {
+    grid-row: 1;
+    grid-column: 1;
+    width: 20px;
+    height: 20px;
+    margin-top: 0;
+    align-self: center;
+    color: var(--color-brown);
+  }
+
+  .form-field > div {
+    display: contents;
+  }
+
+  .form-field label {
+    grid-row: 1;
+    grid-column: 2;
+    align-self: center;
+    font-size: 0.9375rem;
+    font-weight: 600;
+  }
+
+  .form-control {
+    grid-row: 2;
+    grid-column: 1 / -1;
+    min-height: 48px;
+    font-size: 16px; /* Prevents auto-zoom in mobile Safari */
+    margin-top: 0;
+  }
+
+  .form-field__hint {
+    grid-row: 3;
+    grid-column: 1 / -1;
+    margin-top: 0.15rem;
+  }
+
+  .form-field__error {
+    grid-row: 4;
+    grid-column: 1 / -1;
+    margin-top: 0.15rem;
   }
 }
 
@@ -340,9 +408,27 @@ textarea.form-control {
   }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 600px) {
   .included__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .included .photo-card {
+    aspect-ratio: 4 / 3;
+    border-radius: 12px;
+  }
+
+  .included .photo-card__overlay {
+    padding: 0.75rem;
+  }
+
+  .included .photo-card__title {
+    font-size: 0.9375rem;
+  }
+
+  .included .photo-card__text {
+    font-size: 0.75rem;
   }
 }
 
@@ -473,7 +559,34 @@ textarea.form-control {
   line-height: 1.6;
 }
 
-.faq-item__content p {
-  margin: 0;
+.faq-item__trigger:focus-visible {
+  outline: 2px solid var(--color-olive);
+  outline-offset: -2px;
+}
+
+@media (max-width: 600px) {
+  .faq-list {
+    gap: 0.75rem;
+  }
+
+  .faq-item__trigger {
+    padding: 0.95rem 1.15rem;
+    font-size: 0.95rem;
+    min-height: 48px;
+  }
+
+  .faq-item__content {
+    padding: 0 1.15rem 1.15rem;
+    font-size: 0.875rem;
+    line-height: 1.55;
+  }
+
+  .booking-info__body {
+    padding: 1.15rem 1.15rem 1.35rem;
+  }
+
+  .booking-info__title {
+    font-size: 1.375rem;
+  }
 }
 

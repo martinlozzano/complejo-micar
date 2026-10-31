@@ -44,6 +44,12 @@
   .highlights__grid {
     grid-template-columns: 1fr;
     max-width: 560px;
+    gap: 0.85rem;
+  }
+
+  .highlights__grid .photo-card {
+    aspect-ratio: 16 / 10;
+    border-radius: var(--radius-md);
   }
 }
 
@@ -111,23 +117,32 @@
 
 @media (max-width: 700px) {
   .carousel {
-    --per-view: 2;
-    gap: 0.5rem;
+    --per-view: 1.35;
+    gap: 0.75rem;
+    grid-template-columns: 1fr;
   }
 
   .carousel__btn {
-    width: 36px;
-    height: 36px;
+    display: none;
+  }
+
+  .carousel__track {
+    padding-inline: 0.25rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .carousel__slide img {
+    border-radius: var(--radius-md);
   }
 }
 
 @media (max-width: 440px) {
   .carousel {
-    --per-view: 1;
+    --per-view: 1.2;
   }
 }
 
-/* Amenities mobile infinite carousel ------------------------------------- */
+/* Amenities: 2-column mobile grid ---------------------------------------- */
 
 .amenities-strip .feature-strip--clone {
   display: none;
@@ -135,68 +150,65 @@
 
 @media (max-width: 700px) {
   .amenities-strip {
-    overflow: hidden;
-    padding-block: 1.25rem;
-    position: relative;
-    mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    overflow: visible;
+    padding-block: clamp(1.75rem, 1.25rem + 1.5vw, 2.5rem);
+    mask-image: none;
+    -webkit-mask-image: none;
   }
 
   .amenities-strip__container {
-    width: 100%;
-    overflow: hidden;
+    width: min(100% - 2 * var(--gutter), 540px);
+    margin-inline: auto;
+    overflow: visible;
   }
 
   .amenities-strip__track {
-    display: flex;
-    width: max-content;
-    animation: amenities-infinite-scroll 20s linear infinite;
-    will-change: transform;
-  }
-
-  .amenities-strip__track:hover,
-  .amenities-strip__track.is-paused {
-    animation-play-state: paused;
-  }
-
-  .amenities-strip .feature-strip {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 2rem;
-    padding-inline: 1rem;
-    padding-block: 0;
-    margin: 0;
-    width: max-content;
-    max-width: none;
-    grid-template-columns: none;
+    display: block;
+    width: 100%;
+    animation: none !important;
   }
 
   .amenities-strip .feature-strip--clone {
-    display: flex;
+    display: none !important;
+  }
+
+  .amenities-strip .feature-strip {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    padding: 0;
+    margin: 0;
+    width: 100%;
   }
 
   .amenities-strip .feature-strip__item {
-    flex: 0 0 auto;
-    width: 130px;
-    padding-inline: 0.5rem;
-    border-left: 0 !important;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.85rem 1rem;
+    width: 100%;
+    border-radius: var(--radius-md);
+    background-color: #faf5ec;
+    border: 1px solid rgba(217, 203, 181, 0.7);
+    box-shadow: 0 3px 10px rgba(59, 31, 20, 0.04);
+    text-align: left;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    border-left: 1px solid rgba(217, 203, 181, 0.7) !important;
   }
 
-  @keyframes amenities-infinite-scroll {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-50%);
-    }
+  .amenities-strip .feature-strip__item .icon {
+    width: 26px;
+    height: 26px;
+    flex-shrink: 0;
+    color: var(--color-brown);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .amenities-strip__track {
     animation: none;
-    overflow-x: auto;
   }
 }
 

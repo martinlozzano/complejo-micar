@@ -15,8 +15,6 @@
 
     let current = Math.max(0, slides.findIndex((slide) => slide.classList.contains("is-active")));
     let timer = null;
-    let isHovered = false;
-    let hasFocus = false;
 
     function syncAria() {
       slides.forEach((slide, i) => slide.setAttribute("aria-hidden", String(i !== current)));
@@ -52,7 +50,7 @@
 
     function start() {
       stop();
-      if (reducedMotion.matches || isHovered || hasFocus || document.hidden) return;
+      if (reducedMotion.matches || document.hidden) return;
       timer = window.setInterval(() => show(current + 1, "forward"), AUTOPLAY_MS);
     }
 
@@ -66,23 +64,6 @@
     prev.addEventListener("click", () => goTo(current - 1, "backward"));
     next.addEventListener("click", () => goTo(current + 1, "forward"));
 
-    slider.addEventListener("mouseenter", () => {
-      isHovered = true;
-      stop();
-    });
-    slider.addEventListener("mouseleave", () => {
-      isHovered = false;
-      start();
-    });
-    slider.addEventListener("focusin", () => {
-      hasFocus = true;
-      stop();
-    });
-    slider.addEventListener("focusout", (event) => {
-      if (slider.contains(event.relatedTarget)) return;
-      hasFocus = false;
-      start();
-    });
     document.addEventListener("visibilitychange", start);
     reducedMotion.addEventListener("change", start);
 
