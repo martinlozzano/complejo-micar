@@ -16,6 +16,15 @@
     let current = Math.max(0, slides.findIndex((slide) => slide.classList.contains("is-active")));
     let timer = null;
 
+    function syncHeight(targetSlide) {
+      const active = targetSlide || slides[current];
+      if (!active) return;
+      const height = active.offsetHeight;
+      if (height > 0) {
+        track.style.height = `${height}px`;
+      }
+    }
+
     function syncAria() {
       slides.forEach((slide, i) => slide.setAttribute("aria-hidden", String(i !== current)));
     }
@@ -41,6 +50,7 @@
 
       current = nextIndex;
       syncAria();
+      syncHeight(incoming);
     }
 
     function stop() {
@@ -66,11 +76,18 @@
 
     document.addEventListener("visibilitychange", start);
     reducedMotion.addEventListener("change", start);
+    window.addEventListener("resize", () => {
+      window.requestAnimationFrame(() => syncHeight());
+    });
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(() => syncHeight());
+    }
 
     // Automatic changes stay silent so screen readers are not interrupted every few seconds.
     track.setAttribute("aria-live", "off");
     track.dataset.direction = "forward";
     syncAria();
+    syncHeight();
     start();
   });
 })();

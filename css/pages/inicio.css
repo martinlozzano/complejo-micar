@@ -272,8 +272,11 @@
   --from: 1;
   --to: -1;
   display: grid;
+  align-items: start;
   overflow: hidden;
   padding-inline: 0.5rem;
+  transition: height 400ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  will-change: height;
 }
 
 .testimonial-slider__track[data-direction="backward"] {
@@ -283,6 +286,8 @@
 
 .testimonial {
   grid-area: 1 / 1;
+  align-self: start;
+  width: 100%;
   opacity: 0;
   visibility: hidden;
   transform: translateX(calc(var(--from) * var(--shift)));
@@ -361,7 +366,7 @@
 .reviews-action {
   display: flex;
   justify-content: center;
-  margin-top: clamp(2rem, 1.5rem + 1.5vw, 2.75rem);
+  margin-top: clamp(1.75rem, 1.25rem + 1.2vw, 2.5rem);
 }
 
 @media (max-width: 650px) {
@@ -385,6 +390,10 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .testimonial-slider__track {
+    transition: none;
+  }
+
   .testimonial.is-active,
   .testimonial.is-leaving {
     transition: none;
