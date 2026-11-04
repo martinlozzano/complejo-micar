@@ -1,38 +1,38 @@
 [
   {
     "id": 1,
-    "author": "Mariana Gómez",
+    "author": "Karen Cappelletti",
     "avatar": "",
-    "initial": "M",
+    "initial": "K",
     "color": "#8b5a2b",
     "rating": 5,
-    "date": "Hace 2 meses",
+    "date": "Hace 6 años",
     "unit": "Casa Principal",
-    "text": "Pasamos unos días hermosos en familia. La casa principal es súper amplia, cómoda y con todo lo necesario para grupos grandes. La pileta con el jacuzzi y la vista a las sierras son increíbles. ¡Súper recomendable!",
+    "text": "Alquilamos la casa grande. Realmente cumplió con todas nuestras expectativas. Lo que se ve en las fotos es tal cual de lindo. La casa cuenta con todas las comodidades que una buena estadía. La pileta es hermosa y cuenta con sillas y reposeras. La atención de Sergio y la de la sra. que hace limpieza, es impecable. Para recomendar 100% y volver!",
     "url": "https://maps.google.com/?cid=13763134922117110731"
   },
   {
     "id": 2,
-    "author": "Carlos Benítez",
+    "author": "German Dambolena",
     "avatar": "",
-    "initial": "C",
+    "initial": "G",
     "color": "#2c6e49",
     "rating": 5,
-    "date": "Hace 3 meses",
+    "date": "Hace 11 meses",
     "unit": "Cabaña 1",
-    "text": "Excelente lugar para desconectar del ruido de la ciudad. El parque es enorme y muy bien cuidado, los asadores individuales son muy cómodos y la atención de los dueños fue impecable de principio a fin.",
+    "text": "Muy buen lugar, excelente atención, servicio de primera, tiene pileta olímpica...todo muy lindo.",
     "url": "https://maps.google.com/?cid=13763134922117110731"
   },
   {
     "id": 3,
-    "author": "Lucía Fernández",
+    "author": "Natalia Bollini",
     "avatar": "",
-    "initial": "L",
+    "initial": "N",
     "color": "#c05a3e",
-    "rating": 5,
-    "date": "Hace 4 meses",
+    "rating": 4,
+    "date": "Hace 8 meses",
     "unit": "Cabaña 2",
-    "text": "Fuimos en pareja y quedamos encantados. La cabaña es muy acogedora, todo impecablemente limpio y con mucha tranquilidad. Estar en la pileta viendo el atardecer fue lo mejor de las vacaciones.",
+    "text": "Lindo complejo, tranquilo, a unas cuadras del río de mina, de playa amplia y río bajito, ideal para niños pequeños. Si tenés auto todo te queda cerca. Tiene algunos detalles para mejorar, pero la casa es linda y pasamos unos días súper cómodos y felices. La ducha espectacular y la atención del casero también",
     "url": "https://maps.google.com/?cid=13763134922117110731"
   },
   {
@@ -58,5 +58,29 @@
     "unit": "Casa Principal",
     "text": "Muy lindo complejo. Es la 2da vez que voy. Limpio, la pileta hermosa. Tiene asador la cabaña con mesita y reposeras para comer en el balcon y aparte un parque hermoso. Se ven todas las sierras, de noche es muy lindo. Tenes a 2 cuadras el río hermoso para relajarte. Hay un señor que te recibe súper amoroso. Está pendiente de todo. Hablé con Clarisa también y te da toda la información que necesitas. Ideal para relajarte",
     "url": "https://maps.app.goo.gl/zqzrAyJP5pAZ9F3f8"
+  },
+  {
+    "id": 6,
+    "author": "Melisa Goñi",
+    "avatar": "",
+    "initial": "M",
+    "color": "#4a5568",
+    "rating": 5,
+    "date": "Hace 3 años",
+    "unit": "Cabaña 1",
+    "text": "Hermoso lugar para hospedarse. Cómodo y confortable. Cualquier problema que tuvimos Sergio nos ayudó y nos dio soluciones enseguida. La ubicación está buenísima si vas con auto. Muy fácil de llegar y punto medio para ir a varios balnearios de la zona.",
+    "url": "https://maps.app.goo.gl/uteSeSSjkPADEPhS9"
+  },
+  {
+    "id": 7,
+    "author": "Jose Vega",
+    "avatar": "",
+    "initial": "J",
+    "color": "#4a5568",
+    "rating": 5,
+    "date": "Hace 5 años",
+    "unit": "Cabaña 2",
+    "text": "Muy lindo lugar, confortable y con un espacio bárbaro para descansar y disfrutar.",
+    "url": "https://maps.app.goo.gl/uteSeSSjkPADEPhS9"
   }
 ]
