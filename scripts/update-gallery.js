@@ -82,10 +82,12 @@ const TITLE_DICTIONARY = {
   'dormitorio-matrimonial': 'Dormitorio matrimonial',
   'dormitorio-cuadruple': 'Dormitorio cuádruple',
   'dormitorio-doble-triple': 'Dormitorio (doble / triple)',
-  'dormitorio-marinera-planta-alta': 'Dormitorio marinera (P.A.)',
-  'dormitorio-triple-planta-alta': 'Dormitorio triple (P.A.)',
+  'dormitorio-marinera-planta-alta': 'Dormitorio con cama marinera (Planta alta)',
+  'dormitorio-triple-planta-alta': 'Dormitorio triple (Planta alta)',
   'dormitorio-planta-baja': 'Dormitorio (Planta baja)',
-  'habitacion-matrimonial-planta-alta': 'Dormitorio matrimonial (P.A.)',
+  'dormitorio-con-cama-marinera-planta-alta': 'Dormitorio con cama marinera (Planta alta)',
+  'dormitorio-con-cama-marinera-planta-baja': 'Dormitorio con cama marinera (Planta baja)',
+  'habitacion-matrimonial-planta-alta': 'Dormitorio matrimonial (Planta alta)',
   'parrilla': 'Parrilla / Asador',
   'parrilla-terraza': 'Parrilla en terraza',
   'lavadero-terraza': 'Lavadero en terraza',
@@ -194,7 +196,7 @@ function updateGallery() {
   let galeriaContent = fs.readFileSync(GALERIA_HTML, 'utf8').replace(/\r\n/g, '\n');
 
   // Update filters in galeria.html to include all current categories
-  const newFiltersHtml = `        <div class="gallery-filters" role="group" aria-label="Filtrar fotos por categoría">
+  const newFiltersHtml = `        <div class="gallery-filters" id="gallery-filters" role="group" aria-label="Filtrar fotos por categoría" data-filter-menu>
           <button class="gallery-filter" type="button" data-filter="todo" aria-pressed="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>Todo</button>
           <button class="gallery-filter" type="button" data-filter="casa" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Casa principal</button>
           <button class="gallery-filter" type="button" data-filter="cabana1" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></svg>Cabaña 1</button>
