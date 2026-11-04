@@ -492,7 +492,7 @@ textarea.form-control {
 /* FAQ Section ------------------------------------------------------------ */
 
 .faq-section {
-  padding-block: clamp(3rem, 2rem + 3vw, 5rem);
+  padding-block: clamp(3rem, 2rem + 3vw, 1rem);
   background-color: #faf5ec;
 }
 
@@ -557,6 +557,49 @@ textarea.form-control {
   color: var(--color-text-muted);
   font-size: 0.95rem;
   line-height: 1.6;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .faq-item[open] .faq-item__content {
+    animation: faq-answer-reveal 280ms ease-out;
+  }
+
+  @supports (interpolate-size: allow-keywords) and selector(::details-content) and (transition-behavior: allow-discrete) {
+    .faq-item {
+      interpolate-size: allow-keywords;
+    }
+
+    .faq-item::details-content {
+      height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition:
+        height 300ms ease,
+        opacity 200ms ease,
+        content-visibility 300ms allow-discrete;
+    }
+
+    .faq-item[open]::details-content {
+      height: auto;
+      opacity: 1;
+    }
+
+    .faq-item[open] .faq-item__content {
+      animation: none;
+    }
+  }
+}
+
+@keyframes faq-answer-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-0.4rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .faq-item__trigger:focus-visible {
