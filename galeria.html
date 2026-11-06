@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Fotos del Complejo | Complejo MICAR en Mina Clavero</title>
   <meta name="description" content="Galería de fotos de Complejo MICAR en Mina Clavero, Córdoba: pileta con jacuzzi, casa principal, cabañas individuales, quincho y amplio parque natural.">
-  <link rel="canonical" href="galeria.html">
+  <link rel="canonical" href="https://cabanasmicar.com.ar/galeria.html">
 
   <!-- Open Graph / Facebook / WhatsApp -->
   <meta property="og:type" content="website">
@@ -23,12 +23,12 @@
 
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap">
+  <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/playfair-display-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/fonts.css?v=1">
 
   <link rel="stylesheet" href="css/base.css?v=1.1">
-  <link rel="stylesheet" href="css/components.css?v=1.3">
+  <link rel="stylesheet" href="css/components.css?v=1.4">
   <link rel="stylesheet" href="css/pages/galeria.css?v=1.1">
 </head>
 <body>
@@ -65,7 +65,7 @@
   <main>
     <!-- Hero -->
     <section class="hero hero--short" aria-labelledby="hero-title">
-      <img class="hero__media" src="assets/img/photos/casa/casa-exterior-4.webp" srcset="assets/img/photos/casa/casa-exterior-4.webp 800w, assets/img/photos/casa/casa-exterior-4.webp 1600w" sizes="100vw" width="1600" height="1200" alt="" fetchpriority="high" decoding="async">
+      <picture data-responsive-picture><source type="image/avif" srcset="assets/img/responsive/casa/casa-exterior-4-320.avif 320w, assets/img/responsive/casa/casa-exterior-4-480.avif 480w, assets/img/responsive/casa/casa-exterior-4-640.avif 640w, assets/img/responsive/casa/casa-exterior-4-800.avif 800w, assets/img/responsive/casa/casa-exterior-4-960.avif 960w, assets/img/responsive/casa/casa-exterior-4-1086.avif 1086w" sizes="100vw"><img class="hero__media" src="assets/img/responsive/casa/casa-exterior-4-640.webp" data-image-source="assets/img/photos/casa/casa-exterior-4.webp" srcset="assets/img/responsive/casa/casa-exterior-4-320.webp 320w, assets/img/responsive/casa/casa-exterior-4-480.webp 480w, assets/img/responsive/casa/casa-exterior-4-640.webp 640w, assets/img/responsive/casa/casa-exterior-4-800.webp 800w, assets/img/responsive/casa/casa-exterior-4-960.webp 960w, assets/img/responsive/casa/casa-exterior-4-1086.webp 1086w" sizes="100vw" width="1086" height="1448" alt="" fetchpriority="high" decoding="async"></picture>
       <div class="container hero__content">
         <div class="hero__text">
           <span class="eyebrow">Nuestras imágenes</span>
@@ -107,7 +107,7 @@
 <!-- GALLERY_GRID_START -->
         <li class="gallery-item" data-category="pileta-parque pileta" data-bento="large">
           <button class="gallery-card" type="button" data-caption="Pileta y parque" data-full="assets/img/photos/pileta-parque/pileta-parque-1.webp">
-            <img src="assets/img/photos/pileta-parque/pileta-parque-1.webp" alt="Pileta y parque en Pileta y parque - Cabañas MICAR" loading="lazy" decoding="async">
+            <img src="assets/img/responsive/pileta-parque/pileta-parque-1-640.webp" data-image-source="assets/img/photos/pileta-parque/pileta-parque-1.webp" srcset="assets/img/responsive/pileta-parque/pileta-parque-1-320.webp 320w, assets/img/responsive/pileta-parque/pileta-parque-1-480.webp 480w, assets/img/responsive/pileta-parque/pileta-parque-1-640.webp 640w, assets/img/responsive/pileta-parque/pileta-parque-1-800.webp 800w, assets/img/responsive/pileta-parque/pileta-parque-1-960.webp 960w, assets/img/responsive/pileta-parque/pileta-parque-1-1086.webp 1086w" sizes="(max-width: 1024px) min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px), calc((min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px) - 16px) / 2)" width="1086" height="1448" alt="Pileta y parque en Pileta y parque - Cabañas MICAR" loading="lazy" decoding="async">
             <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 19q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 5q2.5 2 5 0t5 0 5 0 5 0"/></svg>Pileta y parque</span>
           </button>
         </li>
@@ -161,13 +161,13 @@
         </li>
         <li class="gallery-item" data-category="casa">
           <button class="gallery-card" type="button" data-caption="Casa exterior" data-full="assets/img/photos/casa/casa-exterior-1.webp">
-            <img src="assets/img/photos/casa/casa-exterior-1.webp" alt="Casa exterior en Casa principal - Cabañas MICAR" loading="lazy" decoding="async">
+            <img src="assets/img/responsive/casa/casa-exterior-1-640.webp" data-image-source="assets/img/photos/casa/casa-exterior-1.webp" srcset="assets/img/responsive/casa/casa-exterior-1-320.webp 320w, assets/img/responsive/casa/casa-exterior-1-480.webp 480w, assets/img/responsive/casa/casa-exterior-1-640.webp 640w, assets/img/responsive/casa/casa-exterior-1-800.webp 800w, assets/img/responsive/casa/casa-exterior-1-960.webp 960w, assets/img/responsive/casa/casa-exterior-1-1086.webp 1086w" sizes="(max-width: 1024px) min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px), calc((min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px) - 16px) / 2)" width="1086" height="1448" alt="Casa exterior en Casa principal - Cabañas MICAR" loading="lazy" decoding="async">
             <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Casa exterior</span>
           </button>
         </li>
         <li class="gallery-item" data-category="casa">
           <button class="gallery-card" type="button" data-caption="Casa exterior" data-full="assets/img/photos/casa/casa-exterior-2.webp">
-            <img src="assets/img/photos/casa/casa-exterior-2.webp" alt="Casa exterior en Casa principal - Cabañas MICAR" loading="lazy" decoding="async">
+            <img src="assets/img/responsive/casa/casa-exterior-2-640.webp" data-image-source="assets/img/photos/casa/casa-exterior-2.webp" srcset="assets/img/responsive/casa/casa-exterior-2-320.webp 320w, assets/img/responsive/casa/casa-exterior-2-480.webp 480w, assets/img/responsive/casa/casa-exterior-2-640.webp 640w, assets/img/responsive/casa/casa-exterior-2-800.webp 800w, assets/img/responsive/casa/casa-exterior-2-960.webp 960w, assets/img/responsive/casa/casa-exterior-2-1280.webp 1280w, assets/img/responsive/casa/casa-exterior-2-1448.webp 1448w" sizes="(max-width: 1024px) min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px), calc((min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px) - 16px) / 2)" width="1448" height="1086" alt="Casa exterior en Casa principal - Cabañas MICAR" loading="lazy" decoding="async">
             <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Casa exterior</span>
           </button>
         </li>
@@ -179,7 +179,7 @@
         </li>
         <li class="gallery-item" data-category="casa">
           <button class="gallery-card" type="button" data-caption="Casa exterior" data-full="assets/img/photos/casa/casa-exterior-4.webp">
-            <img src="assets/img/photos/casa/casa-exterior-4.webp" alt="Casa exterior en Casa principal - Cabañas MICAR" loading="lazy" decoding="async">
+            <img src="assets/img/responsive/casa/casa-exterior-4-640.webp" data-image-source="assets/img/photos/casa/casa-exterior-4.webp" srcset="assets/img/responsive/casa/casa-exterior-4-320.webp 320w, assets/img/responsive/casa/casa-exterior-4-480.webp 480w, assets/img/responsive/casa/casa-exterior-4-640.webp 640w, assets/img/responsive/casa/casa-exterior-4-800.webp 800w, assets/img/responsive/casa/casa-exterior-4-960.webp 960w, assets/img/responsive/casa/casa-exterior-4-1086.webp 1086w" sizes="(max-width: 1024px) min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px), calc((min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px) - 16px) / 2)" width="1086" height="1448" alt="Casa exterior en Casa principal - Cabañas MICAR" loading="lazy" decoding="async">
             <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Casa exterior</span>
           </button>
         </li>
@@ -203,7 +203,7 @@
         </li>
         <li class="gallery-item" data-category="casa">
           <button class="gallery-card" type="button" data-caption="Cocina" data-full="assets/img/photos/casa/cocina-20.webp">
-            <img src="assets/img/photos/casa/cocina-20.webp" alt="Cocina en Casa principal - Cabañas MICAR" loading="lazy" decoding="async">
+            <img src="assets/img/responsive/casa/cocina-20-640.webp" data-image-source="assets/img/photos/casa/cocina-20.webp" srcset="assets/img/responsive/casa/cocina-20-320.webp 320w, assets/img/responsive/casa/cocina-20-480.webp 480w, assets/img/responsive/casa/cocina-20-640.webp 640w, assets/img/responsive/casa/cocina-20-800.webp 800w, assets/img/responsive/casa/cocina-20-960.webp 960w, assets/img/responsive/casa/cocina-20-1280.webp 1280w, assets/img/responsive/casa/cocina-20-1448.webp 1448w" sizes="(max-width: 1024px) min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px), calc((min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px) - 16px) / 2)" width="1448" height="1086" alt="Cocina en Casa principal - Cabañas MICAR" loading="lazy" decoding="async">
             <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Cocina</span>
           </button>
         </li>
@@ -215,7 +215,7 @@
         </li>
         <li class="gallery-item" data-category="casa">
           <button class="gallery-card" type="button" data-caption="Dormitorio con cama marinera (Planta alta)" data-full="assets/img/photos/casa/dormitorio-con-cama-marinera-planta-alta-34.webp">
-            <img src="assets/img/photos/casa/dormitorio-con-cama-marinera-planta-alta-34.webp" alt="Dormitorio con cama marinera (Planta alta) en Casa principal - Cabañas MICAR" loading="lazy" decoding="async">
+            <img src="assets/img/responsive/casa/dormitorio-con-cama-marinera-planta-alta-34-640.webp" data-image-source="assets/img/photos/casa/dormitorio-con-cama-marinera-planta-alta-34.webp" srcset="assets/img/responsive/casa/dormitorio-con-cama-marinera-planta-alta-34-320.webp 320w, assets/img/responsive/casa/dormitorio-con-cama-marinera-planta-alta-34-480.webp 480w, assets/img/responsive/casa/dormitorio-con-cama-marinera-planta-alta-34-640.webp 640w, assets/img/responsive/casa/dormitorio-con-cama-marinera-planta-alta-34-800.webp 800w, assets/img/responsive/casa/dormitorio-con-cama-marinera-planta-alta-34-960.webp 960w, assets/img/responsive/casa/dormitorio-con-cama-marinera-planta-alta-34-1086.webp 1086w" sizes="(max-width: 1024px) min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px), calc((min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px) - 16px) / 2)" width="1086" height="1448" alt="Dormitorio con cama marinera (Planta alta) en Casa principal - Cabañas MICAR" loading="lazy" decoding="async">
             <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Dormitorio con cama marinera (Planta alta)</span>
           </button>
         </li>
@@ -293,7 +293,7 @@
         </li>
         <li class="gallery-item" data-category="casa">
           <button class="gallery-card" type="button" data-caption="Dormitorio matrimonial (Planta alta)" data-full="assets/img/photos/casa/habitacion-matrimonial-planta-alta-29.webp">
-            <img src="assets/img/photos/casa/habitacion-matrimonial-planta-alta-29.webp" alt="Dormitorio matrimonial (Planta alta) en Casa principal - Cabañas MICAR" loading="lazy" decoding="async">
+            <img src="assets/img/responsive/casa/habitacion-matrimonial-planta-alta-29-640.webp" data-image-source="assets/img/photos/casa/habitacion-matrimonial-planta-alta-29.webp" srcset="assets/img/responsive/casa/habitacion-matrimonial-planta-alta-29-320.webp 320w, assets/img/responsive/casa/habitacion-matrimonial-planta-alta-29-480.webp 480w, assets/img/responsive/casa/habitacion-matrimonial-planta-alta-29-640.webp 640w, assets/img/responsive/casa/habitacion-matrimonial-planta-alta-29-800.webp 800w, assets/img/responsive/casa/habitacion-matrimonial-planta-alta-29-960.webp 960w, assets/img/responsive/casa/habitacion-matrimonial-planta-alta-29-1086.webp 1086w" sizes="(max-width: 1024px) min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px), calc((min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px) - 16px) / 2)" width="1086" height="1448" alt="Dormitorio matrimonial (Planta alta) en Casa principal - Cabañas MICAR" loading="lazy" decoding="async">
             <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Dormitorio matrimonial (Planta alta)</span>
           </button>
         </li>
@@ -323,7 +323,7 @@
         </li>
         <li class="gallery-item" data-category="casa">
           <button class="gallery-card" type="button" data-caption="Living" data-full="assets/img/photos/casa/living-22.webp">
-            <img src="assets/img/photos/casa/living-22.webp" alt="Living en Casa principal - Cabañas MICAR" loading="lazy" decoding="async">
+            <img src="assets/img/responsive/casa/living-22-640.webp" data-image-source="assets/img/photos/casa/living-22.webp" srcset="assets/img/responsive/casa/living-22-320.webp 320w, assets/img/responsive/casa/living-22-480.webp 480w, assets/img/responsive/casa/living-22-640.webp 640w, assets/img/responsive/casa/living-22-800.webp 800w, assets/img/responsive/casa/living-22-960.webp 960w, assets/img/responsive/casa/living-22-1280.webp 1280w, assets/img/responsive/casa/living-22-1448.webp 1448w" sizes="(max-width: 1024px) min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px), calc((min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px) - 16px) / 2)" width="1448" height="1086" alt="Living en Casa principal - Cabañas MICAR" loading="lazy" decoding="async">
             <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Living</span>
           </button>
         </li>
@@ -353,7 +353,7 @@
         </li>
         <li class="gallery-item" data-category="casa">
           <button class="gallery-card" type="button" data-caption="Parque" data-full="assets/img/photos/casa/parte-del-parque-14.webp">
-            <img src="assets/img/photos/casa/parte-del-parque-14.webp" alt="Parque en Casa principal - Cabañas MICAR" loading="lazy" decoding="async">
+            <img src="assets/img/responsive/casa/parte-del-parque-14-640.webp" data-image-source="assets/img/photos/casa/parte-del-parque-14.webp" srcset="assets/img/responsive/casa/parte-del-parque-14-320.webp 320w, assets/img/responsive/casa/parte-del-parque-14-480.webp 480w, assets/img/responsive/casa/parte-del-parque-14-640.webp 640w, assets/img/responsive/casa/parte-del-parque-14-800.webp 800w, assets/img/responsive/casa/parte-del-parque-14-960.webp 960w, assets/img/responsive/casa/parte-del-parque-14-1280.webp 1280w, assets/img/responsive/casa/parte-del-parque-14-1448.webp 1448w" sizes="(max-width: 1024px) min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px), calc((min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px) - 16px) / 2)" width="1448" height="1086" alt="Parque en Casa principal - Cabañas MICAR" loading="lazy" decoding="async">
             <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Parque</span>
           </button>
         </li>
@@ -431,7 +431,7 @@
         </li>
         <li class="gallery-item" data-category="cabana1">
           <button class="gallery-card" type="button" data-caption="Entrada" data-full="assets/img/photos/cabana1/entrada-1.webp">
-            <img src="assets/img/photos/cabana1/entrada-1.webp" alt="Entrada en Cabaña 1 - Cabañas MICAR" loading="lazy" decoding="async">
+            <img src="assets/img/responsive/cabana1/entrada-1-640.webp" data-image-source="assets/img/photos/cabana1/entrada-1.webp" srcset="assets/img/responsive/cabana1/entrada-1-320.webp 320w, assets/img/responsive/cabana1/entrada-1-480.webp 480w, assets/img/responsive/cabana1/entrada-1-640.webp 640w, assets/img/responsive/cabana1/entrada-1-800.webp 800w, assets/img/responsive/cabana1/entrada-1-960.webp 960w, assets/img/responsive/cabana1/entrada-1-1102.webp 1102w" sizes="(max-width: 1024px) min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px), calc((min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px) - 16px) / 2)" width="1102" height="1427" alt="Entrada en Cabaña 1 - Cabañas MICAR" loading="lazy" decoding="async">
             <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></svg>Entrada</span>
           </button>
         </li>
@@ -443,7 +443,7 @@
         </li>
         <li class="gallery-item" data-category="cabana1">
           <button class="gallery-card" type="button" data-caption="Dormitorio 1" data-full="assets/img/photos/cabana1/habitacion-1-12.webp">
-            <img src="assets/img/photos/cabana1/habitacion-1-12.webp" alt="Dormitorio 1 en Cabaña 1 - Cabañas MICAR" loading="lazy" decoding="async">
+            <img src="assets/img/responsive/cabana1/habitacion-1-12-640.webp" data-image-source="assets/img/photos/cabana1/habitacion-1-12.webp" srcset="assets/img/responsive/cabana1/habitacion-1-12-320.webp 320w, assets/img/responsive/cabana1/habitacion-1-12-480.webp 480w, assets/img/responsive/cabana1/habitacion-1-12-640.webp 640w, assets/img/responsive/cabana1/habitacion-1-12-800.webp 800w, assets/img/responsive/cabana1/habitacion-1-12-960.webp 960w, assets/img/responsive/cabana1/habitacion-1-12-1280.webp 1280w, assets/img/responsive/cabana1/habitacion-1-12-1440.webp 1440w" sizes="(max-width: 1024px) min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px), calc((min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px) - 16px) / 2)" width="1440" height="1920" alt="Dormitorio 1 en Cabaña 1 - Cabañas MICAR" loading="lazy" decoding="async">
             <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></svg>Dormitorio 1</span>
           </button>
         </li>
@@ -581,7 +581,7 @@
         </li>
         <li class="gallery-item" data-category="cabana2">
           <button class="gallery-card" type="button" data-caption="Lateral del complejo" data-full="assets/img/photos/cabana2/lateral-cabanas-1.webp">
-            <img src="assets/img/photos/cabana2/lateral-cabanas-1.webp" alt="Lateral del complejo en Cabaña 2 - Cabañas MICAR" loading="lazy" decoding="async">
+            <img src="assets/img/responsive/cabana2/lateral-cabanas-1-640.webp" data-image-source="assets/img/photos/cabana2/lateral-cabanas-1.webp" srcset="assets/img/responsive/cabana2/lateral-cabanas-1-320.webp 320w, assets/img/responsive/cabana2/lateral-cabanas-1-480.webp 480w, assets/img/responsive/cabana2/lateral-cabanas-1-640.webp 640w, assets/img/responsive/cabana2/lateral-cabanas-1-800.webp 800w, assets/img/responsive/cabana2/lateral-cabanas-1-960.webp 960w, assets/img/responsive/cabana2/lateral-cabanas-1-1280.webp 1280w, assets/img/responsive/cabana2/lateral-cabanas-1-1600.webp 1600w, assets/img/responsive/cabana2/lateral-cabanas-1-1677.webp 1677w" sizes="(max-width: 1024px) min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px), calc((min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px) - 16px) / 2)" width="1677" height="938" alt="Lateral del complejo en Cabaña 2 - Cabañas MICAR" loading="lazy" decoding="async">
             <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></svg>Lateral del complejo</span>
           </button>
         </li>
@@ -665,7 +665,7 @@
         </li>
         <li class="gallery-item" data-category="cabana3">
           <button class="gallery-card" type="button" data-caption="Dormitorio cuádruple" data-full="assets/img/photos/cabana3/dormitorio-cuadruple-8.webp">
-            <img src="assets/img/photos/cabana3/dormitorio-cuadruple-8.webp" alt="Dormitorio cuádruple en Cabaña 3 - Cabañas MICAR" loading="lazy" decoding="async">
+            <img src="assets/img/responsive/cabana3/dormitorio-cuadruple-8-640.webp" data-image-source="assets/img/photos/cabana3/dormitorio-cuadruple-8.webp" srcset="assets/img/responsive/cabana3/dormitorio-cuadruple-8-320.webp 320w, assets/img/responsive/cabana3/dormitorio-cuadruple-8-480.webp 480w, assets/img/responsive/cabana3/dormitorio-cuadruple-8-640.webp 640w, assets/img/responsive/cabana3/dormitorio-cuadruple-8-800.webp 800w, assets/img/responsive/cabana3/dormitorio-cuadruple-8-960.webp 960w, assets/img/responsive/cabana3/dormitorio-cuadruple-8-1117.webp 1117w" sizes="(max-width: 1024px) min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px), calc((min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px) - 16px) / 2)" width="1117" height="1408" alt="Dormitorio cuádruple en Cabaña 3 - Cabañas MICAR" loading="lazy" decoding="async">
             <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></svg>Dormitorio cuádruple</span>
           </button>
         </li>
@@ -737,7 +737,7 @@
         </li>
         <li class="gallery-item" data-category="pileta-parque pileta">
           <button class="gallery-card" type="button" data-caption="Pileta y parque" data-full="assets/img/photos/pileta-parque/pileta-parque-2.webp">
-            <img src="assets/img/photos/pileta-parque/pileta-parque-2.webp" alt="Pileta y parque en Pileta y parque - Cabañas MICAR" loading="lazy" decoding="async">
+            <img src="assets/img/responsive/pileta-parque/pileta-parque-2-640.webp" data-image-source="assets/img/photos/pileta-parque/pileta-parque-2.webp" srcset="assets/img/responsive/pileta-parque/pileta-parque-2-320.webp 320w, assets/img/responsive/pileta-parque/pileta-parque-2-480.webp 480w, assets/img/responsive/pileta-parque/pileta-parque-2-640.webp 640w, assets/img/responsive/pileta-parque/pileta-parque-2-800.webp 800w, assets/img/responsive/pileta-parque/pileta-parque-2-960.webp 960w, assets/img/responsive/pileta-parque/pileta-parque-2-1086.webp 1086w" sizes="(max-width: 1024px) min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px), calc((min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px) - 16px) / 2)" width="1086" height="1448" alt="Pileta y parque en Pileta y parque - Cabañas MICAR" loading="lazy" decoding="async">
             <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 19q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 5q2.5 2 5 0t5 0 5 0 5 0"/></svg>Pileta y parque</span>
           </button>
         </li>
@@ -755,7 +755,7 @@
         </li>
         <li class="gallery-item" data-category="pileta-parque pileta">
           <button class="gallery-card" type="button" data-caption="Pileta y parque" data-full="assets/img/photos/pileta-parque/pileta-parque-5.webp">
-            <img src="assets/img/photos/pileta-parque/pileta-parque-5.webp" alt="Pileta y parque en Pileta y parque - Cabañas MICAR" loading="lazy" decoding="async">
+            <img src="assets/img/responsive/pileta-parque/pileta-parque-5-640.webp" data-image-source="assets/img/photos/pileta-parque/pileta-parque-5.webp" srcset="assets/img/responsive/pileta-parque/pileta-parque-5-320.webp 320w, assets/img/responsive/pileta-parque/pileta-parque-5-480.webp 480w, assets/img/responsive/pileta-parque/pileta-parque-5-640.webp 640w, assets/img/responsive/pileta-parque/pileta-parque-5-800.webp 800w, assets/img/responsive/pileta-parque/pileta-parque-5-960.webp 960w, assets/img/responsive/pileta-parque/pileta-parque-5-1254.webp 1254w" sizes="(max-width: 1024px) min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px), calc((min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px) - 16px) / 2)" width="1254" height="1254" alt="Pileta y parque en Pileta y parque - Cabañas MICAR" loading="lazy" decoding="async">
             <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 19q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 5q2.5 2 5 0t5 0 5 0 5 0"/></svg>Pileta y parque</span>
           </button>
         </li>
@@ -821,7 +821,7 @@
         </li>
         <li class="gallery-item" data-category="pileta-parque pileta">
           <button class="gallery-card" type="button" data-caption="Pileta y parque" data-full="assets/img/photos/pileta-parque/pileta-parque-16.webp">
-            <img src="assets/img/photos/pileta-parque/pileta-parque-16.webp" alt="Pileta y parque en Pileta y parque - Cabañas MICAR" loading="lazy" decoding="async">
+            <img src="assets/img/responsive/pileta-parque/pileta-parque-16-640.webp" data-image-source="assets/img/photos/pileta-parque/pileta-parque-16.webp" srcset="assets/img/responsive/pileta-parque/pileta-parque-16-320.webp 320w, assets/img/responsive/pileta-parque/pileta-parque-16-480.webp 480w, assets/img/responsive/pileta-parque/pileta-parque-16-640.webp 640w, assets/img/responsive/pileta-parque/pileta-parque-16-800.webp 800w, assets/img/responsive/pileta-parque/pileta-parque-16-960.webp 960w, assets/img/responsive/pileta-parque/pileta-parque-16-1086.webp 1086w" sizes="(max-width: 1024px) min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px), calc((min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px) - 16px) / 2)" width="1086" height="1448" alt="Pileta y parque en Pileta y parque - Cabañas MICAR" loading="lazy" decoding="async">
             <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 19q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 5q2.5 2 5 0t5 0 5 0 5 0"/></svg>Pileta y parque</span>
           </button>
         </li>
@@ -875,7 +875,7 @@
         </li>
         <li class="gallery-item" data-category="juegos-ninos parque">
           <button class="gallery-card" type="button" data-caption="Juegos infantiles" data-full="assets/img/photos/juegos-ninos/juegos-para-ninos-1.webp">
-            <img src="assets/img/photos/juegos-ninos/juegos-para-ninos-1.webp" alt="Juegos infantiles en Juegos para niños - Cabañas MICAR" loading="lazy" decoding="async">
+            <img src="assets/img/responsive/juegos-ninos/juegos-para-ninos-1-640.webp" data-image-source="assets/img/photos/juegos-ninos/juegos-para-ninos-1.webp" srcset="assets/img/responsive/juegos-ninos/juegos-para-ninos-1-320.webp 320w, assets/img/responsive/juegos-ninos/juegos-para-ninos-1-480.webp 480w, assets/img/responsive/juegos-ninos/juegos-para-ninos-1-640.webp 640w, assets/img/responsive/juegos-ninos/juegos-para-ninos-1-800.webp 800w, assets/img/responsive/juegos-ninos/juegos-para-ninos-1-960.webp 960w, assets/img/responsive/juegos-ninos/juegos-para-ninos-1-1280.webp 1280w, assets/img/responsive/juegos-ninos/juegos-para-ninos-1-1448.webp 1448w" sizes="(max-width: 1024px) min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px), calc((min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px) - 16px) / 2)" width="1448" height="1086" alt="Juegos infantiles en Juegos para niños - Cabañas MICAR" loading="lazy" decoding="async">
             <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z"/><path d="M12 22v-3"/></svg>Juegos infantiles</span>
           </button>
         </li>
@@ -917,7 +917,7 @@
         </li>
         <li class="gallery-item" data-category="quincho comunes">
           <button class="gallery-card" type="button" data-caption="Quincho cabañas" data-full="assets/img/photos/quincho/quincho-cabanas-actual-7.webp">
-            <img src="assets/img/photos/quincho/quincho-cabanas-actual-7.webp" alt="Quincho cabañas en Quincho cabañas - Cabañas MICAR" loading="lazy" decoding="async">
+            <img src="assets/img/responsive/quincho/quincho-cabanas-actual-7-640.webp" data-image-source="assets/img/photos/quincho/quincho-cabanas-actual-7.webp" srcset="assets/img/responsive/quincho/quincho-cabanas-actual-7-320.webp 320w, assets/img/responsive/quincho/quincho-cabanas-actual-7-480.webp 480w, assets/img/responsive/quincho/quincho-cabanas-actual-7-640.webp 640w, assets/img/responsive/quincho/quincho-cabanas-actual-7-800.webp 800w, assets/img/responsive/quincho/quincho-cabanas-actual-7-960.webp 960w, assets/img/responsive/quincho/quincho-cabanas-actual-7-1086.webp 1086w" sizes="(max-width: 1024px) min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px), calc((min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px) - 16px) / 2)" width="1086" height="1448" alt="Quincho cabañas en Quincho cabañas - Cabañas MICAR" loading="lazy" decoding="async">
             <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>Quincho cabañas</span>
           </button>
         </li>
@@ -977,7 +977,7 @@
         </li>
         <li class="gallery-item" data-category="paisajes-rios-demas paisajes">
           <button class="gallery-card" type="button" data-caption="Paisajes y ríos de Traslasierra" data-full="assets/img/photos/paisajes-rios-demas/paisaje-rio-1.webp">
-            <img src="assets/img/photos/paisajes-rios-demas/paisaje-rio-1.webp" alt="Paisajes y ríos de Traslasierra en Paisajes y ríos - Cabañas MICAR" loading="lazy" decoding="async">
+            <img src="assets/img/responsive/paisajes-rios-demas/paisaje-rio-1-640.webp" data-image-source="assets/img/photos/paisajes-rios-demas/paisaje-rio-1.webp" srcset="assets/img/responsive/paisajes-rios-demas/paisaje-rio-1-320.webp 320w, assets/img/responsive/paisajes-rios-demas/paisaje-rio-1-480.webp 480w, assets/img/responsive/paisajes-rios-demas/paisaje-rio-1-640.webp 640w, assets/img/responsive/paisajes-rios-demas/paisaje-rio-1-800.webp 800w, assets/img/responsive/paisajes-rios-demas/paisaje-rio-1-960.webp 960w, assets/img/responsive/paisajes-rios-demas/paisaje-rio-1-1280.webp 1280w, assets/img/responsive/paisajes-rios-demas/paisaje-rio-1-1440.webp 1440w" sizes="(max-width: 1024px) min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px), calc((min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px) - 16px) / 2)" width="1440" height="1920" alt="Paisajes y ríos de Traslasierra en Paisajes y ríos - Cabañas MICAR" loading="lazy" decoding="async">
             <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>Paisajes y ríos de Traslasierra</span>
           </button>
         </li>
@@ -1007,7 +1007,7 @@
         </li>
         <li class="gallery-item" data-category="paisajes-rios-demas paisajes">
           <button class="gallery-card" type="button" data-caption="Paisajes y ríos de Traslasierra" data-full="assets/img/photos/paisajes-rios-demas/paisaje-rio-6.webp">
-            <img src="assets/img/photos/paisajes-rios-demas/paisaje-rio-6.webp" alt="Paisajes y ríos de Traslasierra en Paisajes y ríos - Cabañas MICAR" loading="lazy" decoding="async">
+            <img src="assets/img/responsive/paisajes-rios-demas/paisaje-rio-6-640.webp" data-image-source="assets/img/photos/paisajes-rios-demas/paisaje-rio-6.webp" srcset="assets/img/responsive/paisajes-rios-demas/paisaje-rio-6-320.webp 320w, assets/img/responsive/paisajes-rios-demas/paisaje-rio-6-480.webp 480w, assets/img/responsive/paisajes-rios-demas/paisaje-rio-6-640.webp 640w, assets/img/responsive/paisajes-rios-demas/paisaje-rio-6-800.webp 800w, assets/img/responsive/paisajes-rios-demas/paisaje-rio-6-960.webp 960w, assets/img/responsive/paisajes-rios-demas/paisaje-rio-6-1280.webp 1280w, assets/img/responsive/paisajes-rios-demas/paisaje-rio-6-1440.webp 1440w" sizes="(max-width: 1024px) min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px), calc((min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px) - 16px) / 2)" width="1440" height="1920" alt="Paisajes y ríos de Traslasierra en Paisajes y ríos - Cabañas MICAR" loading="lazy" decoding="async">
             <span class="gallery-card__caption"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>Paisajes y ríos de Traslasierra</span>
           </button>
         </li>

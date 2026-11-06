@@ -24,7 +24,7 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: sitemap.xml
+Sitemap: https://cabanasmicar.com.ar/sitemap.xml
 
 # LLM & AI agent discovery files
 # Reference: https://llmstxt.org

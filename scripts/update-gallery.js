@@ -116,6 +116,12 @@ function formatTitle(baseName) {
   return clean.charAt(0).toUpperCase() + clean.slice(1);
 }
 
+function selectGalleryPhotos(files) {
+  const available = new Set(files.map((file) => file.toLowerCase()));
+  return files.filter((file) => /\.(webp|jpg|jpeg|png)$/i.test(file))
+    .filter((file) => /\.webp$/i.test(file) || !available.has(`${path.parse(file).name}.webp`.toLowerCase()));
+}
+
 function updateGallery() {
   const metadata = fs.existsSync(META_FILE) ? JSON.parse(fs.readFileSync(META_FILE, 'utf8')) : {};
   let items = [];
@@ -124,7 +130,7 @@ function updateGallery() {
     const folderPath = path.join(PHOTOS_DIR, catInfo.folder);
     if (!fs.existsSync(folderPath)) continue;
 
-    const files = fs.readdirSync(folderPath).filter(f => /\.(webp|jpg|jpeg|png)$/i.test(f));
+    const files = selectGalleryPhotos(fs.readdirSync(folderPath));
 
     if (files.length === 0) {
       items.push({
@@ -232,4 +238,4 @@ if (require.main === module) {
   updateGallery();
 }
 
-module.exports = { updateGallery };
+module.exports = { updateGallery, selectGalleryPhotos };
