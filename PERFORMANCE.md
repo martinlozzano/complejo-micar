@@ -42,8 +42,18 @@ npm run audit:lighthouse -- --root=artifacts/baseline-source --label=before --ru
 
 ## Deploying
 
-Upload the contents of `dist/` to the existing static host. The build does not configure or publish a hosting service. Enable Brotli/gzip there, or configure the host to serve the generated compressed companions with the correct `Content-Encoding`, original `Content-Type` and `Vary: Accept-Encoding` headers. Verify those headers on the deployed URL; uploading `.br` and `.gz` files alone does not enable compression.
+GitHub Pages publishes the optimized `dist/` artifact through `.github/workflows/pages.yml`. To enable it:
+
+1. In the GitHub repository, open **Settings → Pages → Build and deployment** and select **GitHub Actions** as the source.
+2. Commit the workflow and merge it into `main`. A push to `main` runs dependency installation, tests and the production build, then deploys only `dist/`.
+3. Open **Actions → Deploy GitHub Pages** and check that both jobs succeed. To retry or deploy manually, choose **Run workflow** with the `main` branch selected.
+
+The public address remains `https://martinlozzano.github.io/complejo-micar/`. Keep `dist/` ignored: Actions generates and uploads it, so it does not need to be committed. A failed test or build prevents deployment. Manual runs from another branch can build an artifact but cannot deploy it. No personal access token or repository secret is required; deployment uses GitHub's workflow token and OIDC permissions.
+
+The workflow does not change repository settings by itself. See [GitHub's Pages workflow documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages) for the publishing-source and environment requirements.
+
+For another static host, upload the contents of `dist/` and configure that host separately. Generated `.br`/`.gz` companions do not enable compression by themselves; serving them requires the correct `Content-Encoding`, original `Content-Type` and `Vary: Accept-Encoding` headers. On GitHub Pages, compression and cache response headers are managed by the platform; verify the deployed responses rather than assuming the companion files are used.
 
 Revalidate HTML and mutable asset URLs. Only use long immutable caching for assets with a content version in their URL. The local preview deliberately uses `Cache-Control: no-cache` to avoid stale development assets.
 
-Canonical URLs, the robots sitemap directive and sitemap locations use the existing public domain `https://cabanasmicar.com.ar/`. Keep them consistent if the public domain changes. Lighthouse lab scores do not measure real-user INP; confirm LCP, INP and CLS on production with field data when available.
+Canonical URLs, the robots sitemap directive and sitemap locations still reference `https://cabanasmicar.com.ar/`. Align those separately with the final public address; the deployment workflow does not rewrite them. Lighthouse lab scores do not measure real-user INP; confirm LCP, INP and CLS on production with field data when available.
