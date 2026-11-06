@@ -1,5 +1,7 @@
 # Dependencies & environments
 node_modules/
+dist/
+artifacts/
 .env
 .env.local
 

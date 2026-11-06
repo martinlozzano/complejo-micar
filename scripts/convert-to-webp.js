@@ -4,7 +4,7 @@
  * Complejo MICAR - Batch WebP Converter & Optimizer
  * Converts all PNG, JPG, and JPEG photos in subdirectories to optimized .webp,
  * auto-orients, limits max dimension to 1920px (preserving aspect ratio),
- * removes the heavy original files upon verified conversion,
+ * preserves the original master files,
  * and automatically triggers update-gallery.js.
  */
 
@@ -24,8 +24,17 @@ const TARGET_FOLDERS = [
   'pileta-parque',
   'juegos-ninos',
   'quincho',
-  'paisajes-rios-demas'
+  'mas-fotos'
 ];
+
+async function convertImage(source, destination) {
+  const image = await sharp(source)
+    .rotate()
+    .resize({ width: 1920, height: 1920, fit: 'inside', withoutEnlargement: true })
+    .webp({ quality: 82 })
+    .toBuffer();
+  await fs.promises.writeFile(destination, image);
+}
 
 async function convertAll() {
   console.log('[1/3] Scanning photo folders for PNG, JPG and JPEG files...');
@@ -72,18 +81,12 @@ async function convertAll() {
     const targetPath = path.join(PHOTOS_DIR, item.folder, targetFilename);
 
     try {
-      await sharp(item.fullPath)
-        .rotate() // auto-orient from EXIF
-        .resize({ width: 1920, height: 1920, fit: 'inside', withoutEnlargement: true })
-        .webp({ quality: 82 })
-        .toFile(targetPath);
+      await convertImage(item.fullPath, targetPath);
 
       const newSize = fs.statSync(targetPath).size;
       newTotalBytes += newSize;
 
-      // Safe deletion of original file only after verifying output exists and has size
       if (fs.existsSync(targetPath) && newSize > 0) {
-        fs.unlinkSync(item.fullPath);
         convertedCount++;
       }
 
@@ -115,4 +118,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = { convertAll };
+module.exports = { convertAll, convertImage };

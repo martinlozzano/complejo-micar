@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Reservar Cabañas en Mina Clavero | Complejo MICAR</title>
   <meta name="description" content="Reservá tu estadía en Complejo MICAR, Mina Clavero. Completá tus fechas y contactanos directamente por WhatsApp para confirmar disponibilidad de cabañas con pileta y jacuzzi.">
-  <link rel="canonical" href="reserva.html">
+  <link rel="canonical" href="https://cabanasmicar.com.ar/reserva.html">
 
   <!-- Open Graph / Facebook / WhatsApp -->
   <meta property="og:type" content="website">
@@ -68,12 +68,12 @@
 
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap">
+  <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/playfair-display-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/fonts.css?v=1">
 
   <link rel="stylesheet" href="css/base.css?v=1.1">
-  <link rel="stylesheet" href="css/components.css?v=1.3">
+  <link rel="stylesheet" href="css/components.css?v=1.4">
   <link rel="stylesheet" href="css/pages/reserva.css?v=1.2">
 </head>
 <body>
@@ -110,7 +110,7 @@
   <main>
     <!-- Hero -->
     <section class="hero hero--booking" aria-labelledby="hero-title">
-      <img class="hero__media" src="assets/img/photos/pileta-parque/pileta-parque-1.webp" sizes="100vw" width="1448" height="1086" alt="" fetchpriority="high" decoding="async">
+      <picture data-responsive-picture><source type="image/avif" srcset="assets/img/responsive/pileta-parque/pileta-parque-1-320.avif 320w, assets/img/responsive/pileta-parque/pileta-parque-1-480.avif 480w, assets/img/responsive/pileta-parque/pileta-parque-1-640.avif 640w, assets/img/responsive/pileta-parque/pileta-parque-1-800.avif 800w, assets/img/responsive/pileta-parque/pileta-parque-1-960.avif 960w, assets/img/responsive/pileta-parque/pileta-parque-1-1086.avif 1086w" sizes="100vw"><img class="hero__media" src="assets/img/responsive/pileta-parque/pileta-parque-1-640.webp" data-image-source="assets/img/photos/pileta-parque/pileta-parque-1.webp" srcset="assets/img/responsive/pileta-parque/pileta-parque-1-320.webp 320w, assets/img/responsive/pileta-parque/pileta-parque-1-480.webp 480w, assets/img/responsive/pileta-parque/pileta-parque-1-640.webp 640w, assets/img/responsive/pileta-parque/pileta-parque-1-800.webp 800w, assets/img/responsive/pileta-parque/pileta-parque-1-960.webp 960w, assets/img/responsive/pileta-parque/pileta-parque-1-1086.webp 1086w" sizes="100vw" width="1086" height="1448" alt="" fetchpriority="high" decoding="async"></picture>
       <div class="container hero__content">
         <div class="hero__text">
           <span class="eyebrow">Tu próxima escapada te espera</span>
@@ -214,7 +214,7 @@
         </form>
 
         <aside class="booking-info" aria-labelledby="booking-info-title">
-          <img class="booking-info__media" src="assets/img/photos/pileta-parque/pileta-parque-16.webp" width="1086" height="1448" alt="Vista de la pileta con jacuzzi y las casas del complejo" loading="lazy" decoding="async">
+          <img class="booking-info__media" src="assets/img/responsive/pileta-parque/pileta-parque-16-640.webp" data-image-source="assets/img/photos/pileta-parque/pileta-parque-16.webp" srcset="assets/img/responsive/pileta-parque/pileta-parque-16-320.webp 320w, assets/img/responsive/pileta-parque/pileta-parque-16-480.webp 480w, assets/img/responsive/pileta-parque/pileta-parque-16-640.webp 640w, assets/img/responsive/pileta-parque/pileta-parque-16-800.webp 800w, assets/img/responsive/pileta-parque/pileta-parque-16-960.webp 960w, assets/img/responsive/pileta-parque/pileta-parque-16-1086.webp 1086w" sizes="(max-width: 960px) calc(min(calc(100vw - clamp(32px, 8vw, 128px)), 1240px) - clamp(24px, calc(16px + 2vw), 40px)), calc((min(calc(100vw - clamp(32px, 8vw, 128px)), 1240px) - clamp(24px, calc(16px + 2vw), 40px) - 16px) / 2.45)" width="1086" height="1448" alt="Vista de la pileta con jacuzzi y las casas del complejo" loading="lazy" decoding="async">
           <div class="booking-info__body">
             <h2 class="booking-info__title" id="booking-info-title">Complejo MICAR</h2>
             <!-- TODO: confirm the real town/address. -->
@@ -245,7 +245,7 @@
       </header>
       <div class="included__grid">
         <div class="photo-card">
-          <img class="photo-card__media" src="assets/img/photos/casa/dormitorio-con-cama-marinera-planta-alta-34.webp" width="1086" height="1448" alt="Dormitorio equipado en Complejo MICAR" loading="lazy" decoding="async">
+          <img class="photo-card__media" src="assets/img/responsive/casa/dormitorio-con-cama-marinera-planta-alta-34-640.webp" data-image-source="assets/img/photos/casa/dormitorio-con-cama-marinera-planta-alta-34.webp" srcset="assets/img/responsive/casa/dormitorio-con-cama-marinera-planta-alta-34-320.webp 320w, assets/img/responsive/casa/dormitorio-con-cama-marinera-planta-alta-34-480.webp 480w, assets/img/responsive/casa/dormitorio-con-cama-marinera-planta-alta-34-640.webp 640w, assets/img/responsive/casa/dormitorio-con-cama-marinera-planta-alta-34-800.webp 800w, assets/img/responsive/casa/dormitorio-con-cama-marinera-planta-alta-34-960.webp 960w, assets/img/responsive/casa/dormitorio-con-cama-marinera-planta-alta-34-1086.webp 1086w" sizes="(max-width: 600px) calc((min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px) - 12px) / 2), (max-width: 1100px) calc((min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px) - 16px) / 2), calc((min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px) - 48px) / 4)" width="1086" height="1448" alt="Dormitorio equipado en Complejo MICAR" loading="lazy" decoding="async">
           <span class="photo-card__overlay">
             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></svg>
             <span class="photo-card__title">Cabañas equipadas</span>
@@ -253,7 +253,7 @@
           </span>
         </div>
         <div class="photo-card">
-          <img class="photo-card__media" src="assets/img/photos/pileta-parque/pileta-parque-16.webp" width="1086" height="1448" alt="Reposeras junto a la pileta y jacuzzi" loading="lazy" decoding="async">
+          <img class="photo-card__media" src="assets/img/responsive/pileta-parque/pileta-parque-16-640.webp" data-image-source="assets/img/photos/pileta-parque/pileta-parque-16.webp" srcset="assets/img/responsive/pileta-parque/pileta-parque-16-320.webp 320w, assets/img/responsive/pileta-parque/pileta-parque-16-480.webp 480w, assets/img/responsive/pileta-parque/pileta-parque-16-640.webp 640w, assets/img/responsive/pileta-parque/pileta-parque-16-800.webp 800w, assets/img/responsive/pileta-parque/pileta-parque-16-960.webp 960w, assets/img/responsive/pileta-parque/pileta-parque-16-1086.webp 1086w" sizes="(max-width: 600px) calc((min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px) - 12px) / 2), (max-width: 1100px) calc((min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px) - 16px) / 2), calc((min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px) - 48px) / 4)" width="1086" height="1448" alt="Reposeras junto a la pileta y jacuzzi" loading="lazy" decoding="async">
           <span class="photo-card__overlay">
             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 19q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 5q2.5 2 5 0t5 0 5 0 5 0"/></svg>
             <span class="photo-card__title">Pileta y jacuzzi</span>
@@ -261,7 +261,7 @@
           </span>
         </div>
         <div class="photo-card">
-          <img class="photo-card__media" src="assets/img/photos/juegos-ninos/juegos-para-ninos-1.webp" width="1086" height="1448" alt="Juegos infantiles en el parque" loading="lazy" decoding="async">
+          <img class="photo-card__media" src="assets/img/responsive/juegos-ninos/juegos-para-ninos-1-640.webp" data-image-source="assets/img/photos/juegos-ninos/juegos-para-ninos-1.webp" srcset="assets/img/responsive/juegos-ninos/juegos-para-ninos-1-320.webp 320w, assets/img/responsive/juegos-ninos/juegos-para-ninos-1-480.webp 480w, assets/img/responsive/juegos-ninos/juegos-para-ninos-1-640.webp 640w, assets/img/responsive/juegos-ninos/juegos-para-ninos-1-800.webp 800w, assets/img/responsive/juegos-ninos/juegos-para-ninos-1-960.webp 960w, assets/img/responsive/juegos-ninos/juegos-para-ninos-1-1280.webp 1280w, assets/img/responsive/juegos-ninos/juegos-para-ninos-1-1448.webp 1448w" sizes="(max-width: 600px) calc((min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px) - 12px) / 2), (max-width: 1100px) calc((min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px) - 16px) / 2), calc((min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px) - 48px) / 4)" width="1448" height="1086" alt="Juegos infantiles en el parque" loading="lazy" decoding="async">
           <span class="photo-card__overlay">
             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 21 14 3"/><path d="M20.5 21 10 3"/><path d="M15.5 21 12 15l-3.5 6"/><path d="M2 21h20"/></svg>
             <span class="photo-card__title">Juegos para chicos</span>
@@ -269,7 +269,7 @@
           </span>
         </div>
         <div class="photo-card">
-          <img class="photo-card__media" src="assets/img/photos/casa/parte-del-parque-14.webp" width="1448" height="1086" alt="Parque amplio con pinos y césped" loading="lazy" decoding="async">
+          <img class="photo-card__media" src="assets/img/responsive/casa/parte-del-parque-14-640.webp" data-image-source="assets/img/photos/casa/parte-del-parque-14.webp" srcset="assets/img/responsive/casa/parte-del-parque-14-320.webp 320w, assets/img/responsive/casa/parte-del-parque-14-480.webp 480w, assets/img/responsive/casa/parte-del-parque-14-640.webp 640w, assets/img/responsive/casa/parte-del-parque-14-800.webp 800w, assets/img/responsive/casa/parte-del-parque-14-960.webp 960w, assets/img/responsive/casa/parte-del-parque-14-1280.webp 1280w, assets/img/responsive/casa/parte-del-parque-14-1448.webp 1448w" sizes="(max-width: 600px) calc((min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px) - 12px) / 2), (max-width: 1100px) calc((min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px) - 16px) / 2), calc((min(calc(100vw - clamp(32px, 8vw, 128px)), 1360px) - 48px) / 4)" width="1448" height="1086" alt="Parque amplio con pinos y césped" loading="lazy" decoding="async">
           <span class="photo-card__overlay">
             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z"/><path d="M12 22v-3"/></svg>
             <span class="photo-card__title">Amplio parque</span>

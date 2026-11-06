@@ -1175,7 +1175,7 @@ body.nav-open {
   opacity: 0;
   transform: translateY(8px) scale(0.96);
   visibility: hidden;
-  transition: opacity 300ms ease, transform 300ms ease, visibility 300ms;
+  transition: opacity 300ms ease, transform 300ms ease;
 }
 
 .whatsapp-popup.is-visible {
