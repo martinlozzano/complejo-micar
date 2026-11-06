@@ -1,5 +1,5 @@
 // Booking form: accommodation selection, capacity limits, date/nights sync,
-// and redirection to WhatsApp with a pre-formatted message.
+// and inquiry drafts for WhatsApp, mobile email clients, or desktop Gmail.
 (function () {
   const form = document.querySelector("[data-booking-form]");
   if (!form) return;
@@ -7,6 +7,14 @@
   // WhatsApp contact number from centralized config (or fallback)
   const WHATSAPP_PHONE = window.MICAR_CONFIG?.whatsappPhone || "";
   const CONTACT_EMAIL = window.MICAR_CONFIG?.contactEmail || "";
+
+  function isMobileDevice() {
+    const device = window.navigator || {};
+    const userAgent = device.userAgent || "";
+    // iPadOS can identify as a Mac while retaining multi-touch support.
+    const isIPad = (/Macintosh/i.test(userAgent) || device.platform === "MacIntel") && device.maxTouchPoints > 1;
+    return device.userAgentData?.mobile === true || /Android|iPhone|iPad|iPod/i.test(userAgent) || isIPad;
+  }
 
   const nameInput = form.elements.namedItem("name");
   const accommodation = form.elements.namedItem("accommodation");
@@ -212,6 +220,12 @@
     const extraMessage = messageInput ? messageInput.value.trim() : "";
 
     if (channel === "email") {
+      const recipient = CONTACT_EMAIL.trim();
+      if (!recipient) {
+        status.textContent = "El correo de contacto no está disponible. Consultá por WhatsApp.";
+        return;
+      }
+
       const subject = `Consulta de disponibilidad - ${place}`;
       let emailBody = `¡Hola! Me gustaría consultar por disponibilidad en Cabañas MICAR.\n\n` +
         `Datos de la consulta:\n` +
@@ -228,11 +242,19 @@
 
       emailBody += `\nMuchas gracias,\n${clientName}`;
 
-      const recipient = CONTACT_EMAIL ? encodeURIComponent(CONTACT_EMAIL) : "";
-      const webmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${recipient}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+      const encodedSubject = encodeURIComponent(subject);
+      const encodedBody = encodeURIComponent(emailBody.replace(/\r\n|\r|\n/g, "\r\n"));
 
-      status.textContent = "¡Abriendo correo en una pestaña nueva para enviar tu consulta!";
-      window.open(webmailUrl, "_blank");
+      if (isMobileDevice()) {
+        const encodedRecipient = encodeURIComponent(recipient).replace(/%40/g, "@");
+        const mailtoUrl = `mailto:${encodedRecipient}?subject=${encodedSubject}&body=${encodedBody}`;
+        status.textContent = "Preparando la consulta en tu aplicación de correo.";
+        window.location.assign(mailtoUrl);
+      } else {
+        const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(recipient)}&su=${encodedSubject}&body=${encodedBody}`;
+        status.textContent = "Preparando la consulta en una pestaña nueva de Gmail.";
+        window.open(gmailUrl, "_blank", "noopener,noreferrer");
+      }
       return;
     }
 
