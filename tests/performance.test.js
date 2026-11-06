@@ -4,6 +4,7 @@ const fs = require('node:fs/promises');
 const os = require('node:os');
 const path = require('node:path');
 const sharp = require('sharp');
+const { spawnSync } = require('node:child_process');
 
 test('responsive generation preserves the source and never labels an upscaled image', async (t) => {
   const { generateVariants } = require('../scripts/responsive-images');
@@ -73,4 +74,38 @@ test('hero variants can use AVIF while preserving the same source and dimensions
   assert.equal(bytes.toString('ascii', 4, 12), 'ftypavif');
   assert.equal((await sharp(bytes).metadata()).width, 320);
   await fs.access(source);
+});
+
+test('gallery imports from mas-fotos retain real responsive variants when regenerated', async (t) => {
+  const root = await fs.mkdtemp(path.join(os.tmpdir(), 'micar-gallery-import-'));
+  t.after(() => fs.rm(root, { recursive: true, force: true }));
+  await fs.mkdir(path.join(root, 'scripts'), { recursive: true });
+  await fs.mkdir(path.join(root, 'assets/img/photos/mas-fotos'), { recursive: true });
+  const script = path.join(root, 'scripts/responsive-images.js');
+  await fs.copyFile(path.resolve(__dirname, '../scripts/responsive-images.js'), script);
+  const source = path.join(root, 'assets/img/photos/mas-fotos/river.webp');
+  await sharp({ create: { width: 710, height: 500, channels: 3, background: '#7195a1' } }).webp().toFile(source);
+  const original = await fs.readFile(source);
+  const gallery = '<button data-full="assets/img/photos/mas-fotos/river.webp"><img src="assets/img/photos/mas-fotos/river.webp" loading="lazy"></button><img src="assets/img/photos/casa/unrelated.webp">';
+  for (const page of ['index', 'cabanas', 'servicios', 'galeria', 'ubicacion', 'reserva']) {
+    await fs.writeFile(path.join(root, `${page}.html`), page === 'galeria' ? gallery : '<!doctype html><title>MICAR</title>');
+  }
+  const run = () => {
+    const result = spawnSync(process.execPath, [script], { encoding: 'utf8', env: { ...process.env, NODE_PATH: path.resolve(__dirname, '../node_modules') } });
+    assert.equal(result.status, 0, result.stderr);
+  };
+  run();
+  const generated = await fs.readFile(path.join(root, 'galeria.html'), 'utf8');
+  assert.match(generated, /srcset="[^"]*assets\/img\/responsive\/mas-fotos\/river-320\.webp 320w/);
+  assert.ok(generated.includes('data-full="assets/img/photos/mas-fotos/river.webp"'));
+  assert.ok(generated.includes('<img src="assets/img/photos/casa/unrelated.webp">'));
+  await assert.rejects(fs.access(path.join(root, 'assets/img/responsive/casa')), { code: 'ENOENT' });
+  for (const file of await fs.readdir(path.join(root, 'assets/img/responsive/mas-fotos'))) {
+    const metadata = await sharp(await fs.readFile(path.join(root, 'assets/img/responsive/mas-fotos', file))).metadata();
+    assert.equal(metadata.width, Number(file.match(/-(\d+)\.webp$/)[1]));
+    assert.ok(metadata.width <= 710);
+  }
+  run();
+  assert.equal(await fs.readFile(path.join(root, 'galeria.html'), 'utf8'), generated);
+  assert.deepEqual(await fs.readFile(source), original);
 });

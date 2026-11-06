@@ -24,7 +24,7 @@ const TARGET_FOLDERS = [
   'pileta-parque',
   'juegos-ninos',
   'quincho',
-  'paisajes-rios-demas'
+  'mas-fotos'
 ];
 
 async function convertImage(source, destination) {

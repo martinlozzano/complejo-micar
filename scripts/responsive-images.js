@@ -47,10 +47,10 @@ async function updateResponsiveImages() {
   const heroSources = new Set();
   for (const [page, html] of pages) {
     for (const [tag] of html.matchAll(/<img\b[^>]*>/g)) {
-      if (page === 'galeria.html' && !tag.includes('hero__media')) continue;
       const source = tag.match(/\bdata-image-source="(assets\/img\/photos\/[^"?]+)"/)?.[1]
         || tag.match(/\bsrc="(assets\/img\/photos\/[^"?]+)"/)?.[1];
       if (!source) continue;
+      if (page === 'galeria.html' && !tag.includes('hero__media') && !source.startsWith('assets/img/photos/mas-fotos/')) continue;
       sources.set(source, [320, 480, 640, 800, 960, 1280, 1600, 1920]);
       if (tag.includes('hero__media')) heroSources.add(source);
     }

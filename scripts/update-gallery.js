@@ -57,10 +57,10 @@ const CATEGORIES = {
     label: 'Quincho cabañas',
     icon: '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>'
   },
-  'paisajes-rios-demas': {
-    folder: 'paisajes-rios-demas',
-    category: 'paisajes-rios-demas paisajes',
-    label: 'Paisajes y ríos',
+  'mas-fotos': {
+    folder: 'mas-fotos',
+    category: 'mas-fotos',
+    label: 'Más fotos',
     icon: '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>'
   }
 };
@@ -101,7 +101,22 @@ const TITLE_DICTIONARY = {
   'lateral-cabanas': 'Lateral del complejo',
   'juegos-para-ninos': 'Juegos infantiles',
   'paisaje-rio': 'Paisajes y ríos de Traslasierra',
-  'pileta-parque': 'Pileta y parque'
+  'pileta-parque': 'Pileta y parque',
+  'anfiteatro-mina-clavero': 'Anfiteatro Mina Clavero',
+  'balneario-la-toma-mina-clavero': 'Balneario La Toma, Mina Clavero',
+  'balneario-los-elefantes-mina-clavero': 'Balneario Los Elefantes, Mina Clavero',
+  'balneario-nido-de-aguila-mina-clavero': 'Balneario Nido de Águila, Mina Clavero',
+  'bano-de-los-dioses-mina-clavero': 'Baño de Los Dioses, Mina Clavero',
+  'casino-mina-clavero': 'Casino Mina Clavero',
+  'centro-comercial-mina-clavero': 'Centro comercial de Mina Clavero',
+  'parroquia-mina-clavero': 'Parroquia Mina Clavero',
+  'peatonal-centro-comercial-mina-clavero': 'Peatonal del centro comercial de Mina Clavero',
+  'plaza-san-martin-mina-clavero': 'Plaza San Martín, Mina Clavero',
+  'puente-colgante-mina-clavero': 'Puente colgante de Mina Clavero',
+  'reloj-mina-clavero': 'Reloj de Mina Clavero',
+  'rio-de-los-sauces-mina-clavero': 'Río de Los Sauces, Mina Clavero',
+  'rotonda-de-ingreso-mina-clavero': 'Rotonda de ingreso a Mina Clavero',
+  'rotonda-de-ingreso-mina-clavero-al-atardecer': 'Rotonda de ingreso a Mina Clavero al atardecer'
 };
 
 function formatTitle(baseName) {
@@ -211,7 +226,7 @@ function updateGallery() {
           <button class="gallery-filter" type="button" data-filter="pileta-parque" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 19q2.5 2 5 0t5 0 5 0 5 0"/><path d="M2 5q2.5 2 5 0t5 0 5 0 5 0"/></svg>Pileta y parque</button>
           <button class="gallery-filter" type="button" data-filter="juegos-ninos" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z"/><path d="M12 22v-3"/></svg>Juegos para niños</button>
           <button class="gallery-filter" type="button" data-filter="quincho" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>Quincho cabañas</button>
-          <button class="gallery-filter" type="button" data-filter="paisajes-rios-demas" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>Paisajes y ríos</button>
+          <button class="gallery-filter" type="button" data-filter="mas-fotos" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>Más fotos</button>
         </div>`;
 
   const filtersPattern = /<div class="gallery-filters"[\s\S]*?<\/div>/;
