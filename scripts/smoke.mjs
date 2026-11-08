@@ -18,6 +18,36 @@ const base = `http://127.0.0.1:${server.address().port}`;
 const browser = await chromium.launch({ channel: 'chrome', headless: true, args: ['--disable-extensions'] });
 const results = [];
 try {
+  const routingContext = await browser.newContext({ viewport: { width: 1350, height: 940 }, reducedMotion: 'reduce' });
+  const routingPage = await routingContext.newPage();
+  const routingFailures = [];
+  routingPage.on('pageerror', (error) => routingFailures.push(error.message));
+  routingPage.on('response', (response) => { if (response.url().startsWith(base) && response.status() >= 400) routingFailures.push(`${response.status()} ${response.url()}`); });
+  await routingPage.goto(base + '/');
+  await routingPage.locator('#site-nav a[href$="galeria/"]').click();
+  assert.equal(new URL(routingPage.url()).pathname, '/galeria/');
+  await routingPage.reload();
+  await routingPage.goto(`${base}/galeria.html?from=legacy#casa`);
+  await routingPage.waitForURL(`${base}/galeria/?from=legacy#casa`);
+  assert.equal(await routingPage.locator('[data-filter="casa"]').getAttribute('aria-pressed'), 'true');
+  await routingPage.locator('.gallery-item:not([hidden]) .gallery-card').first().click();
+  await routingPage.locator('.lightbox__img').evaluate((image) => image.decode());
+  await routingPage.keyboard.press('Escape');
+  await routingPage.locator('[data-filter="todo"]').click();
+  assert.equal(new URL(routingPage.url()).search, '?from=legacy');
+  await routingPage.locator('#site-nav a[href$="reserva/"]').click();
+  assert.equal(new URL(routingPage.url()).pathname, '/reserva/');
+  await routingPage.reload();
+  assert.ok(await routingPage.locator('#checkin').isVisible());
+  assert.deepEqual(routingFailures, [], 'Navigation, legacy redirects and dynamic images must load without errors');
+  await routingContext.close();
+  const noScript = await browser.newContext({ javaScriptEnabled: false });
+  const fallbackPage = await noScript.newPage();
+  await fallbackPage.goto(`${base}/reserva.html`);
+  await fallbackPage.waitForURL(`${base}/reserva/`);
+  assert.ok(await fallbackPage.locator('h1').isVisible());
+  await noScript.close();
+  console.log('PASS home → gallery → booking, reload, legacy query/hash, lightbox and no-JS redirect');
   for (const width of process.argv.includes('--responsive-only') ? [] : [390, 1350]) {
     const context = await browser.newContext({ viewport: { width, height: 940 }, deviceScaleFactor: 1, reducedMotion: 'reduce' });
     await context.addInitScript(() => {
@@ -31,7 +61,7 @@ try {
     page.on('pageerror', (error) => failures.push(error.message));
     page.on('response', (response) => { if (response.url().startsWith(base) && response.status() >= 400) failures.push(`${response.status()} ${response.url()}`); });
     for (const filename of ['index', 'cabanas', 'servicios', 'galeria', 'ubicacion', 'reserva']) {
-      assert.equal((await page.goto(`${base}/${filename}.html`, { waitUntil: 'load' })).status(), 200);
+      assert.equal((await page.goto(`${base}${filename === 'index' ? '/' : `/${filename}/`}`, { waitUntil: 'load' })).status(), 200);
       await page.evaluate(() => document.fonts.ready);
       await page.locator('.hero__media').evaluate((image) => image.decode());
       assert.ok(await page.locator('h1').isVisible());
@@ -79,7 +109,7 @@ try {
         await image.decode();
       })));
       await page.screenshot({ path: path.join(directory, `${filename}-${width}.png`), fullPage: true });
-      console.log(`PASS ${filename}.html at ${width}px`);
+      console.log(`PASS ${filename === 'index' ? '/' : `/${filename}/`} at ${width}px`);
     }
     assert.deepEqual(failures, [], 'Browser errors or broken local resources');
     await context.close();
@@ -89,7 +119,7 @@ try {
       const context = await browser.newContext({ viewport: { width, height: 940 }, deviceScaleFactor, reducedMotion: 'reduce' });
       const page = await context.newPage();
       for (const filename of ['index', 'cabanas', 'servicios', 'galeria', 'ubicacion', 'reserva']) {
-        await page.goto(`${base}/${filename}.html`, { waitUntil: 'load' });
+        await page.goto(`${base}${filename === 'index' ? '/' : `/${filename}/`}`, { waitUntil: 'load' });
         const images = await page.locator('img[data-image-source]').evaluateAll(async (elements) => {
           const visible = elements.filter((image) => image.getClientRects().length);
           await Promise.all(visible.map(async (image) => { image.loading = 'eager'; await image.decode(); }));
