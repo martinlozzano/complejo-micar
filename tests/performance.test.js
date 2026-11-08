@@ -76,21 +76,25 @@ test('hero variants can use AVIF while preserving the same source and dimensions
   await fs.access(source);
 });
 
-test('gallery imports from mas-fotos retain real responsive variants when regenerated', async (t) => {
+test('gallery regeneration preserves clean routes, metadata and real responsive variants', async (t) => {
   const root = await fs.mkdtemp(path.join(os.tmpdir(), 'micar-gallery-import-'));
   t.after(() => fs.rm(root, { recursive: true, force: true }));
   await fs.mkdir(path.join(root, 'scripts'), { recursive: true });
   await fs.mkdir(path.join(root, 'assets/img/photos/mas-fotos'), { recursive: true });
   const script = path.join(root, 'scripts/responsive-images.js');
   await fs.copyFile(path.resolve(__dirname, '../scripts/responsive-images.js'), script);
+  const galleryScript = path.join(root, 'scripts/update-gallery.js');
+  await fs.copyFile(path.resolve(__dirname, '../scripts/update-gallery.js'), galleryScript);
   const source = path.join(root, 'assets/img/photos/mas-fotos/river.webp');
   await sharp({ create: { width: 710, height: 500, channels: 3, background: '#7195a1' } }).webp().toFile(source);
   const original = await fs.readFile(source);
-  const gallery = '<button data-full="assets/img/photos/mas-fotos/river.webp"><img src="assets/img/photos/mas-fotos/river.webp" loading="lazy"></button><img src="assets/img/photos/casa/unrelated.webp">';
+  const gallery = '<link rel="canonical" href="https://complejomicar.com/galeria/"><meta property="og:url" content="https://complejomicar.com/galeria/"><a href="reserva.html?cabin=cabana2#booking">Book</a><ul class="gallery-grid" role="list" data-gallery></ul><img src="assets/img/photos/casa/unrelated.webp">';
   for (const page of ['index', 'cabanas', 'servicios', 'galeria', 'ubicacion', 'reserva']) {
     await fs.writeFile(path.join(root, `${page}.html`), page === 'galeria' ? gallery : '<!doctype html><title>MICAR</title>');
   }
   const run = () => {
+    const galleryResult = spawnSync(process.execPath, [galleryScript], { encoding: 'utf8' });
+    assert.equal(galleryResult.status, 0, galleryResult.stderr);
     const result = spawnSync(process.execPath, [script], { encoding: 'utf8', env: { ...process.env, NODE_PATH: path.resolve(__dirname, '../node_modules') } });
     assert.equal(result.status, 0, result.stderr);
   };
@@ -105,7 +109,16 @@ test('gallery imports from mas-fotos retain real responsive variants when regene
     assert.equal(metadata.width, Number(file.match(/-(\d+)\.webp$/)[1]));
     assert.ok(metadata.width <= 710);
   }
+  const { build } = require('../scripts/build');
+  await build(root);
+  const exported = await fs.readFile(path.join(root, 'dist/galeria/index.html'), 'utf8');
+  assert.ok(exported.includes('href="https://complejomicar.com/galeria/"'));
+  assert.ok(exported.includes('content="https://complejomicar.com/galeria/"'));
+  assert.ok(exported.includes('href="../reserva/?cabin=cabana2#booking"'));
+  assert.ok(exported.includes('data-full="../assets/img/photos/mas-fotos/river.webp"'));
   run();
   assert.equal(await fs.readFile(path.join(root, 'galeria.html'), 'utf8'), generated);
+  await build(root);
+  assert.equal(await fs.readFile(path.join(root, 'dist/galeria/index.html'), 'utf8'), exported);
   assert.deepEqual(await fs.readFile(source), original);
 });

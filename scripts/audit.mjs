@@ -18,7 +18,7 @@ const source = process.argv.includes('--source');
 const publicRoot = path.resolve(root, argument('root', source ? '.' : 'dist'));
 const server = serverModule.createSiteServer(publicRoot);
 await new Promise((resolve) => server.listen(0, '127.0.0.1', resolve));
-const url = `http://127.0.0.1:${server.address().port}/index.html`;
+const url = `http://127.0.0.1:${server.address().port}/`;
 const results = [];
 try {
   for (const formFactor of ['mobile', 'desktop']) {

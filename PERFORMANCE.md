@@ -1,6 +1,6 @@
 # Build and verify the static site
 
-The editable HTML, CSS and generated responsive photos work with a normal static server. Use the production build for minified CSS and precompressed text assets; the original photos remain available for gallery lightboxes and future exports.
+The production build works with a normal static server. It exports directory indexes for clean page URLs, minified CSS and precompressed text assets; the original photos remain available for gallery lightboxes and future exports.
 
 ## Quick path
 
@@ -14,6 +14,14 @@ npm run preview
 ```
 
 Open `http://127.0.0.1:4173`. The preview binds only to localhost and serves public files. Run `npm run preview -- --source` to inspect editable sources instead of `dist`.
+
+## Public page URLs
+
+The homepage is `/`; the other pages are `/cabanas/`, `/servicios/`, `/galeria/`, `/ubicacion/` and `/reserva/`. Each page is a real `index.html` inside its own output directory, so direct loads and reloads work on static hosting.
+
+Keep editing the root HTML files. `scripts/routes.js` renders their navigation and resource paths for both the source preview and build. Relative output URLs also work when hosted under a project prefix. Fragment links stay on the current page; gallery lightbox paths are rebased along with images, styles and scripts. The gallery and responsive-image generators continue to use the existing flat source layout. Use the included preview for sources; a generic static server should serve `dist/`.
+
+The old `.html` addresses remain as generated redirect documents. JavaScript uses `location.replace` to preserve query parameters and fragments, including gallery filters and booking selections. A meta refresh and visible link support visitors without JavaScript; that fallback opens the clean page without carrying query parameters or fragments. These static documents are client redirects, not HTTP 301 responses. Configure permanent redirects separately if the hosting provider supports them.
 
 ## Images and CSS
 
@@ -48,7 +56,7 @@ GitHub Pages publishes the optimized `dist/` artifact through `.github/workflows
 2. Commit the workflow and merge it into `main`. A push to `main` runs dependency installation, tests and the production build, then deploys only `dist/`.
 3. Open **Actions → Deploy GitHub Pages** and check that both jobs succeed. To retry or deploy manually, choose **Run workflow** with the `main` branch selected.
 
-The public address remains `https://martinlozzano.github.io/complejo-micar/`. Keep `dist/` ignored: Actions generates and uploads it, so it does not need to be committed. A failed test or build prevents deployment. Manual runs from another branch can build an artifact but cannot deploy it. No personal access token or repository secret is required; deployment uses GitHub's workflow token and OIDC permissions.
+The intended public address is `https://complejomicar.com/`. Configure the custom domain and DNS separately in the hosting provider; updating source metadata does not connect the domain. Keep `dist/` ignored: Actions generates and uploads it, so it does not need to be committed. A failed test or build prevents deployment. Manual runs from another branch can build an artifact but cannot deploy it. No personal access token or repository secret is required; deployment uses GitHub's workflow token and OIDC permissions.
 
 The workflow does not change repository settings by itself. See [GitHub's Pages workflow documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages) for the publishing-source and environment requirements.
 
@@ -56,4 +64,4 @@ For another static host, upload the contents of `dist/` and configure that host 
 
 Revalidate HTML and mutable asset URLs. Only use long immutable caching for assets with a content version in their URL. The local preview deliberately uses `Cache-Control: no-cache` to avoid stale development assets.
 
-Canonical URLs, the robots sitemap directive and sitemap locations still reference `https://cabanasmicar.com.ar/`. Align those separately with the final public address; the deployment workflow does not rewrite them. Lighthouse lab scores do not measure real-user INP; confirm LCP, INP and CLS on production with field data when available.
+Canonical URLs, social metadata, structured-data URLs, the robots sitemap directive and sitemap locations use `https://complejomicar.com/` with clean directory page paths. The deployment workflow does not rewrite them. Lighthouse lab scores do not measure real-user INP; confirm LCP, INP and CLS on production with field data when available.

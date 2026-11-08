@@ -236,7 +236,7 @@
     button.addEventListener("click", () => {
       const category = button.dataset.filter;
       applyFilter(category);
-      history.replaceState(null, "", category === "todo" ? location.pathname : `#${category}`);
+      history.replaceState(null, "", `${location.pathname}${location.search}${category === "todo" ? "" : `#${category}`}`);
     });
   });
 
