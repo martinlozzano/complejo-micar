@@ -66,6 +66,34 @@ test('social and structured metadata identify the canonical site and real public
   }
 });
 
+test('the homepage identifies Complejo Micar and its location consistently', async () => {
+  const html = await fs.readFile(path.join(ROOT, 'index.html'), 'utf8');
+  const schemas = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+    .map(([, json]) => JSON.parse(json));
+  const websites = schemas.filter((schema) => schema['@type'] === 'WebSite');
+  assert.equal(websites.length, 1);
+  assert.equal(websites[0].name, 'Complejo Micar');
+  assert.equal(html.match(/<meta property="og:site_name" content="([^"]+)"/)?.[1], websites[0].name);
+  assert.match(html, /<title>Cabañas en Mina Clavero[^<]*\| Complejo Micar<\/title>/);
+  const heading = html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/)?.[1];
+  assert.equal(heading?.replace(/<br\s*\/?>/gi, ' ').replace(/\s+/g, ' ').trim(), 'Cabañas en Mina Clavero');
+});
+
+test('the homepage declares the existing branded favicon at its actual size', async () => {
+  const html = await fs.readFile(path.join(ROOT, 'index.html'), 'utf8');
+  const icon = html.match(/<link\b[^>]*\brel="icon"[^>]*>/)?.[0];
+  assert.ok(icon, 'The homepage must declare a favicon');
+  const href = icon.match(/\bhref="([^"]+)"/)?.[1];
+  assert.ok(href, 'The favicon must have a URL');
+  const url = new URL(href, ORIGIN);
+  assert.equal(url.href, `${ORIGIN}/assets/img/favicon.png`);
+  const image = await sharp(path.join(ROOT, url.pathname.slice(1))).metadata();
+  assert.equal(image.format, 'png');
+  assert.equal(image.width, image.height);
+  assert.ok(image.width > 48);
+  assert.equal(icon.match(/\bsizes="([^"]+)"/)?.[1], `${image.width}x${image.height}`);
+});
+
 test('home responsive candidates refer to distinct real images with truthful width descriptors', async () => {
   const html = await fs.readFile(path.join(ROOT, 'index.html'), 'utf8');
   const images = [...html.matchAll(/<img\b[^>]*>/g)].map((match) => match[0]).filter((tag) => tag.includes('assets/img/photos/') || tag.includes('assets/img/responsive/'));
